@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 19:16:27 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/18 21:47:56 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 typedef struct		s_map
 {
-	char			width[MAX_INT_DECIMAL + 1];
-	size_t			width_i;
-	size_t			width_t;
-	char			height[MAX_INT_DECIMAL + 1];
-	size_t			height_i;
-	size_t			height_t;
+	char			dim[2][MAX_INT_DECIMAL + 1];
+	size_t			dim_i[2];
+	size_t			dim_t[2];
 	int				mapsize[2];
 	float			mid[2];
 	t_color			*lerp_in;
@@ -37,7 +34,6 @@ typedef struct		s_setup
 	size_t			height;
 	size_t			ui;
 	size_t			mode;
-	size_t			mapsize[2];
 	int				ac;
 	char			**args;
 	int				key;

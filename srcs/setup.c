@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 20:41:10 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/18 21:55:07 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,53 +100,84 @@
 //	return (ft_fract_calc(setup));
 //}
 
-static int		ft_map_width(int keycode, t_setup *setup)
+static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)
 {
-	if (keycode != ENTER && MAP->width_i < MAX_INT_DECIMAL)
+	if (setup->key != ENTER && *c < MAX_INT_DECIMAL)
 	{
-		if (ft_mlx_keytonumchar(keycode) != '\0')
+		if (ft_mlx_keytonumchar(setup->key) != '\0')
 		{
-			MAP->width[MAP->width_i] = ft_mlx_keytonumchar(keycode);
-			MAP->width_i++;
-			MAP->width[MAP->width_i] = '\0';
-			mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 10, \
-					SETUP.height / 7, 0x00FF0000, "WIDTH : ");
-			mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 6, \
-					SETUP.height / 7, 0x00FF0000, MAP->width);
+			str[*c] = ft_mlx_keytonumchar(setup->key);
+			c[0]++;
+			str[*c] = '\0';
 		}
 	}
-	if (keycode == ENTER)
+	if (setup->key == ENTER)
+		*flag = 1;
+	return (OK);
+}
+
+//static int		ft_map_height(int keycode, t_setup *setup)
+//{
+//	if (keycode != ENTER && MAP->height_i < MAX_INT_DECIMAL)
+//	{
+//		if (ft_mlx_keytonumchar(keycode) != '\0')
+//		{
+//			MAP->height[MAP->height_i] = ft_mlx_keytonumchar(keycode);
+//			MAP->height_i++;
+//			MAP->height[MAP->height_i] = '\0';
+//			mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.height / 10, \
+//					SETUP.height / 7, 0x00FF0000, "WIDTH : ");
+//			mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.height / 6, \
+//					SETUP.height / 7, 0x00FF0000, MAP->height);
+//		}
+//	}
+//	if (keycode == ENTER)
+//	{
+//		if ((M_WIDTH = ft_atoi(MAP->height)) < 2)
+//			return (ERROR);
+//		MAP->width_t = 1;
+//	}
+//	return (OK);
+//}
+
+static int		ft_configure_dim(t_setup *setup)
+{
+	size_t		w_flag;
+	static int	dim_col[2];
+
+	w_flag = MAP->dim_t[0];
+	if (!MAP->dim_t[w_flag])
 	{
-		if ((M_WIDTH = ft_atoi(MAP->width)) < 2)
+		ft_map_dim(setup, &MAP->dim_i[w_flag], MAP->dim[w_flag], \
+				&MAP->dim_t[w_flag]);
+		MAP->mapsize[w_flag] = ft_atoi(MAP->dim[w_flag]);
+		if (MAP->mapsize[w_flag] < 2)
 			return (ERROR);
-		MAP->width_t = 1;
 	}
+	dim_col[w_flag] = (MAP->dim_t[w_flag] == 1) ? 65280 : 16711680;
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 6, dim_col[0], "WIDTH  : ");
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 10, \
+			SETUP.height / 6, dim_col[0], MAP->dim[0]);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 4, dim_col[1], "HEIGHT : ");
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 10, \
+			SETUP.height / 4, dim_col[1], MAP->dim[1]);
 	return (OK);
 }
 
 int				ft_setup_menu(int keycode, t_setup *setup)
 {
-	size_t		x;
-	size_t		y;
-
-	x = SETUP.width;
-	y = SETUP.height;
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x / 10, y / 10, \
-			0x00611DE9, MAPG_STR);
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x / 10, y / 8, \
-			0x009999FF, WIDTHG_STR);
-	if (!MAP->width_t)
-		ft_map_width(keycode, setup);
-	else
-	{
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 10, \
-				SETUP.height / 7, 0x0000FF00, "WIDTH : ");
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 6, \
-				SETUP.height / 7, 0x0000FF00, MAP->width);
-	}
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x / 10, y / 6, \
-			0x009999FF, HEIGHTG_STR);
-	return (OK);
+	SETUP.key = keycode;
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 50, 0x00611DE9, MAPG_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 8, 0x009999FF, WIDTHG_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 5, 0x009999FF, HEIGHTG_STR);
+	if (ft_configure_dim(setup) == OK)
+		return (OK);
+	return (ERROR);
 }
 
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
@@ -161,8 +192,8 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		MLX = ft_initwindow("wolf3d", SETUP.width, SETUP.height);
 		IMG = ft_imgnew(MLX->mlx_ptr, SETUP.width, SETUP.height);
 		MAP = (t_map *)ft_memalloc(sizeof(t_map));
-		MAP->width_t = 0;
-		MAP->height_t = 0;
+		MAP->dim_t[0] = 0;
+		MAP->dim_t[1] = 0;
 		if (MLX == NULL || IMG == NULL || MAP == NULL)
 			return (ERROR);
 		return (OK);
