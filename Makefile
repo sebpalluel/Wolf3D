@@ -6,15 +6,15 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/08/14 18:52:42 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/08/18 17:51:12 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
 NAME = wolf3d
 
 SRC 		=	srcs/wolf3d.c \
-#				srcs/mlx_process.c \
-#				srcs/setup.c \
+				srcs/setup.c \
+				srcs/mlx_process.c \
 #				srcs/mouse.c \
 #				srcs/utils.c \
 #				srcs/mlx_control.c \
