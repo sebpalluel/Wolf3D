@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/19 16:57:27 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/19 22:00:15 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct		s_setup
 	t_mlx			*mlx;
 	t_img			*img;
 	t_map			*map;
+	t_fd			*fd;
 }					t_setup;
 
 #endif

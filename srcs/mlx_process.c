@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 20:51:17 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/20 00:34:56 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 int			ft_expose_hook(t_setup *setup)
 {
 	ft_imgclean(IMG, SETUP.width, SETUP.height);
-	if (SETUP.mode == 1)
+	printf("setup mode %lu\n", SETUP.mode);
+	if (SETUP.mode == STATE_GEN)
 		mlx_hook(MLX->win_ptr, KEYRELEASE, KEYRELEASEMASK, ft_setup_menu, \
-				setup);
+		setup);
+	if (SETUP.mode == STATE_SAVE)
+		mlx_hook(MLX->win_ptr, KEYRELEASE, KEYRELEASEMASK, ft_save_map, \
+		setup);
 	mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
 	mlx_do_sync(MLX->mlx_ptr);
 	return (1);
@@ -76,13 +80,14 @@ int			ft_expose_hook(t_setup *setup)
 //
 static int	ft_key_hook(int keycode, t_setup *setup)
 {
-	if (keycode == ESC)
+	SETUP.key = keycode;
+	if (SETUP.key == ESC)
 		ft_setup_mode(&SETUP, 0);
-//	ft_switch_fract(keycode, setup);
-//	ft_change_color(keycode, setup);
-//	ft_move_arrow(keycode, setup);
-//	ft_form_fract(keycode, setup);
-	if (keycode == G_KEY)
+//	ft_switch_fract(SETUP.key, setup);
+//	ft_change_color(SETUP.key, setup);
+//	ft_move_arrow(SETUP.key, setup);
+//	ft_form_fract(SETUP.key, setup);
+	if (SETUP.key == G_KEY)
 		setup->ui = !setup->ui ? 1 : 0;
 	ft_expose_hook(setup);
 	return (0);

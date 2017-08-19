@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/19 18:17:06 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/20 01:00:44 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,35 @@ static size_t	ft_generate_map(t_setup *setup)
 	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
 		ft_random_map(setup);
 	ft_printintarray((int **)MAP->tmp_map, M_WIDTH, M_HEIGHT);
-	SETUP.mode = 0;
+	SETUP.mode = STATE_SAVE;
+	return (OK);
+}
+
+static size_t	ft_save_file(t_setup *setup)
+{
+	FD->path = ft_strdup("maps/");
+	ft_create_file(FD, "zouzou.w3d", 4444);
+	return (OK);
+}
+
+int				ft_save_map(int keycode, t_setup *setup)
+{
+	size_t	y_flag = 0;
+	static int		yn_col;
+
+	yn_col = 10066431;
+	SETUP.key = keycode;
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 50, 0x00611DE9, SAVE_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 10, yn_col, YESORNO_STR);
+	if (SETUP.key == Y_KEY && !y_flag)
+	{
+		yn_col = 65280;
+		printf("before save\n");
+		ft_save_file(setup);
+		y_flag = 1;
+	}
 	return (OK);
 }
 
@@ -217,9 +245,10 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		MLX = ft_initwindow("wolf3d", SETUP.width, SETUP.height);
 		IMG = ft_imgnew(MLX->mlx_ptr, SETUP.width, SETUP.height);
 		MAP = (t_map *)ft_memalloc(sizeof(t_map));
+		FD = (t_fd *)ft_memalloc(sizeof(t_fd));
 		MAP->dim_t[0] = 0;
 		MAP->dim_t[1] = 0;
-		if (MLX == NULL || IMG == NULL || MAP == NULL)
+		if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL)
 			return (ERROR);
 		return (OK);
 	}

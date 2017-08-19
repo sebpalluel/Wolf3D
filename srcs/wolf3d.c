@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:09:10 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 19:29:32 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/19 19:19:24 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int				main(int ac, char **av)
 	if (!setup)
 		return (-1);
 	ft_bzero(setup, sizeof(t_setup) * (NUM_THREAD + 1));
-	setup->mode = 1;
+	setup->mode = STATE_GEN;
 	setup->ac = ac;
 	if (ac > 1)
 	{
-		setup->mode = 0;
+		setup->mode = STATE_OPEN;
 		setup->args = av;
 	}
 	if (ft_setup_mode(setup, 1) == OK)
