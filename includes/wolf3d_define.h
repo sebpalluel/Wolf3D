@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 21:48:18 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/19 17:01:45 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define CAM			setup->cam
 # define MLX			setup->mlx
 # define IMG			setup->img
+
+# define MAX_ELEM		1
 
 # define MAPG_STR		"MAP GENERATOR MODE"
 # define WIDTHG_STR		"TYPE WIDTH AND PRESS ENTER"

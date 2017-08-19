@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 21:47:56 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/19 16:57:27 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct		s_map
 	t_color			*lerp_out;
 	t_color			*curr_clr;
 	t_pix			*pix;
-	int				**tmp_map;
+	size_t			**tmp_map;
 	t_pix			**map;
 }					t_map;
 

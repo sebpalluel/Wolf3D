@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/18 21:55:07 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/19 18:17:06 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,30 @@ static int		ft_configure_dim(t_setup *setup)
 	return (OK);
 }
 
+static void		ft_random_map(t_setup *setup)
+{
+	int	width;
+	int	height;
+
+	width = -1;
+	while (++width < M_WIDTH)
+	{
+		height = -1;
+		while (++height < M_HEIGHT)
+			MAP->tmp_map[width][height] = (size_t)ft_random(0, MAX_ELEM, 1);
+	}
+}
+
+static size_t	ft_generate_map(t_setup *setup)
+{
+	MAP->tmp_map = (size_t **)ft_tabnew(M_WIDTH, M_HEIGHT);
+	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
+		ft_random_map(setup);
+	ft_printintarray((int **)MAP->tmp_map, M_WIDTH, M_HEIGHT);
+	SETUP.mode = 0;
+	return (OK);
+}
+
 int				ft_setup_menu(int keycode, t_setup *setup)
 {
 	SETUP.key = keycode;
@@ -175,7 +199,8 @@ int				ft_setup_menu(int keycode, t_setup *setup)
 			SETUP.height / 8, 0x009999FF, WIDTHG_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 5, 0x009999FF, HEIGHTG_STR);
-	if (ft_configure_dim(setup) == OK)
+	if (ft_configure_dim(setup) == OK && MAP->dim_t[1] && \
+			ft_generate_map(setup) == OK)
 		return (OK);
 	return (ERROR);
 }
