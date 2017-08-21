@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/20 18:08:41 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/21 16:43:06 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@
 # define HEIGHTG_STR	"TYPE HEIGHT OF MAP AND PRESS ENTER"
 # define SAVE_STR		"WOULD YOU LIKE TO SAVE IT ?"
 # define YESORNO_STR	"y / n"
+# define NAME_STR		"TYPE A NAME FOR THIS FILE AND PRESS ENTER"
 # define START_STR		"Wolf3d by psebasti"
 # define ENTER_STR		"Press ENTER to start"
 

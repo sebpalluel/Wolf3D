@@ -6,99 +6,11 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/21 16:39:10 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/21 19:34:51 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
-
-//static size_t	ft_setup_fract_init(t_setup *setup)
-//{
-//	size_t i;
-//	size_t j;
-//
-//	i = 0;
-//	if (!(setup->fract = (t_fract **)ft_memalloc(sizeof(t_fract *) * FNUM + 1)))
-//		return (ERROR);
-//	while (i < FNUM)
-//	{
-//		if(!(setup->fract[i] = (t_fract *)ft_memalloc(sizeof(t_fract)))\
-//				|| !(setup->fract[i]->clr = (t_color **)\
-//					ft_memalloc(sizeof(t_color *) * 4)))
-//			return (ERROR);
-//		j = 0;
-//		while (j < 3)
-//		{
-//			if (!(setup->fract[i]->clr[j] = ft_colornew(0, 0, 0)))
-//				return (ERROR);
-//			j++;
-//		}
-//		setup->fract[i]->clr[j] = NULL;
-//		i++;
-//	}
-//	setup->fract[i] = NULL;
-//	return (1);
-//}
-
-//static void		ft_setup_delete_mlx_img(size_t i, t_setup *setup)
-//{
-//	if (i == 0)
-//	{
-//		if (IMG)
-//			ft_imgdel(IMG, MLX->mlx_ptr);
-//		if (MLX)
-//			ft_mlxdelete(MLX);
-//	}
-//	else
-//	{
-//		if (setup[i].img)
-//			free (setup[i].img);
-//		if (setup[i].mlx)
-//			free (setup[i].mlx);
-//	}
-//}
-
-// static void		ft_setup_delete(size_t i, t_setup *setup)
-// {
-// 	int			frac_n;
-// 	int			col_n;
-// 
-// 	frac_n = -1;
-// 	ft_setup_delete_mlx_img(i, setup);
-// 	if (setup[i].fract)
-// 	{
-// 		while (++frac_n < FNUM)
-// 		{
-// 			col_n = -1;
-// 			while (++col_n < 4)
-// 				free (setup[i].fract[frac_n]->clr[col_n]);
-// 			free (setup[i].fract[frac_n]->clr);
-// 			free (setup[i].fract[frac_n]);
-// 		}
-// 		free (setup[i].fract);
-// 	}
-// }
-
-//static size_t	ft_setup_init(t_setup *setup)
-//{
-//	size_t		i;
-//
-//	i = 1;
-//	while (i < NUM_THREAD + 1)
-//	{
-//		ft_memcpy(&setup[i], &SETUP, sizeof(t_setup));
-//		setup[i].mlx = (t_mlx *)ft_memalloc(sizeof(t_mlx));
-//		setup[i].img = (t_img *)ft_memalloc(sizeof(t_img));
-//		if (!setup[i].mlx || !setup[i].img)
-//			return (ERROR);
-//		ft_memcpy(setup[i].mlx, SETUP.mlx, sizeof(t_mlx));
-//		ft_memcpy(setup[i].img, SETUP.img, sizeof(t_img));
-//		//		if (!ft_setup_fract_init(&setup[i]))
-//		//			return (ERROR);
-//		i++;
-//	}
-//	return (ft_fract_calc(setup));
-//}
 
 static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)
 {
@@ -107,38 +19,13 @@ static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)
 		if (ft_mlx_keytonumchar(setup->key) != '\0')
 		{
 			str[*c] = ft_mlx_keytonumchar(setup->key);
-			c[0]++;
-			str[*c] = '\0';
+			str[++c[0]] = '\0';
 		}
 	}
 	if (setup->key == ENTER && *str >= 1)
 		*flag = 1;
 	return (OK);
 }
-
-//static int		ft_map_height(int keycode, t_setup *setup)
-//{
-//	if (keycode != ENTER && MAP->height_i < MAX_INT_DECIMAL)
-//	{
-//		if (ft_mlx_keytonumchar(keycode) != '\0')
-//		{
-//			MAP->height[MAP->height_i] = ft_mlx_keytonumchar(keycode);
-//			MAP->height_i++;
-//			MAP->height[MAP->height_i] = '\0';
-//			mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.height / 10, \
-//					SETUP.height / 7, 0x00FF0000, "WIDTH : ");
-//			mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.height / 6, \
-//					SETUP.height / 7, 0x00FF0000, MAP->height);
-//		}
-//	}
-//	if (keycode == ENTER)
-//	{
-//		if ((M_WIDTH = ft_atoi(MAP->height)) < 2)
-//			return (ERROR);
-//		MAP->width_t = 1;
-//	}
-//	return (OK);
-//}
 
 static int		ft_configure_dim(t_setup *setup)
 {
@@ -190,10 +77,46 @@ static size_t	ft_generate_map(t_setup *setup)
 	return (OK);
 }
 
+static size_t	ft_name_input(t_setup *setup)
+{
+	char		*tmp;
+
+	if (FD->name == NULL)
+		if (!(FD->name = ft_strnew(1)))
+			return (ERROR);
+	if (SETUP.key != ENTER && MAP->yes_t && ft_mlx_printkeytochar(SETUP.key))
+	{
+		if (!(tmp = ft_strdup(FD->name)))
+			return (ERROR);
+		free(FD->name);
+		if (!(FD->name = ft_strnew(MAP->name_i + 1)))
+			return (ERROR);
+		FD->name = tmp;
+		FD->name[MAP->name_i] = ft_mlx_printkeytochar(SETUP.key);
+		FD->name[++MAP->name_i] = '\0';
+	}
+	return (OK);
+}
+
 static size_t	ft_save_file(t_setup *setup)
 {
-	FD->path = ft_strdup("maps/");
-	ft_create_file(FD, "zouzou.w3d", 4444);
+	int			name_col;
+
+	name_col = (MAP->name_t == 1) ? 65280 : 16711680;
+	if (ft_name_input(setup) != OK)
+		return (ERROR);
+	if (setup->key == ENTER && *FD->name > 1)
+	{
+		if (!(FD->path = ft_strdup("maps/")))
+			return (ERROR);
+		ft_create_file(FD, 777);
+		MAP->name_t = 1;
+		SETUP.mode = STATE_RUN;
+	}
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 2.7, 0x00611DE9, NAME_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 2.5, name_col, FD->name);
 	return (OK);
 }
 
@@ -205,13 +128,12 @@ int				ft_save_map(t_setup *setup)
 		yn_col = 10066431;
 	else
 	{
-		if (SETUP.key == Y_KEY)
+		if (SETUP.key == Y_KEY || MAP->yes_t)
 		{
 			ft_save_file(setup);
 			MAP->yes_t = 1;
 		}
 		yn_col = (MAP->yes_t == 1) ? 65280 : 16711680;
-		SETUP.mode = STATE_RUN;
 	}
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 3.3, 0x00611DE9, SAVE_STR);
@@ -261,7 +183,11 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		FD = (t_fd *)ft_memalloc(sizeof(t_fd));
 		MAP->dim_t[0] = 0;
 		MAP->dim_t[1] = 0;
+		MAP->dim_i[0] = 0;
+		MAP->dim_i[1] = 0;
 		MAP->yes_t = 0;
+		MAP->name_t = 0;
+		MAP->name_i = 0;
 		if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL)
 			return (ERROR);
 		return (OK);

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/20 17:36:52 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/21 17:23:40 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ typedef struct		s_map
 	size_t			dim_i[2];
 	size_t			dim_t[2];
 	size_t			yes_t;
+	size_t			name_t;
+	size_t			name_i;
 	int				mapsize[2];
 	float			mid[2];
 	t_color			*lerp_in;
