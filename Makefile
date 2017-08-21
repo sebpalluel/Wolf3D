@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/08/19 22:15:59 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/08/20 15:43:08 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -36,7 +36,7 @@ all : lib $(NAME)
 
 $(NAME) : $(OBJ) $(EXT)
 	@$(CMP) $(FLAGS) -o $(NAME) $(SRC) $(LIB_DIR) $(LIBS)
-	@echo "fractol compiled"
+	@echo "wolf3d compiled"
 
 lib :
 	@echo "compiling libft..."

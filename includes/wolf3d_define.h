@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/20 00:31:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/20 18:08:41 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@
 # define ERROR			1
 # define OK				0
 # define STATE_RUN		0
-# define STATE_GEN		1
-# define STATE_SAVE		2
-# define STATE_OPEN		3
+# define STATE_START	1
+# define STATE_GEN		2
+# define STATE_SAVE		3
+# define STATE_OPEN		4
+# define STATE_DRAW		5
 
 # define SETUP			setup[0]
 # define MAP			setup[0].map
@@ -38,8 +40,11 @@
 # define MAX_ELEM		1
 
 # define MAPG_STR		"MAP GENERATOR MODE"
-# define WIDTHG_STR		"TYPE WIDTH AND PRESS ENTER"
-# define HEIGHTG_STR	"TYPE HEIGHT AND PRESS ENTER"
+# define WIDTHG_STR		"TYPE WIDTH OF MAP AND PRESS ENTER"
+# define HEIGHTG_STR	"TYPE HEIGHT OF MAP AND PRESS ENTER"
 # define SAVE_STR		"WOULD YOU LIKE TO SAVE IT ?"
-# define YESORNO_STR	"Y / N"
+# define YESORNO_STR	"y / n"
+# define START_STR		"Wolf3d by psebasti"
+# define ENTER_STR		"Press ENTER to start"
+
 #endif

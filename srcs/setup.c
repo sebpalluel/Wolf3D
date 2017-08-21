@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/20 01:00:44 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/21 16:39:10 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)
 			str[*c] = '\0';
 		}
 	}
-	if (setup->key == ENTER)
+	if (setup->key == ENTER && *str >= 1)
 		*flag = 1;
 	return (OK);
 }
@@ -197,30 +197,31 @@ static size_t	ft_save_file(t_setup *setup)
 	return (OK);
 }
 
-int				ft_save_map(int keycode, t_setup *setup)
+int				ft_save_map(t_setup *setup)
 {
-	size_t	y_flag = 0;
-	static int		yn_col;
+	int			yn_col;
 
-	yn_col = 10066431;
-	SETUP.key = keycode;
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
-			SETUP.height / 50, 0x00611DE9, SAVE_STR);
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
-			SETUP.height / 10, yn_col, YESORNO_STR);
-	if (SETUP.key == Y_KEY && !y_flag)
+	if (SETUP.key != Y_KEY && SETUP.key != N_KEY && !MAP->yes_t)
+		yn_col = 10066431;
+	else
 	{
-		yn_col = 65280;
-		printf("before save\n");
-		ft_save_file(setup);
-		y_flag = 1;
+		if (SETUP.key == Y_KEY)
+		{
+			ft_save_file(setup);
+			MAP->yes_t = 1;
+		}
+		yn_col = (MAP->yes_t == 1) ? 65280 : 16711680;
+		SETUP.mode = STATE_RUN;
 	}
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 3.3, 0x00611DE9, SAVE_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
+			SETUP.height / 3, yn_col, YESORNO_STR);
 	return (OK);
 }
 
-int				ft_setup_menu(int keycode, t_setup *setup)
+int				ft_setup_menu(t_setup *setup)
 {
-	SETUP.key = keycode;
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 50, 0x00611DE9, MAPG_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
@@ -231,6 +232,18 @@ int				ft_setup_menu(int keycode, t_setup *setup)
 			ft_generate_map(setup) == OK)
 		return (OK);
 	return (ERROR);
+}
+
+void			ft_start(t_setup *setup)
+{
+	size_t		xy[2];
+
+	xy[0] = SETUP.width / 2 - SETUP.width / 14;
+	xy[1] = SETUP.height / 2 - SETUP.height / 10;
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, xy[0], xy[1], \
+			0x00FFFFFF, START_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, xy[0], xy[1] + 30, \
+			0x00FFFFFF, ENTER_STR);
 }
 
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
@@ -248,6 +261,7 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		FD = (t_fd *)ft_memalloc(sizeof(t_fd));
 		MAP->dim_t[0] = 0;
 		MAP->dim_t[1] = 0;
+		MAP->yes_t = 0;
 		if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL)
 			return (ERROR);
 		return (OK);
