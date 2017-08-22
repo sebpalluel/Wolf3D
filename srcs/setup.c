@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/21 19:34:51 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/22 18:23:14 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,32 @@ static int		ft_configure_dim(t_setup *setup)
 
 static void		ft_random_map(t_setup *setup)
 {
-	int	width;
+	int	width[2];
 	int	height;
+	int	rand_num;
 
-	width = -1;
-	while (++width < M_WIDTH)
+	height = -1;
+	while (++height < M_WIDTH)
 	{
-		height = -1;
-		while (++height < M_HEIGHT)
-			MAP->tmp_map[width][height] = (size_t)ft_random(0, MAX_ELEM, 1);
+		width[0] = -1;
+		width[1] = 0;
+		while (++width[0] < M_HEIGHT)
+		{
+			rand_num = ft_random(0, MAX_ELEM, 1);
+			MAP->tmp_map[height][width[0]] = (size_t)rand_num;
+			MAP->map_str[height][width[1]] = *ft_itoa(rand_num);
+			width[1]++;
+			MAP->map_str[height][width[1]] = ' ';
+			width[1]++;
+		}
+			MAP->map_str[height][width[1]] = '\n';
 	}
 }
 
 static size_t	ft_generate_map(t_setup *setup)
 {
-	MAP->tmp_map = (size_t **)ft_tabnew(M_WIDTH, M_HEIGHT);
+	MAP->map_str = ft_tabnewstr(M_WIDTH * 2, M_HEIGHT);
+	MAP->tmp_map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT);
 	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
 		ft_random_map(setup);
 	ft_printintarray((int **)MAP->tmp_map, M_WIDTH, M_HEIGHT);
@@ -98,6 +109,34 @@ static size_t	ft_name_input(t_setup *setup)
 	return (OK);
 }
 
+static size_t	ft_write_to_file(t_setup *setup)
+{
+	int			err;
+	size_t		line;
+
+	err = 0;
+	line = 0;
+	ft_open(FD->path, FD->name, O_WRONLY, O_APPEND);
+	while (line < (size_t)M_HEIGHT)
+	{
+		if (FD->fd > 0)
+		{
+			while ((err = write(FD->fd, MAP->map_str[line], M_WIDTH)) > 0)
+				;
+			if (err < 0)
+				return (ERROR);
+			line++;
+		}
+	}
+	if (FD->fd < 0 && err != 0)
+		return (ERROR);
+	else
+	{
+		SETUP.mode = STATE_RUN;
+		return (OK);
+	}
+}
+
 static size_t	ft_save_file(t_setup *setup)
 {
 	int			name_col;
@@ -111,13 +150,16 @@ static size_t	ft_save_file(t_setup *setup)
 			return (ERROR);
 		ft_create_file(FD, 777);
 		MAP->name_t = 1;
-		SETUP.mode = STATE_RUN;
 	}
+	name_col = (MAP->name_t == 1) ? 65280 : 16711680;
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 2.7, 0x00611DE9, NAME_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 2.5, name_col, FD->name);
-	return (OK);
+	if (MAP->name_t && ft_write_to_file(setup) == OK)
+		return (OK);
+	else
+		return (ERROR);
 }
 
 int				ft_save_map(t_setup *setup)
