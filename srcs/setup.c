@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/22 18:23:14 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/22 19:05:48 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ static void		ft_random_map(t_setup *setup)
 	int	rand_num;
 
 	height = -1;
-	while (++height < M_WIDTH)
+	while (++height < M_HEIGHT)
 	{
 		width[0] = -1;
 		width[1] = 0;
-		while (++width[0] < M_HEIGHT)
+		while (++width[0] < M_WIDTH)
 		{
 			rand_num = ft_random(0, MAX_ELEM, 1);
 			MAP->tmp_map[height][width[0]] = (size_t)rand_num;
@@ -73,17 +73,18 @@ static void		ft_random_map(t_setup *setup)
 			MAP->map_str[height][width[1]] = ' ';
 			width[1]++;
 		}
-			MAP->map_str[height][width[1]] = '\n';
+		MAP->map_str[height][width[1]] = '\n';
 	}
 }
 
+
 static size_t	ft_generate_map(t_setup *setup)
 {
-	MAP->map_str = ft_tabnewstr(M_WIDTH * 2, M_HEIGHT);
+	MAP->map_str = ft_tabnewstr(M_WIDTH * 2 + 1, M_HEIGHT);
 	MAP->tmp_map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT);
 	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
 		ft_random_map(setup);
-	ft_printintarray((int **)MAP->tmp_map, M_WIDTH, M_HEIGHT);
+	ft_printsize_tarray(MAP->tmp_map, M_WIDTH, M_HEIGHT);
 	SETUP.mode = STATE_SAVE;
 	return (OK);
 }
