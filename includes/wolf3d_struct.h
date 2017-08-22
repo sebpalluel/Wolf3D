@@ -6,15 +6,25 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/21 19:57:10 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/23 00:28:53 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WOLF3D_STRUCT_H
 # define WOLF3D_STRUCT_H
 
+typedef struct		s_pathmaker
+{
+	t_vec3u			pos;
+	t_vec3u			to_find;
+	size_t			is_full;
+	size_t			lr[2];
+}
+					t_pathmaker;
+
 typedef struct		s_map
 {
+	t_pathmaker		path;
 	char			dim[2][MAX_INT_DECIMAL + 1];
 	size_t			dim_i[2];
 	size_t			dim_t[2];
