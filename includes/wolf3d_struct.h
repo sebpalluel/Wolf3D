@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 00:28:53 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/23 15:12:49 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct		s_pathmaker
 {
-	t_vec3u			pos;
-	t_vec3u			to_find;
+	t_pix			pos;
+	t_pix			to_find;
 	size_t			is_full;
 	size_t			lr[2];
 }

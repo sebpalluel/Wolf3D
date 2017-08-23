@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/08/20 15:43:08 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/08/23 15:36:22 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -15,10 +15,10 @@ NAME = wolf3d
 SRC 		=	srcs/wolf3d.c \
 				srcs/setup.c \
 				srcs/mlx_process.c \
-#				srcs/mouse.c \
-#				srcs/utils.c \
-#				srcs/mlx_control.c \
-#				srcs/cam.c \
+				srcs/path_maker.c \
+				srcs/configure_map.c \
+				srcs/save_map.c \
+				srcs/generate_map.c \
 #				srcs/update_map.c \
 
 EXT			=	Makefile
