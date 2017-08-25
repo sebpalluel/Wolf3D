@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 15:33:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/23 16:22:11 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,7 @@ size_t			ft_generate_map(t_setup *setup)
 	MAP->tmp_map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT);
 	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
 		ft_random_map(setup);
-	PATH.pos.x = ft_random(1, M_WIDTH - 2, 1);
-	PATH.pos.y = 1;
-	while (ft_path_maker(setup) != OK)
-		;
+	ft_path_maker(setup);
 	//ft_convertmap_to_str(setup);
 	printf("print array int :\n");
 	ft_printsize_tarray(MAP->tmp_map, M_WIDTH, M_HEIGHT);

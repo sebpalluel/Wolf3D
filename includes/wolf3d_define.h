@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 00:04:12 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/23 15:43:40 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@
 # define GO_DOWN		0
 # define GO_lEFT		1
 # define GO_RIGHT		2
+# define GO_UP			3
 # define IS_FULL		0
 
 # define MAPG_STR		"MAP GENERATOR MODE"

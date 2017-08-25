@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:18 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 15:31:22 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/23 16:39:29 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ int		ft_mouse_moove(int x, int y, t_setup *setup);
 int		ft_expose_hook(t_setup *setup);
 void	ft_print(t_setup *setup);
 void	ft_start(t_setup *setup);
-size_t	ft_path_maker(t_setup *setup);
+void	ft_path_maker(t_setup *setup);
 int		ft_configure_dim(t_setup *setup);
 size_t	ft_name_input(t_setup *setup);
 size_t	ft_generate_map(t_setup *setup);
+void	ft_path_maker_dir(t_setup *setup);
 
 #endif
