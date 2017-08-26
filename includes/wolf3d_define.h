@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/26 18:06:02 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/26 19:24:50 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@
 # define PATH_			2
 
 # define MAPG_STR		"MAP GENERATOR MODE"
-# define WIDTHG_STR		"TYPE WIDTH OF MAP AND PRESS ENTER"
-# define HEIGHTG_STR	"TYPE HEIGHT OF MAP AND PRESS ENTER"
+# define WIDTHG_STR		"TYPE WIDTH OF MAP [ > 2] AND PRESS ENTER"
+# define HEIGHTG_STR	"TYPE HEIGHT OF MAP [ > 2] AND PRESS ENTER"
 # define SAVE_STR		"WOULD YOU LIKE TO SAVE IT ?"
 # define YESORNO_STR	"y / n"
 # define NAME_STR		"TYPE A NAME FOR THIS FILE AND PRESS ENTER"
