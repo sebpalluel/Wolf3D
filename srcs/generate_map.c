@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/26 18:30:13 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/26 19:12:18 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void		ft_convertmap_to_str(t_setup *setup)
 {
 	int			width[2];
 	int			height;
-	
+
 	height = -1;
 	while (++height < M_HEIGHT)
 	{
@@ -66,23 +66,23 @@ static void		ft_convertmap_to_str(t_setup *setup)
 		width[1] = 0;
 		while (++width[0] < M_WIDTH)
 		{
-			MAP->map_str[height][width[1]] =\
+			MAP->map_str[height][width[1]] = \
 				*ft_itoa(MAP->tmp_map[height][width[0]]);
 			width[1]++;
 			MAP->map_str[height][width[1]] = ' ';
 			width[1]++;
 		}
 		MAP->map_str[height][width[1]] = '\n';
-		printf("%s", MAP->map_str[height]);
 	}
 }
 
 size_t			ft_generate_map(t_setup *setup)
 {
-	MAP->map_str = ft_tabnewstr(M_WIDTH * 2 + 1, M_HEIGHT);
-	MAP->tmp_map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT);
-	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
-		ft_random_map(setup);
+	if (!(MAP->map_str = ft_tabnewstr(M_WIDTH * 2 + 1, M_HEIGHT)))
+		return (ERROR);
+	if (!(MAP->tmp_map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT)))
+		return (ERROR);
+	ft_random_map(setup);
 	ft_path_maker(setup);
 	ft_convertmap_to_str(setup);
 	printf("print array int :\n");
