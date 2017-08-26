@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 15:43:40 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/26 18:06:02 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@
 # define GO_RIGHT		2
 # define GO_UP			3
 # define IS_FULL		0
+
+# define EMPTY			0
+# define WALL			1
+# define PATH_			2
 
 # define MAPG_STR		"MAP GENERATOR MODE"
 # define WIDTHG_STR		"TYPE WIDTH OF MAP AND PRESS ENTER"

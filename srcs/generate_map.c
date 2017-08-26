@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 16:22:11 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/26 18:21:22 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,19 @@ static void		ft_random_map(t_setup *setup)
 			MAP->map_str[height][width[1]] = ' ';
 			width[1]++;
 		}
-		if (height > 0 && (height < M_HEIGHT - 2))
+		if (height > 0 && (height < M_HEIGHT - 2) && ft_random(0, 1, 1) == 1)
 			ft_check_if_all_one(setup, height);
 		MAP->map_str[height][width[1]] = '\n';
 	}
+}
+
+static size_t	ft_convertmap_to_str(t_setup *setup)
+{
+	int			width[2];
+	int			height;
+	
+	height - 1;
+
 }
 
 size_t			ft_generate_map(t_setup *setup)
@@ -67,7 +76,7 @@ size_t			ft_generate_map(t_setup *setup)
 	if (&MAP->tmp_map[0] != NULL && &MAP->tmp_map[0][0] != NULL)
 		ft_random_map(setup);
 	ft_path_maker(setup);
-	//ft_convertmap_to_str(setup);
+	ft_convertmap_to_str(setup);
 	printf("print array int :\n");
 	ft_printsize_tarray(MAP->tmp_map, M_WIDTH, M_HEIGHT);
 	SETUP.mode = STATE_SAVE;

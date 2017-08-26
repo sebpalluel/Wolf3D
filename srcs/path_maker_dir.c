@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:52:43 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 21:11:44 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/26 18:14:34 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ static void	ft_godown(t_setup *setup)
 	if (PATH.to_find.y + 1 != PATH.pos.y)
 	{
 		PATH.to_find.y++;;
-		printf("y %d x %d\n", PATH.to_find.y, PATH.to_find.x);
-		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x])
+		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] == WALL)
 		{
 			PATH.is_full = IS_FULL;
-			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = 0;
+			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = PATH_;
 		}
 	}
 	PATH.lrdu[2] = 1;
@@ -32,10 +31,10 @@ static void	ft_goup(t_setup *setup)
 	if (PATH.to_find.y - 1 != PATH.pos.y)
 	{
 		PATH.to_find.y--;;
-		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x])
+		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] == WALL)
 		{
 			PATH.is_full = IS_FULL;
-			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = 0;
+			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = PATH_;
 		}
 	}
 	PATH.lrdu[3] = 1;
@@ -46,9 +45,9 @@ static void	ft_goleft(t_setup *setup)
 	if (PATH.to_find.x - 1 != PATH.pos.x)
 	{
 		PATH.to_find.x--;
-		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x])
+		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] == WALL)
 		{
-			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = 0;
+			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = PATH_;
 			PATH.is_full = IS_FULL;
 		}
 	}
@@ -60,9 +59,9 @@ static void	ft_goright(t_setup *setup)
 	if (PATH.to_find.x + 1 != PATH.pos.x)
 	{
 		PATH.to_find.x++;
-		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x])
+		if (MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] == WALL)
 		{
-			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = 0;
+			MAP->tmp_map[PATH.to_find.y][PATH.to_find.x] = PATH_;
 			PATH.is_full = IS_FULL;
 		}
 	}
