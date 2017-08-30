@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/08/30 21:02:30 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/08/30 22:31:55 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -21,6 +21,7 @@ SRC 		=	srcs/wolf3d.c \
 				srcs/save_map.c \
 				srcs/generate_map.c \
 				srcs/open_map.c \
+				srcs/draw.c \
 
 EXT			=	Makefile
 

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/30 17:12:43 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/30 22:19:53 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define STATE_DRAW		5
 
 # define SETUP			setup[0]
+# define S_WIDTH		setup[0].width
+# define S_HEIGHT		setup[0].height
 # define MAP			setup[0].map
 # define M_WIDTH		setup[0].map->mapsize[0]
 # define M_HEIGHT		setup[0].map->mapsize[1]

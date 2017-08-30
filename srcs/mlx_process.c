@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/29 17:19:53 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/30 22:31:15 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int			ft_expose_hook(t_setup *setup)
 	if (SETUP.mode == STATE_SAVE)
 		ft_save_map(setup);
 	if (SETUP.mode == STATE_DRAW)
+	{
+		ft_draw_map(setup);
 		mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
+	}
 	mlx_do_sync(MLX->mlx_ptr);
 	return (1);
 }
