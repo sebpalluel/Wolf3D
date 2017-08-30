@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:20:22 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/26 19:23:48 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/30 17:46:39 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int				ft_configure_dim(t_setup *setup)
 		ft_map_dim(setup, &MAP->dim_i[w_flag], MAP->dim[w_flag], \
 				&MAP->dim_t[w_flag]);
 		MAP->mapsize[w_flag] = ft_atoi(MAP->dim[w_flag]);
-		if (MAP->mapsize[w_flag] < 3)
+		if (MAP->mapsize[w_flag] <= M_MIN_HEIGHT || MAP->mapsize[w_flag] >=\
+				M_MAX_HEIGHT)
 			return (ERROR);
 	}
 	dim_col[w_flag] = (MAP->dim_t[w_flag] == 1) ? 65280 : 16711680;

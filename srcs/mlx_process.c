@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/26 19:21:36 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/29 17:19:53 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int			ft_expose_hook(t_setup *setup)
 {
 	ft_imgclean(IMG, SETUP.width, SETUP.height);
+	if (SETUP.mode == STATE_OPEN)
+		ft_open_map(setup);
 	if (SETUP.mode == STATE_GEN)
 		ft_setup_menu(setup);
 	if (SETUP.mode == STATE_SAVE)

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:18 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/23 16:39:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/30 21:02:10 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		ft_configure_dim(t_setup *setup);
 size_t	ft_name_input(t_setup *setup);
 size_t	ft_generate_map(t_setup *setup);
 void	ft_path_maker_dir(t_setup *setup);
+size_t	ft_open_map(t_setup *setup);
 
 #endif
