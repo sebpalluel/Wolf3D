@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/30 22:19:53 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/31 17:32:00 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@
 # define FD				setup[0].fd
 
 # define MAX_ELEM		1
-# define M_MIN_HEIGHT	3
-# define M_MAX_HEIGHT	500
+# define M_MIN_SIZE		3
+# define M_MAX_SIZE		500
 
 
 # define GO_DOWN		0
