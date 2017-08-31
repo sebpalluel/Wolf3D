@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/30 22:31:15 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/31 19:32:06 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int			ft_expose_hook(t_setup *setup)
 {
+	int		ret;
+	ret = -1;
 	ft_imgclean(IMG, SETUP.width, SETUP.height);
 	if (SETUP.mode == STATE_OPEN)
-		ft_open_map(setup);
+		ret = ft_open_map(setup);
+	printf("ret %d\n", ret);
 	if (SETUP.mode == STATE_GEN)
 		ft_setup_menu(setup);
 	if (SETUP.mode == STATE_SAVE)

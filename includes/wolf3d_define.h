@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/31 17:32:00 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/08/31 18:28:47 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # define IMG			setup[0].img
 # define FD				setup[0].fd
 
-# define MAX_ELEM		1
+# define MAX_ELEM		2
 # define M_MIN_SIZE		3
 # define M_MAX_SIZE		500
 
