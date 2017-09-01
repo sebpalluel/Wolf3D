@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/01 18:41:51 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/01 19:05:07 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int			ft_expose_hook(t_setup *setup)
 	if (SETUP.mode == STATE_GEN)
 		ft_setup_menu(setup);
 	if (SETUP.mode == STATE_SAVE)
-		ft_save_map(setup);
+		if (ft_save_map(setup) == OK)
+		SETUP.mode = STATE_DRAW;
 	if (SETUP.mode == STATE_DRAW)
 	{
 		ft_draw_map(setup);

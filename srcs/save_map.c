@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:41 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/01 18:47:34 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/01 19:08:18 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,25 @@ static size_t	ft_save_file(t_setup *setup)
 int				ft_save_map(t_setup *setup)
 {
 	int			yn_col;
+	size_t		ret;
 
+	ret = ERROR;
 	if (SETUP.key != Y_KEY && SETUP.key != N_KEY && !MAP->yes_t)
 		yn_col = 10066431;
 	else
 	{
 		if (SETUP.key == Y_KEY || MAP->yes_t)
 		{
-			ft_save_file(setup);
+			ret = ft_save_file(setup);
 			MAP->yes_t = 1;
 		}
+		else if (SETUP.key == N_KEY)
+			ret = OK;
 		yn_col = (MAP->yes_t == 1) ? 65280 : 16711680;
 	}
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 3.3, 0x00611DE9, SAVE_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 3, yn_col, YESORNO_STR);
-	return (OK);
+	return (ret);
 }
