@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/31 19:48:22 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/01 18:26:43 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,6 @@ size_t			ft_open_map(t_setup *setup)
 	}
 	MAP->map_str[height] = NULL;
 	M_HEIGHT = height;
-	SETUP.mode = STATE_RUN;
+	SETUP.mode = STATE_DRAW;
 	return (ft_parse_map(setup));
 }

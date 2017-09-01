@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/30 22:01:57 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/01 18:41:12 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		MAP->yes_t = 0;
 		MAP->name_t = 0;
 		MAP->name_i = 0;
+		MAP->cheat = 1;
 		if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL)
 			return (ERROR);
 		return (OK);
