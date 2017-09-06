@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/31 18:28:47 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/06 15:35:09 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 
 # define MAX_ELEM		2
 # define M_MIN_SIZE		3
-# define M_MAX_SIZE		500
+# define M_MAX_SIZE		200
 
 
 # define GO_DOWN		0
@@ -57,8 +57,8 @@
 # define PATH_			2
 
 # define MAPG_STR		"MAP GENERATOR MODE"
-# define WIDTHG_STR		"TYPE WIDTH OF MAP [ >= 3 && <= 500] AND PRESS ENTER"
-# define HEIGHTG_STR	"TYPE HEIGHT OF MAP [ >= 3 && <= 500] AND PRESS ENTER"
+# define WIDTHG_STR		"TYPE WIDTH OF MAP [ >= 3 && <= 200] AND PRESS ENTER"
+# define HEIGHTG_STR	"TYPE HEIGHT OF MAP [ >= 3 && <= 200] AND PRESS ENTER"
 # define SAVE_STR		"WOULD YOU LIKE TO SAVE IT ?"
 # define YESORNO_STR	"y / n"
 # define NAME_STR		"TYPE A NAME FOR THIS FILE AND PRESS ENTER"
