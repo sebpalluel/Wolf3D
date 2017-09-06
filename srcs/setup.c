@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/01 18:41:12 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/06 16:21:27 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ int				ft_setup_menu(t_setup *setup)
 			SETUP.height / 8, 0x009999FF, WIDTHG_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 5, 0x009999FF, HEIGHTG_STR);
-	if (ft_configure_dim(setup) == OK && MAP->dim_t[1] && \
-			ft_generate_map(setup) == OK)
-		return (OK);
-	return (ERROR);
+	if (ft_configure_dim(setup) == ERROR)
+		return (ERROR);
+	if (MAP->dim_t[1] && ft_generate_map(setup) == ERROR)
+		return (ERROR);
+	return (OK);
 }
 
 void			ft_start(t_setup *setup)
