@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:07:24 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:04:03 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		IMG = ft_imgnew(MLX->mlx_ptr, SETUP.width, SETUP.height);
 		MAP = (t_map *)ft_memalloc(sizeof(t_map));
 		FD = (t_fd *)ft_memalloc(sizeof(t_fd));
+		RAY = (t_ray_cast *)ft_memalloc(sizeof(t_ray_cast));
+		PLAY = (t_player *)ft_memalloc(sizeof(t_player));
 		MAP->dim_t[0] = 0;
 		MAP->dim_t[1] = 0;
 		MAP->dim_i[0] = 0;
@@ -60,7 +62,8 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		MAP->name_t = 0;
 		MAP->name_i = 0;
 		MAP->cheat = 1;
-		if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL)
+		if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL || \
+				RAY == NULL || PLAY == NULL)
 			return (ERROR);
 		return (OK);
 	}

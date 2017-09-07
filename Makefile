@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/09/07 18:57:04 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/09/07 20:08:50 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -23,6 +23,7 @@ SRC 		=	srcs/wolf3d.c \
 				srcs/open_map.c \
 				srcs/draw.c \
 				srcs/ray_casting.c \
+				srcs/player.c \
 
 EXT			=	Makefile
 

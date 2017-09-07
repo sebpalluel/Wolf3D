@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:18 by psebasti          #+#    #+#             */
-/*   Updated: 2017/08/30 22:31:35 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:08:30 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ size_t	ft_name_input(t_setup *setup);
 size_t	ft_generate_map(t_setup *setup);
 void	ft_path_maker_dir(t_setup *setup);
 size_t	ft_open_map(t_setup *setup);
+void	ft_pos_player(t_setup *setup);
 
 #endif
