@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 20:32:56 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 21:49:26 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	ft_memset(MAP, 0, sizeof(t_map));
 	ft_memset(RAY, 0, sizeof(t_ray_cast));
 	ft_memset(PLAY, 0, sizeof(t_player));
+	ft_color(&MAP->north, 125, 0, 125);
+	ft_color(&MAP->south, 125, 125, 0);
+	ft_color(&MAP->east, 0, 125, 125);
+	ft_color(&MAP->west, 255, 125, 125);
+	ft_color(&MAP->ground, 42, 42, 42);
 	if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL || \
 			RAY == NULL || PLAY == NULL)
 		return (ERROR);

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 21:28:40 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 21:48:50 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ typedef struct		s_ray
 	double			size;
 	char			side;
 	char			touch;
-	t_pix			*sdist;
-	t_pix			*ddist;
-	t_pix			*dir;
-	t_pix			*pos;
+	t_vec3			sdist;
+	t_vec3			ddist;
+	t_vec3			dir;
+	t_vec3			pos;
 }					t_ray_cast;
 
 typedef struct		s_map
@@ -59,11 +59,11 @@ typedef struct		s_map
 	int				draw_tick;
 	int				mapsize[2];
 	float			mid[2];
-	t_color			*west;
-	t_color			*east;
-	t_color			*north;
-	t_color			*south;
-	t_color			*ground;
+	t_color			north;
+	t_color			south;
+	t_color			east;
+	t_color			west;
+	t_color			ground;
 	size_t			**map;
 	char			**map_str;
 }					t_map;
