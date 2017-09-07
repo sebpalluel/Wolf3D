@@ -6,10 +6,15 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 20:07:24 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:21:09 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 
-void	ft_pos_player(t_setup *setup);
+void	ft_pos_player(t_setup *setup)
+{
+	if (setup)
+		return ;
+
+}
