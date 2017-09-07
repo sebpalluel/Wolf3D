@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/06 15:42:52 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 19:57:36 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@
 # define MLX			setup[0].mlx
 # define IMG			setup[0].img
 # define FD				setup[0].fd
+# define PLAY			setup[0].player
+# define RAY			setup[0].ray_cast
 
 # define MAX_ELEM		2
 # define M_MIN_SIZE		3

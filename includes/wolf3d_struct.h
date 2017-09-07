@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/06 10:05:59 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 19:19:04 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,28 @@ typedef struct		s_pathmaker
 }
 					t_pathmaker;
 
+typedef struct		s_player
+{
+	t_pix			*dir;
+	t_pix			*pos;
+	t_pix			*plane;
+}					t_player;
+
+typedef struct		s_ray
+{
+	char			stepx;
+	char			stepy;
+	int				mapx;
+	int				mapy;
+	double			size;
+	char			side;
+	char			touch;
+	t_pix			*sdist;
+	t_pix			*ddist;
+	t_pix			*dir;
+	t_pix			*pos;
+}					t_ray_cast;
+
 typedef struct		s_map
 {
 	t_pathmaker		path;
@@ -36,13 +58,13 @@ typedef struct		s_map
 	int				draw_tick;
 	int				mapsize[2];
 	float			mid[2];
-	t_color			*lerp_in;
-	t_color			*lerp_out;
-	t_color			*curr_clr;
-	t_pix			*pix;
-	size_t			**tmp_map;
+	t_color			*west;
+	t_color			*east;
+	t_color			*north;
+	t_color			*south;
+	t_color			*ground;
+	size_t			**map;
 	char			**map_str;
-	t_pix			**map;
 }					t_map;
 
 typedef struct		s_setup 
@@ -57,6 +79,8 @@ typedef struct		s_setup
 	t_mlx			*mlx;
 	t_img			*img;
 	t_map			*map;
+	t_player		*player;
+	t_ray_cast		*ray_cast;
 	t_fd			*fd;
 }					t_setup;
 
