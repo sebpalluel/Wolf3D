@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 20:12:25 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:57:01 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct		s_pathmaker
 typedef struct		s_player
 {
 	t_pix			*dir;
-	t_pix			*pos;
+	t_pix			pos;
 	t_pix			*plane;
 	size_t			randpos;
 }					t_player;
