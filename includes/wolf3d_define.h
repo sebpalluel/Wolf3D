@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 20:00:20 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/08 15:54:05 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@
 # define EMPTY			0
 # define WALL			1
 # define PATH_			2
+
+# define MOVE_STEP		0.05
+# define ROT_STEP		0.05
 
 # define MAPG_STR		"MAP GENERATOR MODE"
 # define WIDTHG_STR		"TYPE WIDTH OF MAP [ >= 3 && <= 200] AND PRESS ENTER"

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 21:31:24 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/08 15:50:57 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int			ft_expose_hook(t_setup *setup)
 		ft_setup_mode(&SETUP, 0);
 	if (SETUP.mode == STATE_DRAW)
 	{
-		if (!PLAY->randpos)
-			ft_pos_player(setup);
+		ft_pos_player(setup);
 		ft_draw_map(setup);
 		mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
 	}
