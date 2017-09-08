@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 20:20:10 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/08 20:26:14 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ int			ft_expose_hook(t_setup *setup)
 	ft_imgclean(IMG, SETUP.width, SETUP.height);
 	if (SETUP.mode == STATE_OPEN)
 		ret = ft_open_map(setup);
-	if (SETUP.mode == STATE_GEN)
-		ret = ft_setup_menu(setup);
-	if (SETUP.mode == STATE_SAVE)
-		if (ft_save_map(setup) == OK)
-			SETUP.mode = STATE_DRAW;
 	if (SETUP.mode == STATE_DRAW)
 	{
 		ft_pos_player(setup);
@@ -41,9 +36,10 @@ int			ft_expose_hook(t_setup *setup)
 
 static int	ft_key_hook(int keycode, t_setup *setup)
 {
+	size_t	ret;
+	
 	SETUP.key = keycode;
-	if (SETUP.key == ESC)
-		ft_setup_mode(&SETUP, 0);
+	ret = OK;
 	if (SETUP.key == ENTER && SETUP.mode == STATE_START)
 		SETUP.mode = (SETUP.ac > 1) ? STATE_OPEN : STATE_GEN;
 	if (SETUP.key == G_KEY)
@@ -56,6 +52,13 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 		SETUP.udlr[2] = 1;
 	if (SETUP.key == RIGHT)
 		SETUP.udlr[3] = 1;
+	if (SETUP.mode == STATE_GEN)
+		ret = ft_setup_menu(setup);
+	if (SETUP.mode == STATE_SAVE)
+		if (ft_save_map(setup) == OK)
+			SETUP.mode = STATE_DRAW;
+	if (SETUP.key == ESC || ret == ERROR)
+		ft_setup_mode(&SETUP, 0);
 	return (0);
 }
 
