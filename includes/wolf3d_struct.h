@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 21:48:50 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/08 19:18:29 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ typedef struct		s_player
 
 typedef struct		s_ray
 {
-	char			stepx;
-	char			stepy;
-	int				mapx;
-	int				mapy;
 	double			size;
 	char			side;
 	char			touch;
@@ -44,6 +40,8 @@ typedef struct		s_ray
 	t_vec3			ddist;
 	t_vec3			dir;
 	t_vec3			pos;
+	t_pix			map;
+	t_pix			step;
 }					t_ray_cast;
 
 typedef struct		s_map
@@ -64,6 +62,7 @@ typedef struct		s_map
 	t_color			east;
 	t_color			west;
 	t_color			ground;
+	t_color			sky;
 	size_t			**map;
 	char			**map_str;
 }					t_map;
@@ -77,6 +76,7 @@ typedef struct		s_setup
 	int				ac;
 	char			**args;
 	int				key;
+	size_t			udlr[4];
 	t_mlx			*mlx;
 	t_img			*img;
 	t_map			*map;

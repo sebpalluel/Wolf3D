@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 15:33:31 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/08 17:19:10 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	ft_color(&MAP->south, 125, 125, 0);
 	ft_color(&MAP->east, 0, 125, 125);
 	ft_color(&MAP->west, 255, 125, 125);
-	ft_color(&MAP->ground, 42, 42, 42);
+	ft_color(&MAP->ground, 125, 125, 125);
+	ft_color(&MAP->sky, 255, 255, 255);
 	if (MLX == NULL || IMG == NULL || MAP == NULL || FD == NULL || \
 			RAY == NULL || PLAY == NULL)
 		return (ERROR);

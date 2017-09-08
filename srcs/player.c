@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 16:22:50 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/08 19:59:03 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ static size_t	ft_test_move(t_setup *setup)
 {
 	t_pix		pos;
 
-	if (SETUP.key == UP)
+	if (SETUP.udlr[0])
 	{
 		pos.x = PLAY->pos.x + MOVE_STEP * PLAY->dir.x;
 		pos.y = PLAY->pos.y + MOVE_STEP * PLAY->dir.y;
 	}
-	if (SETUP.key == DOWN)
+	if (SETUP.udlr[1])
 	{
 		pos.x = PLAY->pos.x - MOVE_STEP * PLAY->dir.x;
 		pos.y = PLAY->pos.y - MOVE_STEP * PLAY->dir.y;
 	}
 	if (pos.x < M_WIDTH && pos.y < M_HEIGHT && pos.x > 0 && pos.y > 0
-			&& MAP->map[pos.x][pos.y] != WALL)
+			&& MAP->map[pos.y][pos.x] != WALL)
 		return (OK);
 	return (ERROR);
 }
@@ -35,18 +35,7 @@ static size_t	ft_test_move(t_setup *setup)
 static void		ft_turn_player(t_setup *setup, double prev_dirx, \
 		double prev_planex)
 {
-	if (SETUP.key == LEFT)
-	{
-		PLAY->dir.x = prev_dirx * cos(-ROT_STEP)
-			- PLAY->dir.y * sin(-ROT_STEP);
-		PLAY->dir.y = prev_dirx * sin(-ROT_STEP)
-			+ PLAY->dir.y * cos(-ROT_STEP);
-		PLAY->plane.x = prev_planex * cos(-ROT_STEP)
-			- PLAY->plane.y * sin(-ROT_STEP);
-		PLAY->plane.y = prev_planex * sin(-ROT_STEP)
-			+ PLAY->plane.y * cos(-ROT_STEP);
-	}
-	if (SETUP.key == RIGHT)
+	if (SETUP.udlr[2])
 	{
 		PLAY->dir.x = prev_dirx * cos(ROT_STEP)
 			- PLAY->dir.y * sin(ROT_STEP);
@@ -56,6 +45,17 @@ static void		ft_turn_player(t_setup *setup, double prev_dirx, \
 			- PLAY->plane.y * sin(ROT_STEP);
 		PLAY->plane.y = prev_planex * sin(ROT_STEP)
 			+ PLAY->plane.y * cos(ROT_STEP);
+	}
+	if (SETUP.udlr[3])
+	{
+		PLAY->dir.x = prev_dirx * cos(-ROT_STEP)
+			- PLAY->dir.y * sin(-ROT_STEP);
+		PLAY->dir.y = prev_dirx * sin(-ROT_STEP)
+			+ PLAY->dir.y * cos(-ROT_STEP);
+		PLAY->plane.x = prev_planex * cos(-ROT_STEP)
+			- PLAY->plane.y * sin(-ROT_STEP);
+		PLAY->plane.y = prev_planex * sin(-ROT_STEP)
+			+ PLAY->plane.y * cos(-ROT_STEP);
 	}
 }
 
