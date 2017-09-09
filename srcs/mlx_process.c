@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 20:26:14 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 13:26:54 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,3 @@ void		ft_mlx_process(t_setup *setup)
 	mlx_loop_hook(MLX->mlx_ptr, ft_expose_hook, setup);
 	mlx_loop(MLX->mlx_ptr);
 }
-
-//void	ft_put_pxl_to_img(t_setup *setup, t_vec3 pos, t_color *clr)
-//{
-//	unsigned int	index;
-//
-//	index = (pos.y * setup->width) * (IMG->bbp >> 3) \
-//			+ pos.x * (IMG->bbp >> 3);
-//	if (pos.x < setup->width && pos.y < setup->height)
-//		ft_memcpy(setup->img->image_addr + index, clr, sizeof(int));
-//}

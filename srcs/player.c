@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 19:59:03 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 13:42:53 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ static void		ft_turn_player(t_setup *setup, double prev_dirx, \
 
 static void		ft_move_player(t_setup *setup)
 {
-	if (SETUP.key == UP && ft_test_move(setup) == OK)
+	if (SETUP.udlr[0] && ft_test_move(setup) == OK)
 	{
 		PLAY->pos.x += MOVE_STEP * PLAY->dir.x;
 		PLAY->pos.y += MOVE_STEP * PLAY->dir.y;
 	}
-	else if (SETUP.key == DOWN && ft_test_move(setup) == OK)
+	else if (SETUP.udlr[1] && ft_test_move(setup) == OK)
 	{
 		PLAY->pos.x -= MOVE_STEP * PLAY->dir.x;
 		PLAY->pos.y -= MOVE_STEP * PLAY->dir.y;
@@ -88,7 +88,7 @@ void			ft_pos_player(t_setup *setup)
 		}
 		ft_vec3cpy(&pos, &PLAY->pos);
 		ft_vec3populate(&PLAY->dir, -1., 0., 0.0);
-		ft_vec3populate(&PLAY->plane, 0., 0.66, 0.0);
+		ft_vec3populate(&PLAY->plane, 0., 0.6, 0.0);
 		PLAY->randpos = 1;
 	}
 	ft_move_player(setup);
