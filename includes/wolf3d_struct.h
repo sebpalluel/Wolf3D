@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 19:18:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 17:16:35 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ typedef struct		s_player
 typedef struct		s_ray
 {
 	double			size;
-	char			side;
-	char			touch;
-	t_vec3			sdist;
-	t_vec3			ddist;
+	size_t			side;
+	size_t			hit;
+	t_vec3			sidedist;
+	t_vec3			deltadist;
 	t_vec3			dir;
 	t_vec3			pos;
 	t_pix			map;
