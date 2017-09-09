@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 13:46:47 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:43:20 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,31 +32,26 @@ static size_t	ft_test_move(t_setup *setup)
 	return (ERROR);
 }
 
+static void		ft_fish_eye_correct(t_setup *setup, double	prev_dirx, \
+		double prev_planex, double rot_step)
+{
+	PLAY->dir.x = prev_dirx * cos(rot_step)
+		- PLAY->dir.y * sin(rot_step);
+	PLAY->dir.y = prev_dirx * sin(rot_step)
+		+ PLAY->dir.y * cos(rot_step);
+	PLAY->plane.x = prev_planex * cos(rot_step)
+		- PLAY->plane.y * sin(rot_step);
+	PLAY->plane.y = prev_planex * sin(rot_step)
+		+ PLAY->plane.y * cos(rot_step);
+}
+
 static void		ft_turn_player(t_setup *setup, double prev_dirx, \
 		double prev_planex)
 {
 	if (SETUP.udlr[2])
-	{
-		PLAY->dir.x = prev_dirx * cos(ROT_STEP)
-			- PLAY->dir.y * sin(ROT_STEP);
-		PLAY->dir.y = prev_dirx * sin(ROT_STEP)
-			+ PLAY->dir.y * cos(ROT_STEP);
-		PLAY->plane.x = prev_planex * cos(ROT_STEP)
-			- PLAY->plane.y * sin(ROT_STEP);
-		PLAY->plane.y = prev_planex * sin(ROT_STEP)
-			+ PLAY->plane.y * cos(ROT_STEP);
-	}
+		ft_fish_eye_correct(setup, prev_dirx, prev_planex, ROT_STEP);
 	if (SETUP.udlr[3])
-	{
-		PLAY->dir.x = prev_dirx * cos(-ROT_STEP)
-			- PLAY->dir.y * sin(-ROT_STEP);
-		PLAY->dir.y = prev_dirx * sin(-ROT_STEP)
-			+ PLAY->dir.y * cos(-ROT_STEP);
-		PLAY->plane.x = prev_planex * cos(-ROT_STEP)
-			- PLAY->plane.y * sin(-ROT_STEP);
-		PLAY->plane.y = prev_planex * sin(-ROT_STEP)
-			+ PLAY->plane.y * cos(-ROT_STEP);
-	}
+		ft_fish_eye_correct(setup, prev_dirx, prev_planex, -ROT_STEP);
 }
 
 static void		ft_move_player(t_setup *setup)

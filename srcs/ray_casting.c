@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 14:10:31 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:30:04 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,27 @@ static	t_color		*ft_select_color(t_setup *setup)
 	return (&MAP->ground);
 }
 
-void			ft_draw_vert_line(t_setup *setup, int x, int len)
+void			ft_draw_vert_line(t_setup *setup, int posx, int len)
 {
-	int	i;
+	int	posy;
 	int start;
 	int end;
 
 	start = -len / 2 + S_HEIGHT / 2;
 	end = len / 2 + S_HEIGHT / 2;
-	i = -1;
+	posy = -1;
 	if (start < 0)
 		start = 0;
 	if (end >= (int)S_HEIGHT)
 		end = S_HEIGHT - 1;
-	while (++i < start)
-		ft_put_pixel(setup, x, i, ft_colortohex(&MAP->sky));
-	i--;
-	while (++i < end)
-		ft_put_pixel(setup, x, i, ft_colortohex(ft_select_color(setup)));
-	i--;
-	while (++i < (int)S_HEIGHT)
-		ft_put_pixel(setup, x, i, ft_colortohex(&MAP->ground));
+	while (++posy < start)
+		ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
+	posy--;
+	while (++posy < end)
+		ft_put_pixel(setup, posx, posy, ft_colortohex(ft_select_color(setup)));
+	posy--;
+	while (++posy < (int)S_HEIGHT)
+		ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->ground));
 }
 
 static void		ft_ray_touch(t_setup *setup)
@@ -99,13 +99,13 @@ static void		ft_ray_dir(t_setup *setup)
 
 size_t			ft_ray_casting(t_setup *setup)
 {
-	int			x;
+	int			posx;
 	double		xi;
 
-	x = -1;
-	while (++x < (int)S_WIDTH)
+	posx = -1;
+	while (++posx < (int)S_WIDTH)
 	{
-		xi = 2 * (double)x / (double)S_WIDTH - 1;
+		xi = 2 * (double)posx / (double)S_WIDTH - 1;
 		ft_vec3cpy(&PLAY->pos, &RAY->pos);
 		RAY->dir.x = PLAY->dir.x + PLAY->plane.x * xi;
 		RAY->dir.y = PLAY->dir.y + PLAY->plane.y * xi;
@@ -120,7 +120,7 @@ size_t			ft_ray_casting(t_setup *setup)
 			RAY->size = (RAY->map.x - RAY->pos.x + (1 - RAY->step.x) / 2) / RAY->dir.x;
 		else
 			RAY->size = (RAY->map.y - RAY->pos.y + (1 - RAY->step.y) / 2) / RAY->dir.y;
-		ft_draw_vert_line(setup, x, (int)((S_HEIGHT / RAY->size)));
+		ft_draw_vert_line(setup, posx, (int)((S_HEIGHT / RAY->size)));
 	}
 	return (OK);
 }
