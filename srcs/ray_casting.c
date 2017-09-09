@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 20:31:47 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 13:56:08 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void		ft_ray_touch(t_setup *setup)
 	}
 	//printf("max width %d, max height %d, map.x %d, map.y %d\n", M_WIDTH, \
 	//		M_HEIGHT, RAY->map.x, RAY->map.y);
-	if (MAP->map[RAY->map.x][RAY->map.y] == WALL)
+	if (MAP->map[RAY->map.y][RAY->map.x] == WALL)
 		RAY->touch = 1;
 }
 
