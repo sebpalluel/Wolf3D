@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:16:35 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 17:36:41 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct		s_map
 	t_color			ground;
 	t_color			sky;
 	size_t			**map;
+	size_t			**map_draw;
 	char			**map_str;
 }					t_map;
 

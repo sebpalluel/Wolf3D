@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 13:26:54 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 17:30:47 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void		ft_mlx_process(t_setup *setup)
 {
 	if (SETUP.mode == STATE_START)
 		ft_start(setup);
+	MAP->cheat = 1;
 	mlx_hook(MLX->win_ptr, KEYPRESS, KEYPRESSMASK, ft_key_hook, setup);
 	mlx_hook(MLX->win_ptr, KEYRELEASE, KEYRELEASEMASK, ft_key_release, setup);
 	mlx_loop_hook(MLX->mlx_ptr, ft_expose_hook, setup);

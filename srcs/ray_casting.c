@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:19:19 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 17:26:14 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ size_t			ft_ray_casting(t_setup *setup)
 	posx = -1;
 	while (++posx < (int)S_WIDTH)
 	{
-		xi = 2 * (double)posx / (double)S_WIDTH - 1;
+		xi = 4 * (double)posx / (double)S_WIDTH - 1;
 		ft_vec3cpy(&PLAY->pos, &RAY->pos);
 		RAY->dir.x = PLAY->dir.x + PLAY->plane.x * xi;
 		RAY->dir.y = PLAY->dir.y + PLAY->plane.y * xi;
