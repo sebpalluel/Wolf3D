@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 13:56:08 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:10:31 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void			ft_draw_vert_line(t_setup *setup, int x, int len)
 
 	start = -len / 2 + S_HEIGHT / 2;
 	end = len / 2 + S_HEIGHT / 2;
-	i = 0;
+	i = -1;
 	if (start < 0)
 		start = 0;
 	if (end >= (int)S_HEIGHT)
@@ -68,8 +68,6 @@ static void		ft_ray_touch(t_setup *setup)
 		RAY->map.y += (int)RAY->step.y;
 		RAY->side = 1;
 	}
-	//printf("max width %d, max height %d, map.x %d, map.y %d\n", M_WIDTH, \
-	//		M_HEIGHT, RAY->map.x, RAY->map.y);
 	if (MAP->map[RAY->map.y][RAY->map.x] == WALL)
 		RAY->touch = 1;
 }
