@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 22:17:13 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:57:00 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 16:38:20 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,13 @@ static void		ft_select_map_coord(t_setup *setup, int i, int j)
 	pos.y = j + (MAP->draw_tick * (j + 1));
 	if (MAP->map[j][i] == 1)
 		ft_draw_map_coord(setup, pos.x, pos.y, 0x0000FF);
-	if (MAP->cheat && MAP->map[j][i] == 2)
-		ft_draw_map_coord(setup, pos.x, pos.y, 0x00FF00);
+	if (MAP->map[j][i] == 2)
+	{
+		if (MAP->cheat)
+			ft_draw_map_coord(setup, pos.x, pos.y, 0x00FF00);
+		else
+			ft_draw_map_coord(setup, pos.x, pos.y, 0xFFFFFF);
+	}
 	if ((int)PLAY->pos.x == i && (int)PLAY->pos.y == j)
 		ft_draw_map_coord(setup, pos.x, pos.y, 0xFF0000);
 	else if (MAP->map[j][i] == 0)
