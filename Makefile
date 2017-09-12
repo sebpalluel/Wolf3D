@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/09/07 20:09:38 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/09/12 16:12:32 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -15,6 +15,7 @@ NAME = wolf3d
 SRC 		=	srcs/wolf3d.c \
 				srcs/setup.c \
 				srcs/mlx_process.c \
+				srcs/mlx_control.c \
 				srcs/path_maker.c \
 				srcs/path_maker_dir.c \
 				srcs/configure_map.c \

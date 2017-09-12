@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 15:23:31 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 16:02:44 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,21 @@
 # define NAME_STR		"TYPE A NAME FOR THIS FILE AND PRESS ENTER"
 # define START_STR		"Wolf3d by psebasti"
 # define ENTER_STR		"Press ENTER to start"
+
+# define L_CONTROLS "         CONTROL "
+# define L_UP "|Forward    |  Up or W  |"
+# define L_DOWN "|Backward   | Down or S |"
+# define L_LEFT "|Turn Left  | Left or A |"
+# define L_RIGHT "|Turn Right | Right or D|"
+# define L_PLUS "|Speed Up   |     +     |"
+# define L_MINUS "|Slow Down  |     -     |"
+# define L_MAP "|Hide Map   |     M     |"
+# define L_HIDE "|Hide This  |     H     |"
+# define L_EASY "|Easy       |     1     |"
+# define L_MEDIUM "|Medium     |     2     |"
+# define L_HARD "|Hard       |     3     |"
+# define L_RESET "|Start Over |   Enter   |"
+# define L_LINE " -----------------------"
+# define L_ESC "|Quit Game  |    Esc    |"
 
 #endif

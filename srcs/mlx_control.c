@@ -6,138 +6,50 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 14:19:33 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:05:36 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 16:32:43 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../includes/wolf3d.h"
 
-static void	ft_print_color(t_setup *setup)
-{	
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 100, 16711680,
-			" key Q/W   LERP_IN R:");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 5, 100, 16711680,
-			ft_ftoa((int)(SETUP.fract[SETUP.f_mode]->clr[0]->r)));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 120, 65280,
-			" key A/S   LERP_IN G:");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 5, 120, 65280,
-			ft_ftoa((int)(SETUP.fract[SETUP.f_mode]->clr[0]->g)));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 140, 255,
-			" key Z/X   LERP_IN B:");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 5, 140, 255,
-			ft_ftoa((int)(SETUP.fract[SETUP.f_mode]->clr[0]->b)));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 4, 100, 16711680,
-			" key E/R   LERP_OUT R:");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 2.15, 100, 16711680,
-			ft_ftoa((int)(SETUP.fract[SETUP.f_mode]->clr[1]->r)));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 4, 120, 65280,
-			" key D/F   LERP_OUT G:");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 2.15, 120, 652805,
-			ft_ftoa((int)(SETUP.fract[SETUP.f_mode]->clr[1]->g)));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 4, 140, 255,
-			" key C/V   LERP_OUT B:");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 2.15, 140, 255,
-			ft_ftoa((int)(SETUP.fract[SETUP.f_mode]->clr[1]->b)));
+void			ft_mlx_control_key(t_setup *setup)
+{
+	if (SETUP.key == UP)
+		SETUP.udlr[0] = 1;
+	if (SETUP.key == DOWN)
+		SETUP.udlr[1] = 1;
+	if (SETUP.key == LEFT)
+		SETUP.udlr[2] = 1;
+	if (SETUP.key == RIGHT)
+		SETUP.udlr[3] = 1;
+	if (SETUP.key == G_KEY)
+		SETUP.ui = !SETUP.ui ? 1 : 0;
+	if (SETUP.key == C_KEY)
+		MAP->cheat = !MAP->cheat ? 1 : 0;
+	if (SETUP.key == B_KEY)
+		MAP->skybox = !MAP->skybox ? 1 : 0;
 }
 
-static void	ft_print_fract_info(t_setup *setup)
+void			ft_mlx_control(t_setup *setup)
 {
-	if (SETUP.f_mode == 0)
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 0, 16777215,
-				" mandelbrot");
-	if (SETUP.f_mode == 1)
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 0, 16777215, " julia");
-	if (SETUP.f_mode == 2)
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 0, 16777215,
-				" burningship");
-	if (SETUP.f_mode == 3)
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 0, 16777215, " cantor");
-	if (SETUP.f_mode == 4)
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 0, 16777215, " all");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 20, 16777215,
-			" key -/+   iteration max : ");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 4, 20, 16777215,
-			ft_ftoa(SETUP.fract[SETUP.f_mode]->it_max));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 40, 16777215, " pos x/y : ");
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 8, 40, 16777215,
-			ft_ftoa(SETUP.fract[SETUP.f_mode]->vec.x));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, setup->width / 4, 40, 16777215,
-			ft_ftoa(SETUP.fract[SETUP.f_mode]->vec.y));
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 60, 8224125,
-			" switch to fract [1] mandelbrot [2] julia [3] burningship \
-			[4] cantor [0] all");
-}
+	int			x;
 
-void		ft_print(t_setup *setup)
-{
-	ft_print_fract_info(setup);
-	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, 0, 80, 8224125,
-			" to reset position press P");
-	ft_print_color(setup);
-}
-
-void		ft_form_fract(int keycode, t_setup *setup)
-{
-	int		frac;
-
-	frac = -1;
-	if (SETUP.f_mode < FNUM - 1)
+	x = S_WIDTH / 1.5;
+	if (!SETUP.ui)
 	{
-		if (keycode == MINUS && SETUP.fract[SETUP.f_mode]->it_max > 10)
-			SETUP.fract[SETUP.f_mode]->it_max -= 10;
-		if (keycode == EQUAL && SETUP.fract[SETUP.f_mode]->it_max < 250)
-			SETUP.fract[SETUP.f_mode]->it_max += 10;
-	}
-	if (SETUP.f_mode == FNUM)
-	{
-		if (keycode == MINUS)
-			while (++frac < FNUM && SETUP.fract[frac]->it_max > 10)
-				SETUP.fract[frac]->it_max -= 10;
-		if (keycode == EQUAL)
-			while (++frac < FNUM && SETUP.fract[frac]->it_max < 250)
-				SETUP.fract[frac]->it_max += 10;
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 16, 0xccccff, L_CONTROLS);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 32, 0xccccff, L_UP);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 48, 0xccccff, L_DOWN);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 64, 0xccccff, L_LEFT);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 80, 0xccccff, L_RIGHT);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 96, 0xccccff, L_PLUS);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 112, 0xccccff, L_MINUS);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 128, 0xccccff, L_MAP);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 144, 0xccccff, L_HIDE);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 160, 0xccccff, L_EASY);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 176, 0xccccff, L_MEDIUM);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 192, 0xccccff, L_HARD);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 208, 0xccccff, L_RESET);
+		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 224, 0xccccff, L_ESC);
 	}
 }
-void	ft_switch_fract(int keycode, t_setup *setup)
-{
-	if (keycode == ONE)
-		SETUP.f_mode = 0;
-	if (keycode == TWO)
-		SETUP.f_mode = 1;
-	if (keycode == THREE)
-		SETUP.f_mode = 2;
-	if (keycode == FOUR)
-		SETUP.f_mode = 3;
-	if (keycode == ZERO)
-		SETUP.f_mode = 4;
-}
-
-void	ft_change_color(int keycode, t_setup *setup)
-{
-	if (keycode == Q_KEY && SETUP.fract[SETUP.f_mode]->clr[0]->r > 0)
-		SETUP.fract[SETUP.f_mode]->clr[0]->r -= 5;
-	if (keycode == A_KEY && SETUP.fract[SETUP.f_mode]->clr[0]->g > 0)
-		SETUP.fract[SETUP.f_mode]->clr[0]->g -= 5;
-	if (keycode == Z_KEY && SETUP.fract[SETUP.f_mode]->clr[0]->b > 0)
-		SETUP.fract[SETUP.f_mode]->clr[0]->b -= 5;
-	if (keycode == W_KEY && SETUP.fract[SETUP.f_mode]->clr[0]->r < 255)
-		SETUP.fract[SETUP.f_mode]->clr[0]->r += 5;
-	if (keycode == S_KEY && SETUP.fract[SETUP.f_mode]->clr[0]->g < 255)
-		SETUP.fract[SETUP.f_mode]->clr[0]->g += 5;
-	if (keycode == X_KEY && SETUP.fract[SETUP.f_mode]->clr[0]->b < 255)
-		SETUP.fract[SETUP.f_mode]->clr[0]->b += 5;
-	if (keycode == E_KEY && SETUP.fract[SETUP.f_mode]->clr[1]->r > 0)
-		SETUP.fract[SETUP.f_mode]->clr[1]->r -= 5;
-	if (keycode == D_KEY && SETUP.fract[SETUP.f_mode]->clr[1]->g > 0)
-		SETUP.fract[SETUP.f_mode]->clr[1]->g -= 5;
-	if (keycode == C_KEY && SETUP.fract[SETUP.f_mode]->clr[1]->b > 0)
-		SETUP.fract[SETUP.f_mode]->clr[1]->b -= 5;
-	if (keycode == R_KEY && SETUP.fract[SETUP.f_mode]->clr[1]->r < 255)
-		SETUP.fract[SETUP.f_mode]->clr[1]->r += 5;
-	if (keycode == F_KEY && SETUP.fract[SETUP.f_mode]->clr[1]->g < 255)
-		SETUP.fract[SETUP.f_mode]->clr[1]->g += 5;
-	if (keycode == V_KEY && SETUP.fract[SETUP.f_mode]->clr[1]->b < 255)
-		SETUP.fract[SETUP.f_mode]->clr[1]->b += 5;
-}
-
-

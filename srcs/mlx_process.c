@@ -6,13 +6,13 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 15:49:24 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 16:33:51 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 
-int			ft_expose_hook(t_setup *setup)
+int			ft_loop_hook(t_setup *setup)
 {
 	int		ret;
 
@@ -28,11 +28,11 @@ int			ft_expose_hook(t_setup *setup)
 		if (MAP->skybox)
 			mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, SKY->image, 0, 0);
 		mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
+		ft_mlx_control(setup);
 	}
 	//printf("ret %d\n", ret);
 	if (ret == ERROR)
 		ft_setup_mode(&SETUP, 0);
-	mlx_do_sync(MLX->mlx_ptr);
 	return (0);
 }
 
@@ -44,16 +44,6 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 	ret = OK;
 	if (SETUP.key == ENTER && SETUP.mode == STATE_START)
 		SETUP.mode = (SETUP.ac > 1) ? STATE_OPEN : STATE_GEN;
-	if (SETUP.key == G_KEY)
-		setup->ui = !setup->ui ? 1 : 0;
-	if (SETUP.key == UP)
-		SETUP.udlr[0] = 1;
-	if (SETUP.key == DOWN)
-		SETUP.udlr[1] = 1;
-	if (SETUP.key == LEFT)
-		SETUP.udlr[2] = 1;
-	if (SETUP.key == RIGHT)
-		SETUP.udlr[3] = 1;
 	if (SETUP.mode == STATE_GEN)
 		ret = ft_setup_menu(setup);
 	if (SETUP.mode == STATE_SAVE)
@@ -61,6 +51,8 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 			SETUP.mode = STATE_DRAW;
 	if (SETUP.key == ESC || ret == ERROR)
 		ft_setup_mode(&SETUP, 0);
+	ft_mlx_control_key(&SETUP);
+	mlx_do_sync(MLX->mlx_ptr);
 	return (0);
 }
 
@@ -81,9 +73,8 @@ void		ft_mlx_process(t_setup *setup)
 {
 	if (SETUP.mode == STATE_START)
 		ft_start(setup);
-	MAP->cheat = 1;
 	mlx_hook(MLX->win_ptr, KEYPRESS, KEYPRESSMASK, ft_key_hook, setup);
 	mlx_hook(MLX->win_ptr, KEYRELEASE, KEYRELEASEMASK, ft_key_release, setup);
-	mlx_loop_hook(MLX->mlx_ptr, ft_expose_hook, setup);
+	mlx_loop_hook(MLX->mlx_ptr, ft_loop_hook, setup);
 	mlx_loop(MLX->mlx_ptr);
 }
