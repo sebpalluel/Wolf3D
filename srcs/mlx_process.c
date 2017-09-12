@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:30:47 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:49:24 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ int			ft_expose_hook(t_setup *setup)
 		ft_pos_player(setup);
 		ret = ft_ray_casting(setup);
 		ft_draw_map(setup);
+		if (MAP->skybox)
+			mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, SKY->image, 0, 0);
 		mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
 	}
-	printf("ret %d\n", ret);
+	//printf("ret %d\n", ret);
 	if (ret == ERROR)
 		ft_setup_mode(&SETUP, 0);
 	mlx_do_sync(MLX->mlx_ptr);
@@ -37,7 +39,7 @@ int			ft_expose_hook(t_setup *setup)
 static int	ft_key_hook(int keycode, t_setup *setup)
 {
 	size_t	ret;
-	
+
 	SETUP.key = keycode;
 	ret = OK;
 	if (SETUP.key == ENTER && SETUP.mode == STATE_START)
@@ -62,18 +64,18 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 	return (0);
 }
 
- static int	ft_key_release(int keycode, t_setup *setup)
- {
- 	if (keycode == UP)
- 		SETUP.udlr[0] = 0;
- 	if (keycode == DOWN)
- 		SETUP.udlr[1] = 0;
- 	if (keycode == LEFT)
- 		SETUP.udlr[2] = 0;
- 	if (keycode == RIGHT)
- 		SETUP.udlr[3] = 0;
- 	return (0);
- }
+static int	ft_key_release(int keycode, t_setup *setup)
+{
+	if (keycode == UP)
+		SETUP.udlr[0] = 0;
+	if (keycode == DOWN)
+		SETUP.udlr[1] = 0;
+	if (keycode == LEFT)
+		SETUP.udlr[2] = 0;
+	if (keycode == RIGHT)
+		SETUP.udlr[3] = 0;
+	return (0);
+}
 
 void		ft_mlx_process(t_setup *setup)
 {

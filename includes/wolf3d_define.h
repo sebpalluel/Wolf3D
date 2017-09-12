@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/08 20:22:01 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:23:31 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define CAM			setup[0].cam
 # define MLX			setup[0].mlx
 # define IMG			setup[0].img
+# define SKY			setup[0].sky
 # define FD				setup[0].fd
 # define PLAY			setup[0].player
 # define RAY			setup[0].ray_cast
@@ -60,6 +61,8 @@
 
 # define MOVE_STEP		0.05
 # define ROT_STEP		0.1
+
+# define SKY_PATH		"textures/sky.xpm"
 
 # define MAPG_STR		"MAP GENERATOR MODE"
 # define WIDTHG_STR		"TYPE WIDTH OF MAP [ >= 3 && <= 200] AND PRESS ENTER"

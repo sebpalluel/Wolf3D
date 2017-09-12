@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:36:41 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:47:53 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct		s_map
 	size_t			name_t;
 	size_t			name_i;
 	size_t			cheat;
+	size_t			skybox;
 	int				draw_tick;
 	int				mapsize[2];
 	float			mid[2];
@@ -64,7 +65,6 @@ typedef struct		s_map
 	t_color			ground;
 	t_color			sky;
 	size_t			**map;
-	size_t			**map_draw;
 	char			**map_str;
 }					t_map;
 
@@ -80,6 +80,7 @@ typedef struct		s_setup
 	size_t			udlr[4];
 	t_mlx			*mlx;
 	t_img			*img;
+	t_img			*sky;
 	t_map			*map;
 	t_player		*player;
 	t_ray_cast		*ray_cast;

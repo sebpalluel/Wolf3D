@@ -6,13 +6,13 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:26:14 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:48:59 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 
-static	t_color		*ft_select_color(t_setup *setup)
+static t_color	*ft_select_color(t_setup *setup)
 {
 	if (RAY->side)
 	{
@@ -33,9 +33,9 @@ static	t_color		*ft_select_color(t_setup *setup)
 
 void			ft_draw_vert_line(t_setup *setup, int posx, int len)
 {
-	int	posy;
-	int start;
-	int end;
+	int			posy;
+	int			start;
+	int			end;
 
 	start = -len / 2 + S_HEIGHT / 2;
 	end = len / 2 + S_HEIGHT / 2;
@@ -45,6 +45,9 @@ void			ft_draw_vert_line(t_setup *setup, int posx, int len)
 	if (end >= (int)S_HEIGHT)
 		end = S_HEIGHT - 1;
 	while (++posy < start)
+		if (MAP->skybox)
+		ft_put_pixel(setup, posx, posy, 0xC00000A0);
+		else
 		ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
 	posy--;
 	while (++posy < end)
@@ -107,7 +110,7 @@ size_t			ft_ray_casting(t_setup *setup)
 	posx = -1;
 	while (++posx < (int)S_WIDTH)
 	{
-		xi = 4 * (double)posx / (double)S_WIDTH - 1;
+		xi = 2 * (double)posx / (double)S_WIDTH - 1;
 		ft_vec3cpy(&PLAY->pos, &RAY->pos);
 		RAY->dir.x = PLAY->dir.x + PLAY->plane.x * xi;
 		RAY->dir.y = PLAY->dir.y + PLAY->plane.y * xi;
