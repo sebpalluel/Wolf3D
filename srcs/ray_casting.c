@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 15:48:59 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/13 01:54:49 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void			ft_draw_vert_line(t_setup *setup, int posx, int len)
 		end = S_HEIGHT - 1;
 	while (++posy < start)
 		if (MAP->skybox)
-		ft_put_pixel(setup, posx, posy, 0xC00000A0);
+			ft_put_pixel(setup, posx, posy, 0xC00000A0);
 		else
-		ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
+			ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
 	posy--;
 	while (++posy < end)
 		ft_put_pixel(setup, posx, posy, ft_colortohex(ft_select_color(setup)));
@@ -102,6 +102,17 @@ static void		ft_ray_dir(t_setup *setup)
 	RAY->hit = 0;
 }
 
+static void		ft_ray_casting_init(t_setup *setup, double xi)
+{
+	ft_vec3cpy(&PLAY->pos, &RAY->pos);
+	RAY->dir.x = PLAY->dir.x + PLAY->plane.x * xi;
+	RAY->dir.y = PLAY->dir.y + PLAY->plane.y * xi;
+	RAY->deltadist.x = sqrt(1 + (pow(RAY->dir.y, 2) / pow(RAY->dir.x, 2)));
+	RAY->deltadist.y = sqrt(1 + (pow(RAY->dir.x, 2) / pow(RAY->dir.y, 2)));
+	RAY->map.x = (int)RAY->pos.x;
+	RAY->map.y = (int)RAY->pos.y;
+}
+
 size_t			ft_ray_casting(t_setup *setup)
 {
 	int			posx;
@@ -111,13 +122,7 @@ size_t			ft_ray_casting(t_setup *setup)
 	while (++posx < (int)S_WIDTH)
 	{
 		xi = 2 * (double)posx / (double)S_WIDTH - 1;
-		ft_vec3cpy(&PLAY->pos, &RAY->pos);
-		RAY->dir.x = PLAY->dir.x + PLAY->plane.x * xi;
-		RAY->dir.y = PLAY->dir.y + PLAY->plane.y * xi;
-		RAY->deltadist.x = sqrt(1 + (pow(RAY->dir.y, 2) / pow(RAY->dir.x, 2)));
-		RAY->deltadist.y = sqrt(1 + (pow(RAY->dir.x, 2) / pow(RAY->dir.y, 2)));
-		RAY->map.x = (int)RAY->pos.x;
-		RAY->map.y = (int)RAY->pos.y;
+		ft_ray_casting_init(setup, xi);
 		ft_ray_dir(setup);
 		while (!(RAY->hit))
 			ft_ray_hit(setup);
