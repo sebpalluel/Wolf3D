@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 16:13:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/20 17:31:07 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,60 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	return (OK);
 }
 
+static void		ft_setup_delete_mlx_img(size_t i, t_setup *setup)
+{
+	if (i == 0)
+	{
+		if (IMG)
+			ft_imgdel(IMG, MLX->mlx_ptr);
+		if (SKY)
+			ft_imgdel(SKY, MLX->mlx_ptr);
+		if (MLX)
+			ft_mlxdelete(MLX);
+	}
+	else
+	{
+		if (setup[i].img)
+			free (setup[i].img);
+		if (setup[i].sky)
+			free (setup[i].sky);
+		if (setup[i].mlx)
+			free (setup[i].mlx);
+	}
+}
+
+void		ft_setup_delete(t_setup *setup, int i)
+{
+	int			frac_n;
+	int			col_n;
+
+	frac_n = -1;
+	ft_setup_delete_mlx_img(i, setup);
+	if (setup[i].fract)
+	{
+		while (++frac_n < FNUM)
+		{
+			col_n = -1;
+			while (++col_n < 4)
+				free (setup[i].fract[frac_n]->clr[col_n]);
+			free (setup[i].fract[frac_n]->clr);
+			free (setup[i].fract[frac_n]);
+		}
+		free (setup[i].fract);
+	}
+}
+
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
 {
-	size_t		i;
+	int			i;
 
-	i = 0;
+	i = -1;
 	if (mode)
 		return (ft_setup_alloc(setup));
 	else
 	{
+		while (++i < NUM_THREAD)
+		ft_setup_delete(setup, i);
 		//		while (i < NUM_THREAD + 1)
 		//		{
 		//			ft_setup_delete(i, setup);

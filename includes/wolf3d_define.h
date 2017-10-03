@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 16:02:44 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/09/20 17:27:43 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define WIDTH			1600
 # define HEIGHT			900
-# define NUM_THREAD		8
+# define NUM_THREAD		1
 # define AMP			1.3
 
 # define ERROR			1
