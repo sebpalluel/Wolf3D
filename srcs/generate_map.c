@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:05:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/03 19:51:14 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static void		ft_convertmap_to_str(t_setup *setup)
 
 size_t			ft_generate_map(t_setup *setup)
 {
+	srand(time(NULL));
 	if (!(MAP->map_str = ft_tabnewstr(M_WIDTH * 2 + 1, M_HEIGHT)))
 		return (ERROR);
 	if (!(MAP->map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT)))

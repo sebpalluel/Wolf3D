@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:06:53 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/03 19:50:13 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ size_t			ft_open_map(t_setup *setup)
 	ft_args_to_fd(setup);
 	if (ft_open(FD, O_RDONLY, O_APPEND) != OK)
 		return (ERROR);
-	MAP->map_str = (char**)malloc(sizeof(char*) * M_MAX_SIZE);
+	if (!(MAP->map_str = (char**)malloc(sizeof(char*) * M_MAX_SIZE)))
+		return (ERROR);
 	while ((ret_gnl = get_next_line(FD->fd, &MAP->map_str[++height])))
 	{
 		if (height == 0)

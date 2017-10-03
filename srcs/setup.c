@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/03 17:16:16 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/03 18:52:38 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,13 +129,12 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 			free(PLAY);
 		if (FD)
 			free(FD);
-		ft_tabfree((void **)SETUP.args);
 		//		while (i < NUM_THREAD + 1)
 		//		{
 		//			ft_setup_delete(i, setup);
 		//			i++;
 		//		}
-		free (setup);
+		free(setup);
 		ft_putendl("program exited normally");
 		//		else
 		//			ft_error_usage();
