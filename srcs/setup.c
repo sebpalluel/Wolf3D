@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/20 17:31:07 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/03 17:16:16 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,9 @@ static void		ft_setup_delete_mlx_img(size_t i, t_setup *setup)
 {
 	if (i == 0)
 	{
-		if (IMG)
-			ft_imgdel(IMG, MLX->mlx_ptr);
 		if (SKY)
 			ft_imgdel(SKY, MLX->mlx_ptr);
-		if (MLX)
-			ft_mlxdelete(MLX);
+		ft_mlxdelete(MLX, IMG);
 	}
 	else
 	{
@@ -87,26 +84,27 @@ static void		ft_setup_delete_mlx_img(size_t i, t_setup *setup)
 	}
 }
 
-void		ft_setup_delete(t_setup *setup, int i)
-{
-	int			frac_n;
-	int			col_n;
 
-	frac_n = -1;
-	ft_setup_delete_mlx_img(i, setup);
-	if (setup[i].fract)
-	{
-		while (++frac_n < FNUM)
-		{
-			col_n = -1;
-			while (++col_n < 4)
-				free (setup[i].fract[frac_n]->clr[col_n]);
-			free (setup[i].fract[frac_n]->clr);
-			free (setup[i].fract[frac_n]);
-		}
-		free (setup[i].fract);
-	}
-}
+//void		ft_setup_delete(t_setup *setup, int i)
+//{
+//	int			frac_n;
+//	int			col_n;
+//
+//	frac_n = -1;
+//	ft_setup_delete_mlx_img(i, setup);
+//	if (setup[i].fract)
+//	{
+//		while (++frac_n < FNUM)
+//		{
+//			col_n = -1;
+//			while (++col_n < 4)
+//				free (setup[i].fract[frac_n]->clr[col_n]);
+//			free (setup[i].fract[frac_n]->clr);
+//			free (setup[i].fract[frac_n]);
+//		}
+//		free (setup[i].fract);
+//	}
+//}
 
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
 {
@@ -117,8 +115,21 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		return (ft_setup_alloc(setup));
 	else
 	{
-		while (++i < NUM_THREAD)
-		ft_setup_delete(setup, i);
+		//while (++i < NUM_THREAD)
+		ft_setup_delete_mlx_img(0, setup);
+		if (MAP)
+		{
+			ft_tabfree((void **)MAP->map_str);
+			ft_tabfree((void **)MAP->map);
+			free(MAP);
+		}
+		if (RAY)
+			free(RAY);
+		if (PLAY)
+			free(PLAY);
+		if (FD)
+			free(FD);
+		ft_tabfree((void **)SETUP.args);
 		//		while (i < NUM_THREAD + 1)
 		//		{
 		//			ft_setup_delete(i, setup);
@@ -128,6 +139,7 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		ft_putendl("program exited normally");
 		//		else
 		//			ft_error_usage();
+		while(42);
 		exit (0);
 	}
 }
