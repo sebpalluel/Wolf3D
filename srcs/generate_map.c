@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/03 19:51:14 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/03 20:06:07 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static void		ft_convertmap_to_str(t_setup *setup)
 {
 	int			width[2];
 	int			height;
+	char		*tmp;
 
 	height = -1;
 	while (++height < M_HEIGHT)
@@ -66,8 +67,9 @@ static void		ft_convertmap_to_str(t_setup *setup)
 		width[1] = 0;
 		while (++width[0] < M_WIDTH)
 		{
-			MAP->map_str[height][width[1]] = \
-				*ft_itoa(MAP->map[height][width[0]]);
+			tmp = ft_itoa(MAP->map[height][width[0]]);
+			MAP->map_str[height][width[1]] = *tmp;
+			free(tmp);
 			width[1]++;
 			MAP->map_str[height][width[1]] = ' ';
 			width[1]++;
