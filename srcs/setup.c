@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 16:13:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/03 16:59:26 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,70 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	return (OK);
 }
 
+static void		ft_setup_delete_mlx_img(size_t i, t_setup *setup)
+{
+	if (i == 0)
+	{
+		if (SKY)
+			ft_imgdel(SKY, MLX->mlx_ptr);
+		ft_mlxdelete(MLX, IMG);
+	}
+	else
+	{
+		if (setup[i].img)
+			free (setup[i].img);
+		if (setup[i].sky)
+			free (setup[i].sky);
+		if (setup[i].mlx)
+			free (setup[i].mlx);
+	}
+}
+
+//void		ft_setup_delete(t_setup *setup, int i)
+//{
+//	int			frac_n;
+//	int			col_n;
+//
+//	frac_n = -1;
+//	ft_setup_delete_mlx_img(i, setup);
+//	if (setup[i].fract)
+//	{
+//		while (++frac_n < FNUM)
+//		{
+//			col_n = -1;
+//			while (++col_n < 4)
+//				free (setup[i].fract[frac_n]->clr[col_n]);
+//			free (setup[i].fract[frac_n]->clr);
+//			free (setup[i].fract[frac_n]);
+//		}
+//		free (setup[i].fract);
+//	}
+//}
+
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
 {
-	size_t		i;
+	int			i;
 
-	i = 0;
+	i = -1;
 	if (mode)
 		return (ft_setup_alloc(setup));
 	else
 	{
+		//while (++i < NUM_THREAD)
+		ft_setup_delete_mlx_img(0, setup);
+		if (MAP)
+		{
+			ft_tabfree((void **)MAP->map_str);
+			ft_tabfree((void **)MAP->map);
+			free(MAP);
+		}
+		if (RAY)
+			free(RAY);
+		if (PLAY)
+			free(PLAY);
+		if (FD)
+			free(FD);
+		ft_tabfree((void **)SETUP.args);
 		//		while (i < NUM_THREAD + 1)
 		//		{
 		//			ft_setup_delete(i, setup);
@@ -83,6 +138,7 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		ft_putendl("program exited normally");
 		//		else
 		//			ft_error_usage();
+		while(42);
 		exit (0);
 	}
 }
