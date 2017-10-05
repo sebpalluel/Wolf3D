@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:20:22 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:04:51 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/05 12:50:46 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)
 		}
 	}
 	if (setup->key == ENTER && *str >= 1)
-	{
-		if (ft_atoi(str) < M_MIN_SIZE || ft_atoi(str) > M_MAX_SIZE)
-			return (ERROR);
 		*flag = 1;
-	}
 	return (OK);
 }
 
