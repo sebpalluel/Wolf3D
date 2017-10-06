@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/03 20:03:49 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/06 15:38:37 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,46 +65,25 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	return (OK);
 }
 
-static void		ft_setup_delete_mlx_img(size_t i, t_setup *setup)
+static void		ft_setup_delete(t_setup *setup)
 {
-	if (i == 0)
+	if (SKY)
+		ft_imgdel(SKY, MLX->mlx_ptr);
+	ft_mlxdelete(MLX, IMG);
+	if (MAP)
 	{
-		if (SKY)
-			ft_imgdel(SKY, MLX->mlx_ptr);
-		ft_mlxdelete(MLX, IMG);
+		ft_tabfree((void **)MAP->map_str);
+		ft_tabfree((void **)MAP->map);
+		free(MAP);
 	}
-	else
-	{
-		if (setup[i].img)
-			free (setup[i].img);
-		if (setup[i].sky)
-			free (setup[i].sky);
-		if (setup[i].mlx)
-			free (setup[i].mlx);
-	}
+	if (RAY)
+		free(RAY);
+	if (PLAY)
+		free(PLAY);
+	if (FD)
+		ft_fd_delete(FD);
+	free(setup);
 }
-
-
-//void		ft_setup_delete(t_setup *setup, int i)
-//{
-//	int			frac_n;
-//	int			col_n;
-//
-//	frac_n = -1;
-//	ft_setup_delete_mlx_img(i, setup);
-//	if (setup[i].fract)
-//	{
-//		while (++frac_n < FNUM)
-//		{
-//			col_n = -1;
-//			while (++col_n < 4)
-//				free (setup[i].fract[frac_n]->clr[col_n]);
-//			free (setup[i].fract[frac_n]->clr);
-//			free (setup[i].fract[frac_n]);
-//		}
-//		free (setup[i].fract);
-//	}
-//}
 
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
 {
@@ -115,29 +94,8 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 		return (ft_setup_alloc(setup));
 	else
 	{
-		//while (++i < NUM_THREAD)
-		ft_setup_delete_mlx_img(0, setup);
-		if (MAP)
-		{
-			ft_tabfree((void **)MAP->map_str);
-			ft_tabfree((void **)MAP->map);
-			free(MAP);
-		}
-		if (RAY)
-			free(RAY);
-		if (PLAY)
-			free(PLAY);
-		if (FD)
-			free(FD);
-		//		while (i < NUM_THREAD + 1)
-		//		{
-		//			ft_setup_delete(i, setup);
-		//			i++;
-		//		}
-		free(setup);
+		ft_setup_delete(setup);
 		ft_putendl("program exited normally");
-		//		else
-		//			ft_error_usage();
 		while(42);
 		exit (0);
 	}

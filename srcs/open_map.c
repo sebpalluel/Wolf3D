@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/03 19:50:13 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/06 15:44:27 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,21 @@ static size_t	ft_parse_row(t_setup *setup, char *map_str, int line)
 {
 	int			row;
 	int			row2;
+	char		*max_elem;
 
 	row = -1;
 	row2 = -1;
+	max_elem = ft_itoa(MAX_ELEM);
 	while (++row < M_WIDTH * 2 && ++row2 < M_WIDTH)
 	{
 		map_str[0] = MAP->map_str[line][row];
-		if (!(map_str[0] >= '0' && map_str[0] <= *ft_itoa(MAX_ELEM)) \
+		if (!(map_str[0] >= '0' && map_str[0] <= *max_elem) \
 				|| MAP->map_str[line][row + 1] != ' ')
 			return (ERROR);
 		MAP->map[line][row2] = ft_atoi(map_str);
 		row++;
 	}
+	free(max_elem);
 	return (OK);
 }
 
