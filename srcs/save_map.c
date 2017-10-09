@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:41 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:07:21 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/09 18:33:48 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,23 @@ static size_t	ft_write_to_file(t_setup *setup)
 {
 	int			err;
 	size_t		line;
+	size_t		mapdim[2];
 
 	err = 0;
 	line = 0;
+	mapdim[0] = M_HEIGHT;
+	mapdim[1] = M_WIDTH;
 	if (ft_open(FD, O_WRONLY, O_APPEND) != OK)
 		return (ERROR);
-	while (line < (size_t)M_HEIGHT)
+	while (line < mapdim[0])
 	{
-			err = write(FD->fd, MAP->map_str[line], M_WIDTH * 2 + 1);
-			if (err < 0)
-				return (ERROR);
-			line++;
+		err = write(FD->fd, MAP->map_str[line], mapdim[1] * 2 + 1);
+		if (err < 0)
+			return (ERROR);
+		line++;
 	}
-		SETUP.mode = STATE_RUN;
-		return (OK);
+	SETUP.mode = STATE_RUN;
+	return (OK);
 }
 
 static size_t	ft_save_file(t_setup *setup)
