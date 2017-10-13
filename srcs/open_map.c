@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 14:54:13 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 15:22:57 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ static size_t	ft_parse_map(t_setup *setup)
 
 	line = -1;
 	map_str = ft_strnew(1);
-	if (M_WIDTH < M_MIN_SIZE || M_WIDTH > M_MAX_SIZE ||\
-			M_HEIGHT < M_MIN_SIZE || M_HEIGHT > M_MAX_SIZE)
+	if (M_WIDTH > M_MAX_SIZE || M_HEIGHT < M_MIN_SIZE || M_HEIGHT > M_MAX_SIZE)
 		return (setup->error = MAP_ERROR);
 	if (!(MAP->map = ft_tabnewsize_t(M_WIDTH, M_HEIGHT)))
 		return (ERROR);
@@ -87,6 +86,8 @@ static size_t	ft_check_digit_or_space(char *str)
 	while (++c < len)
 		if (str[c] != ' ' && str[c] != '0' && str[c] != '1' && str[c] != '2')
 			return (ERROR);
+	if (len < M_MIN_SIZE * 2)
+		return (ERROR);
 	return(OK);
 }
 
@@ -97,10 +98,9 @@ size_t			ft_open_map(t_setup *setup)
 
 	height = -1;
 	ft_args_to_fd(setup);
-	if (ft_open(FD, O_RDONLY, O_APPEND) != OK)
+	if (ft_open(FD, O_RDONLY, O_APPEND) != OK || \
+			!(MAP->map_str = (char**)malloc(sizeof(char*) * M_MAX_SIZE)))
 		return (setup->error = FILE_ERROR);
-	if (!(MAP->map_str = (char**)malloc(sizeof(char*) * M_MAX_SIZE)))
-		return (ERROR);
 	while ((ret_gnl = get_next_line(FD->fd, &MAP->map_str[++height])))
 	{
 		if (height == 0)
@@ -108,7 +108,10 @@ size_t			ft_open_map(t_setup *setup)
 		if (ft_check_digit_or_space(MAP->map_str[height]) != OK ||\
 				M_WIDTH != (ft_strlen(MAP->map_str[height]) / 2) ||\
 				height > M_MAX_SIZE || ret_gnl == READ_ERR)
+		{
+			MAP->map_str[height] = NULL;
 			return (setup->error = MAP_ERROR);
+		}
 	}
 	MAP->map_str[height] = NULL;
 	M_HEIGHT = height;

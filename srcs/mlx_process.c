@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 13:49:09 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 15:18:33 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int			ft_loop_hook(t_setup *setup)
 	ft_imgclean(IMG, SETUP.width, SETUP.height);
 	if (SETUP.mode == STATE_OPEN)
 		ret = ft_open_map(setup);
-	if (SETUP.mode == STATE_DRAW)
+	if (ret == OK && SETUP.mode == STATE_DRAW)
 	{
 		ft_pos_player(setup);
 		ret = ft_ray_casting(setup);
