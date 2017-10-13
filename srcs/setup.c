@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 15:02:04 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 16:53:22 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	SETUP.height = HEIGHT;
 	MLX = ft_initwindow("wolf3d", SETUP.width, SETUP.height);
 	IMG = ft_imgnew(MLX->mlx_ptr, SETUP.width, SETUP.height);
-	SKY = ft_xmpnew(MLX->mlx_ptr, SKY_PATH, SETUP.width, SETUP.height);
+	SKY = ft_xmpnew(MLX->mlx_ptr, SKY_PATH_0, SETUP.width, SETUP.height);
 	MAP = (t_map *)ft_memalloc(sizeof(t_map));
 	FD = (t_fd *)ft_memalloc(sizeof(t_fd));
 	RAY = (t_ray_cast *)ft_memalloc(sizeof(t_ray_cast));

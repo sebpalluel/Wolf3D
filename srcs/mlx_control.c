@@ -6,13 +6,13 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 14:19:33 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 16:39:28 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 17:29:03 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 
-void			ft_mlx_control_key(t_setup *setup)
+void	ft_mlx_control_key(t_setup *setup)
 {
 	if (SETUP.key == UP)
 		SETUP.udlr[0] = 1;
@@ -30,9 +30,36 @@ void			ft_mlx_control_key(t_setup *setup)
 		MAP->skybox = !MAP->skybox ? 1 : 0;
 }
 
-void			ft_mlx_control(t_setup *setup)
+void	ft_sky_apply(t_setup *setup, char *path, int num)
 {
-	int			x;
+	if (SKY)
+		ft_imgdel(SKY, MLX->mlx_ptr);
+	SKY = ft_xmpnew(MLX->mlx_ptr, path, SETUP.width, SETUP.height);
+	SETUP.sky_num = num;
+}
+
+int		ft_sky_select(t_setup *setup)
+{
+	if (SETUP.key == ZERO && SETUP.sky_num != 0)
+		ft_sky_apply(setup, SKY_PATH_0, 0);
+	else if (SETUP.key == ONE && SETUP.sky_num != 1)
+		ft_sky_apply(setup, SKY_PATH_1, 1);
+	else if (SETUP.key == TWO && SETUP.sky_num != 2)
+		ft_sky_apply(setup, SKY_PATH_2, 2);
+	else if (SETUP.key == THREE && SETUP.sky_num != 3)
+		ft_sky_apply(setup, SKY_PATH_3, 3);
+	else if (SETUP.key == FOUR && SETUP.sky_num != 4)
+		ft_sky_apply(setup, SKY_PATH_4, 4);
+	else if (SETUP.key == FIVE && SETUP.sky_num != 5)
+		ft_sky_apply(setup, SKY_PATH_5, 5);
+	if (SKY != NULL)
+		return (OK);
+	return (ERROR);
+}
+
+void	ft_mlx_control(t_setup *setup)
+{
+	int	x;
 
 	x = S_WIDTH / 1.5;
 	if (!SETUP.ui)

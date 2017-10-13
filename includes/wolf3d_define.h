@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 11:48:49 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 16:52:46 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,12 @@
 # define MOVE_STEP		0.05
 # define ROT_STEP		0.1
 
-# define SKY_PATH		"textures/sky.xpm"
+# define SKY_PATH_0		"textures/sky.xpm"
+# define SKY_PATH_1		"textures/sky1.xpm"
+# define SKY_PATH_2		"textures/sky2.xpm"
+# define SKY_PATH_3		"textures/sky3.xpm"
+# define SKY_PATH_4		"textures/sky4.xpm"
+# define SKY_PATH_5		"textures/sky5.xpm"
 
 # define MAPG_STR		"MAP GENERATOR MODE"
 # define WIDTHG_STR		"TYPE WIDTH OF MAP [ >= 3 && <= 200] AND PRESS ENTER"

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 12:15:19 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 16:53:20 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct		s_setup
 	size_t			height;
 	size_t			ui;
 	size_t			mode;
+	size_t			sky_num;
 	int				ac;
 	int				error;
 	char			**args;
