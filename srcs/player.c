@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 15:27:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 18:09:25 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static size_t	ft_test_move(t_setup *setup)
 
 	if (SETUP.udlr[0])
 	{
-		pos.x = PLAY->pos.x + MOVE_STEP * PLAY->dir.x;
-		pos.y = PLAY->pos.y + MOVE_STEP * PLAY->dir.y;
+		pos.x = PLAY->pos.x + SETUP.move_step * PLAY->dir.x;
+		pos.y = PLAY->pos.y + SETUP.move_step * PLAY->dir.y;
 	}
 	if (SETUP.udlr[1])
 	{
-		pos.x = PLAY->pos.x - MOVE_STEP * PLAY->dir.x;
-		pos.y = PLAY->pos.y - MOVE_STEP * PLAY->dir.y;
+		pos.x = PLAY->pos.x - SETUP.move_step * PLAY->dir.x;
+		pos.y = PLAY->pos.y - SETUP.move_step * PLAY->dir.y;
 	}
 	if (pos.x < M_WIDTH && pos.y < M_HEIGHT && pos.x > 0 && pos.y > 0
 			&& MAP->map[pos.y][pos.x] != WALL)
@@ -49,22 +49,22 @@ static void		ft_turn_player(t_setup *setup, double prev_dirx, \
 		double prev_planex)
 {
 	if (SETUP.udlr[2])
-		ft_fish_eye_correct(setup, prev_dirx, prev_planex, ROT_STEP);
+		ft_fish_eye_correct(setup, prev_dirx, prev_planex, SETUP.rot_step);
 	if (SETUP.udlr[3])
-		ft_fish_eye_correct(setup, prev_dirx, prev_planex, -ROT_STEP);
+		ft_fish_eye_correct(setup, prev_dirx, prev_planex, -SETUP.rot_step);
 }
 
 static void		ft_move_player(t_setup *setup)
 {
 	if (SETUP.udlr[0] && ft_test_move(setup) == OK)
 	{
-		PLAY->pos.x += MOVE_STEP * PLAY->dir.x;
-		PLAY->pos.y += MOVE_STEP * PLAY->dir.y;
+		PLAY->pos.x += SETUP.move_step * PLAY->dir.x;
+		PLAY->pos.y += SETUP.move_step * PLAY->dir.y;
 	}
 	else if (SETUP.udlr[1] && ft_test_move(setup) == OK)
 	{
-		PLAY->pos.x -= MOVE_STEP * PLAY->dir.x;
-		PLAY->pos.y -= MOVE_STEP * PLAY->dir.y;
+		PLAY->pos.x -= SETUP.move_step * PLAY->dir.x;
+		PLAY->pos.y -= SETUP.move_step * PLAY->dir.y;
 	}
 	ft_turn_player(setup, PLAY->dir.x, PLAY->plane.x);
 }

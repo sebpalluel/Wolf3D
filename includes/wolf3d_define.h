@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 16:52:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 19:15:11 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,18 @@
 # define START_STR		"Wolf3d by psebasti"
 # define ENTER_STR		"Press ENTER to start"
 
-# define L_CONTROLS "         CONTROL "
-# define L_UP "|Forward    |  Up or W  |"
-# define L_DOWN "|Backward   | Down or S |"
-# define L_LEFT "|Turn Left  | Left or A |"
-# define L_RIGHT "|Turn Right | Right or D|"
-# define L_PLUS "|Speed Up   |     +     |"
-# define L_MINUS "|Slow Down  |     -     |"
-# define L_MAP "|Hide Map   |     M     |"
-# define L_HIDE "|Hide This  |     H     |"
-# define L_EASY "|Easy       |     1     |"
-# define L_MEDIUM "|Medium     |     2     |"
-# define L_HARD "|Hard       |     3     |"
-# define L_RESET "|Start Over |   Enter   |"
-# define L_LINE " -----------------------"
-# define L_ESC "|Quit Game  |    Esc    |"
+# define UP_STR			"Forward    :  Up"
+# define DOWN_STR		"Backward   :  Down"
+# define LEFT_STR		"Turn Left  :  Left"
+# define RIGHT_STR		"Turn Right :  Right"
+# define PLUS_STR		"Speed Up   :  +"
+# define MINUS_STR		"Slow Down  :  -"
+# define DRUNK_STR		"Drunk Mode :  D"
+# define MAP_STR		"Hide MAP   :  M"
+# define GUI_STR		"Hide GUI   :  G"
+# define SKY_STR		"Hide SKY   :  B"
+# define CHEAT_STR		"Hide CHEAT :  C"
+# define S_MODE_STR		"Change SKY :  1 2 3 4 5 6"
+# define ESC_STR		"Quit Game  :  Esc"
 
 #endif

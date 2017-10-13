@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 16:53:22 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 19:18:41 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static size_t	ft_setup_alloc(t_setup *setup)
 {
 	SETUP.width = WIDTH;
 	SETUP.height = HEIGHT;
+	SETUP.move_step = MOVE_STEP;
+	SETUP.rot_step = ROT_STEP;
 	MLX = ft_initwindow("wolf3d", SETUP.width, SETUP.height);
 	IMG = ft_imgnew(MLX->mlx_ptr, SETUP.width, SETUP.height);
 	SKY = ft_xmpnew(MLX->mlx_ptr, SKY_PATH_0, SETUP.width, SETUP.height);
@@ -57,7 +59,7 @@ static size_t	ft_setup_alloc(t_setup *setup)
 	ft_color(&MAP->south, 125, 125, 0);
 	ft_color(&MAP->east, 0, 125, 125);
 	ft_color(&MAP->west, 255, 125, 125);
-	ft_color(&MAP->ground, 125, 125, 125);
+	ft_color(&MAP->ground, 25, 25, 25);
 	ft_color(&MAP->sky, 255, 255, 255);
 	if (MLX == NULL || IMG == NULL || SKY == NULL || MAP == NULL || \
 			FD == NULL || RAY == NULL || PLAY == NULL)

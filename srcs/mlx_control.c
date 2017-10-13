@@ -6,11 +6,25 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 14:19:33 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 17:29:03 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 18:36:32 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
+
+void	ft_modify_speed(t_setup *setup)
+{
+	if (SETUP.key == EQUAL)
+	{
+		SETUP.rot_step += 0.05;
+		SETUP.move_step += 0.05;
+	}
+	if (SETUP.key == MINUS)
+	{
+		SETUP.rot_step -= 0.05;
+		SETUP.move_step -= 0.05;
+	}
+}
 
 void	ft_mlx_control_key(t_setup *setup)
 {
@@ -28,6 +42,11 @@ void	ft_mlx_control_key(t_setup *setup)
 		MAP->cheat = !MAP->cheat ? 1 : 0;
 	if (SETUP.key == B_KEY)
 		MAP->skybox = !MAP->skybox ? 1 : 0;
+	if (SETUP.key == D_KEY)
+		MAP->drunk_mode = !MAP->drunk_mode ? 1 : 0;
+	if (SETUP.key == M_KEY)
+		MAP->draw_map = !MAP->draw_map ? 1 : 0;
+	ft_modify_speed(setup);
 }
 
 void	ft_sky_apply(t_setup *setup, char *path, int num)
@@ -62,21 +81,17 @@ void	ft_mlx_control(t_setup *setup)
 	int	x;
 
 	x = S_WIDTH / 1.5;
-	if (!SETUP.ui)
-	{
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 16, 0xccccff, L_CONTROLS);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 32, 0xccccff, L_UP);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 48, 0xccccff, L_DOWN);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 64, 0xccccff, L_LEFT);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 80, 0xccccff, L_RIGHT);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 96, 0xccccff, L_PLUS);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 112, 0xccccff, L_MINUS);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 128, 0xccccff, L_MAP);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 144, 0xccccff, L_HIDE);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 160, 0xccccff, L_EASY);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 176, 0xccccff, L_MEDIUM);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 192, 0xccccff, L_HARD);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 208, 0xccccff, L_RESET);
-		mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 224, 0xccccff, L_ESC);
-	}
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 16, 0xffccff, UP_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 32, 0xffccff, DOWN_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 48, 0xffccff, LEFT_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 64, 0xffccff, RIGHT_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 80, 0xccffff, PLUS_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 96, 0xccffff, MINUS_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 112, 0xccffee, DRUNK_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 128, 0xccccff, MAP_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 144, 0xccccff, GUI_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 160, 0xccccff, SKY_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 176, 0xccccff, CHEAT_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 192, 0xffffff, S_MODE_STR);
+	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, x, 208, 0xFFcccc, ESC_STR);
 }

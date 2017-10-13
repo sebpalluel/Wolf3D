@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:09:10 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 11:30:18 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 19:31:49 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int				main(int ac, char **av)
 	setup->mode = STATE_START;
 	setup->ac = ac;
 	setup->args = av;
+	setup->midalpha = (int)ft_stoul("c0000000", 16);
+	setup->alpha = (int)ft_stoul("0A000000", 16);
 	if ((setup->error = (ac < 3) ? OK : ERROR) == OK \
 			&& ft_setup_mode(setup, 1) == OK)
 		ft_mlx_process(setup);
