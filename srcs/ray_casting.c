@@ -6,30 +6,30 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/20 17:18:38 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/11 16:30:25 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 
-static t_color	*ft_select_color(t_setup *setup)
-{
-	if (RAY->side)
-	{
-		if (RAY->dir.y > 0)
-			return (&MAP->west);
-		else
-			return (&MAP->east);
-	}
-	else if (!RAY->side)
-	{
-		if (RAY->dir.x > 0)
-			return (&MAP->south);
-		else
-			return (&MAP->north);
-	}
-	return (&MAP->ground);
-}
+//static t_color	*ft_select_color(t_setup *setup)
+//{
+//	if (RAY->side)
+//	{
+//		if (RAY->dir.y > 0)
+//			return (&MAP->west);
+//		else
+//			return (&MAP->east);
+//	}
+//	else if (!RAY->side)
+//	{
+//		if (RAY->dir.x > 0)
+//			return (&MAP->south);
+//		else
+//			return (&MAP->north);
+//	}
+//	return (&MAP->ground);
+//}
 
 void			ft_draw_vert_line(t_setup *setup, int posx, int len)
 {
@@ -46,12 +46,13 @@ void			ft_draw_vert_line(t_setup *setup, int posx, int len)
 		end = S_HEIGHT - 1;
 	while (++posy < start)
 		if (MAP->skybox)
-			ft_put_pixel(setup, posx, posy, 0xC00000A0);
+			ft_put_pixel(setup, posx, posy, 0xa0000000);
 		else
 			ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
 	posy--;
 	while (++posy < end)
-		ft_put_pixel(setup, posx, posy, ft_colortohex(ft_select_color(setup)));
+		//ft_put_pixel(setup, posx, posy, ft_colortohex(ft_select_color(setup)));
+		ft_put_pixel(setup, posx, posy, 0xa0000000);
 	posy--;
 	while (++posy < (int)S_HEIGHT)
 		ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->ground));

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/05 13:41:00 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 11:48:49 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@
 # define STATE_OPEN		4
 # define STATE_DRAW		5
 
+# define DIM_ERROR_S	"error: width or height >200 || < 3"
+# define MAP_ERROR_S	"error: map is not in the correct format"
+# define FILE_ERROR_S	"error: file doesn't exist or don't have the rights"
+# define MAP_ERROR		-1
+# define DIM_ERROR		-2
+# define FILE_ERROR		-3
+
 # define SETUP			setup[0]
 # define S_WIDTH		setup[0].width
 # define S_HEIGHT		setup[0].height
@@ -47,7 +54,6 @@
 # define MAX_ELEM		2
 # define M_MIN_SIZE		3
 # define M_MAX_SIZE		200
-
 
 # define GO_DOWN		0
 # define GO_lEFT		1

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/06 15:49:08 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 12:16:55 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int				ft_setup_menu(t_setup *setup)
 			SETUP.height / 8, 0x009999FF, WIDTHG_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, SETUP.width / 50, \
 			SETUP.height / 5, 0x009999FF, HEIGHTG_STR);
-	if (ft_configure_dim(setup) == ERROR)
-		return (ERROR);
+	if (ft_configure_dim(setup) != OK)
+		return (setup->error = DIM_ERROR);
 	if (MAP->dim_t[1] && ft_generate_map(setup) == ERROR)
 		return (ERROR);
 	return (OK);
@@ -67,22 +67,25 @@ static size_t	ft_setup_alloc(t_setup *setup)
 
 static void		ft_setup_delete(t_setup *setup)
 {
-	if (SKY)
-		ft_imgdel(SKY, MLX->mlx_ptr);
-	ft_mlxdelete(MLX, IMG);
-	if (MAP)
+	if (setup)
 	{
-		ft_tabfree((void **)MAP->map_str);
-		ft_tabfree((void **)MAP->map);
-		free(MAP);
+		if (SKY)
+			ft_imgdel(SKY, MLX->mlx_ptr);
+		ft_mlxdelete(MLX, IMG);
+		if (MAP)
+		{
+			ft_tabfree((void **)MAP->map_str);
+			ft_tabfree((void **)MAP->map);
+			free(MAP);
+		}
+		if (RAY)
+			free(RAY);
+		if (PLAY)
+			free(PLAY);
+		if (FD)
+			ft_fd_delete(FD);
+		free(setup);
 	}
-	if (RAY)
-		free(RAY);
-	if (PLAY)
-		free(PLAY);
-	if (FD)
-		ft_fd_delete(FD);
-	free(setup);
 }
 
 size_t			ft_setup_mode(t_setup *setup, size_t mode)
@@ -91,12 +94,12 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 
 	i = -1;
 	if (mode)
-		return (ft_setup_alloc(setup));
+		return(ft_setup_alloc(setup));
 	else
 	{
+		usage(setup->error);
 		ft_setup_delete(setup);
-		ft_putendl("program exited normally");
 		while(42);
-		exit (0);
+		exit(0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/09 17:36:44 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 14:55:51 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,20 @@ static void		ft_move_player(t_setup *setup)
 void			ft_pos_player(t_setup *setup)
 {
 	t_vec3		pos;
+	size_t		elem;
 
 	if (!PLAY->randpos)
 	{
 		ft_memset(&pos, 0, sizeof(t_vec3));
-		while (MAP->map[(int)pos.y][(int)pos.x] != PATH_)
-		{
-			pos.x = ft_random(1, M_HEIGHT - 1, 1);
-			pos.y = ft_random(1, M_WIDTH - 1, 1);
-		}
+		elem = (MAP->has_path) ? PATH_ : EMPTY;
+		if (M_WIDTH == 3 && M_HEIGHT == 3)
+			ft_vec3populate(&pos, 1, 1, 0);
+		else
+			while (MAP->map[(int)pos.y][(int)pos.x] != elem)
+			{
+				pos.y = ft_random(1, M_HEIGHT - 1, 1);
+				pos.x = ft_random(1, M_WIDTH - 1, 1);
+			}
 		ft_vec3cpy(&pos, &PLAY->pos);
 		ft_vec3populate(&PLAY->dir, -1., 0., 0.0);
 		ft_vec3populate(&PLAY->plane, 0., 0.6, 0.0);

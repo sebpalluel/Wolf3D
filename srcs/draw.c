@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 22:17:13 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/12 16:39:00 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/11 14:21:30 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 void			ft_put_pixel(t_setup *setup, int x, int y, int color)
 {
 	int			*tmp;
+	size_t		index;
 
-	if (y >= (int)S_HEIGHT || x >= (int)S_WIDTH || x < 0 || y < 0)
+	if (y >= (int)setup->height || x >= (int)setup->width || x < 0 || y < 0)
 		return ;
-	tmp = (int *)&IMG->image_addr[(y * IMG->size_x) + (x * (IMG->bbp / 8))];
+	index = (y * setup->width) * (IMG->bbp >> 3) \
+			+ x * (IMG->bbp >> 3);
+	tmp = (int *)&IMG->image_addr[index];
 	*tmp = color;
 }
 

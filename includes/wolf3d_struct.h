@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/06 14:57:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/13 12:15:19 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct		s_map
 	size_t			name_i;
 	size_t			cheat;
 	size_t			skybox;
+	size_t			has_path;
 	int				draw_tick;
 	int				mapsize[2];
 	t_color			north;
@@ -74,6 +75,7 @@ typedef struct		s_setup
 	size_t			ui;
 	size_t			mode;
 	int				ac;
+	int				error;
 	char			**args;
 	int				key;
 	size_t			udlr[4];
