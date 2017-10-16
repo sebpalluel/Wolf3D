@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:17:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/09/07 19:06:00 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 14:00:11 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_path_maker_down(t_setup *setup)
 		else if (PATH.to_find.x > 1 && PATH.to_find.x < M_WIDTH - 2)
 			PATH.rand_dir = ft_random(0, 2, 1);
 		else if (PATH.to_find.x > 1 && PATH.lrdu[0] != 1)
-			PATH.rand_dir = GO_lEFT;
+			PATH.rand_dir = GO_LEFT;
 		else if (PATH.to_find.x < M_WIDTH - 2 && PATH.lrdu[1] != 1)
 			PATH.rand_dir = GO_RIGHT;
 		else if (PATH.rand_dir == 666)
