@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 14:19:33 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 18:36:32 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 12:57:03 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ void	ft_sky_apply(t_setup *setup, char *path, int num)
 
 int		ft_sky_select(t_setup *setup)
 {
-	if (SETUP.key == ZERO && SETUP.sky_num != 0)
-		ft_sky_apply(setup, SKY_PATH_0, 0);
-	else if (SETUP.key == ONE && SETUP.sky_num != 1)
+	if (SETUP.key == ONE && SETUP.sky_num != 1)
 		ft_sky_apply(setup, SKY_PATH_1, 1);
 	else if (SETUP.key == TWO && SETUP.sky_num != 2)
 		ft_sky_apply(setup, SKY_PATH_2, 2);
@@ -71,6 +69,8 @@ int		ft_sky_select(t_setup *setup)
 		ft_sky_apply(setup, SKY_PATH_4, 4);
 	else if (SETUP.key == FIVE && SETUP.sky_num != 5)
 		ft_sky_apply(setup, SKY_PATH_5, 5);
+	else if (SETUP.key == SIX && SETUP.sky_num != 0)
+		ft_sky_apply(setup, SKY_PATH_0, 0);
 	if (SKY != NULL)
 		return (OK);
 	return (ERROR);

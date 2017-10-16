@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 18:39:58 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 12:39:27 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int			ft_loop_hook(t_setup *setup)
 		if (MAP->skybox)
 			mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, SKY->image, 0, 0);
 		mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
-		ft_mlx_control(setup);
+		if (!SETUP.ui)
+			ft_mlx_control(setup);
 	}
 	if (ret != OK)
 		ft_setup_mode(&SETUP, 0);
@@ -51,8 +52,7 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 			SETUP.mode = STATE_DRAW;
 	if (SETUP.key == ESC || ret != OK)
 		ft_setup_mode(&SETUP, 0);
-	if (!SETUP.ui)
-		ft_mlx_control_key(&SETUP);
+	ft_mlx_control_key(&SETUP);
 	ft_sky_select(&SETUP);
 	mlx_do_sync(MLX->mlx_ptr);
 	return (0);
