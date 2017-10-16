@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 19:18:41 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:48:18 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,11 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 
 	i = -1;
 	if (mode)
-		return(ft_setup_alloc(setup));
+		return (ft_setup_alloc(setup));
 	else
 	{
 		usage(setup->error);
 		ft_setup_delete(setup);
-		while(42);
 		exit(0);
 	}
 }

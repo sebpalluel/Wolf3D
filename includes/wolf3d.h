@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:18 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 17:25:02 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:42:29 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,8 @@ size_t		ft_ray_casting(t_setup *setup);
 void		ft_mlx_control(t_setup *setup);
 void		ft_mlx_control_key(t_setup *setup);
 int			ft_sky_select(t_setup *setup);
+int			ft_quit(t_setup *setup);
+int			ft_select_color(t_setup *setup);
+int			ft_give_color(t_setup *setup, t_color *color, int alpha);
+
 #endif

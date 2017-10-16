@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/09/12 16:12:32 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/10/16 13:43:12 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -25,6 +25,7 @@ SRC 		=	srcs/wolf3d.c \
 				srcs/draw.c \
 				srcs/ray_casting.c \
 				srcs/player.c \
+				srcs/color.c \
 
 EXT			=	Makefile
 

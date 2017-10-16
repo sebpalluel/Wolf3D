@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 19:26:49 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:51:12 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ typedef struct		s_pathmaker
 	size_t			is_full;
 	size_t			rand_dir;
 	size_t			lrdu[4];
-}
-					t_pathmaker;
+}					t_pathmaker;
 
 typedef struct		s_player
 {
@@ -70,7 +69,7 @@ typedef struct		s_map
 	char			**map_str;
 }					t_map;
 
-typedef struct		s_setup 
+typedef struct		s_setup
 {
 	size_t			width;
 	size_t			height;

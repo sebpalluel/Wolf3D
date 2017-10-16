@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 20:06:31 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 18:09:25 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:46:38 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static size_t	ft_test_move(t_setup *setup)
 	return (ERROR);
 }
 
-static void		ft_fish_eye_correct(t_setup *setup, double	prev_dirx, \
+static void		ft_fish_eye_correct(t_setup *setup, double prev_dirx, \
 		double prev_planex, double rot_step)
 {
 	PLAY->dir.x = prev_dirx * cos(rot_step)

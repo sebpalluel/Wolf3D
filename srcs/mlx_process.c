@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 12:39:27 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:44:53 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int			ft_loop_hook(t_setup *setup)
 		if (!MAP->draw_map)
 			ft_draw_map(setup);
 		if (MAP->skybox)
-			mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, SKY->image, 0, 0);
+			mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, \
+					SKY->image, 0, 0);
 		mlx_put_image_to_window(MLX->mlx_ptr, MLX->win_ptr, IMG->image, 0, 0);
 		if (!SETUP.ui)
 			ft_mlx_control(setup);
@@ -51,7 +52,7 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 		if (ft_save_map(setup) == OK)
 			SETUP.mode = STATE_DRAW;
 	if (SETUP.key == ESC || ret != OK)
-		ft_setup_mode(&SETUP, 0);
+		ft_quit(setup);
 	ft_mlx_control_key(&SETUP);
 	ft_sky_select(&SETUP);
 	mlx_do_sync(MLX->mlx_ptr);
@@ -71,12 +72,19 @@ static int	ft_key_release(int keycode, t_setup *setup)
 	return (0);
 }
 
+int			ft_quit(t_setup *setup)
+{
+	ft_setup_mode(&SETUP, 0);
+	return (0);
+}
+
 void		ft_mlx_process(t_setup *setup)
 {
 	if (SETUP.mode == STATE_START)
 		ft_start(setup);
 	mlx_hook(MLX->win_ptr, KEYPRESS, KEYPRESSMASK, ft_key_hook, setup);
 	mlx_hook(MLX->win_ptr, KEYRELEASE, KEYRELEASEMASK, ft_key_release, setup);
+	mlx_hook(MLX->win_ptr, DESTROYNOTIFY, STRUCTURENOTIFYMASK, ft_quit, setup);
 	mlx_loop_hook(MLX->mlx_ptr, ft_loop_hook, setup);
 	mlx_loop(MLX->mlx_ptr);
 }

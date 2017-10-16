@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 15:22:57 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:45:29 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,13 @@ static size_t	ft_check_digit_or_space(char *str)
 			return (ERROR);
 	if (len < M_MIN_SIZE * 2)
 		return (ERROR);
-	return(OK);
+	return (OK);
 }
 
 size_t			ft_open_map(t_setup *setup)
 {
 	int			ret_gnl;
-	int 		height;
+	int			height;
 
 	height = -1;
 	ft_args_to_fd(setup);

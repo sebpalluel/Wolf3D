@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:52:43 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/03 16:57:45 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:51:28 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_godown(t_setup *setup)
 {
 	if (PATH.to_find.y + 1 != PATH.pos.y)
 	{
-		PATH.to_find.y++;;
+		PATH.to_find.y++;
 		if (MAP->map[PATH.to_find.y][PATH.to_find.x] == WALL)
 		{
 			PATH.is_full = IS_FULL;
@@ -30,7 +30,7 @@ static void	ft_goup(t_setup *setup)
 {
 	if (PATH.to_find.y - 1 != PATH.pos.y)
 	{
-		PATH.to_find.y--;;
+		PATH.to_find.y--;
 		if (MAP->map[PATH.to_find.y][PATH.to_find.x] == WALL)
 		{
 			PATH.is_full = IS_FULL;
@@ -74,7 +74,7 @@ void		ft_path_maker_dir(t_setup *setup)
 		ft_godown(setup);
 	else if (PATH.rand_dir == GO_UP)
 		ft_goup(setup);
-	else if (PATH.rand_dir == GO_lEFT)
+	else if (PATH.rand_dir == GO_LEFT)
 		ft_goleft(setup);
 	else if (PATH.rand_dir == GO_RIGHT)
 		ft_goright(setup);

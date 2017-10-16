@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:31:26 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 12:54:51 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 13:50:19 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@
 # define M_MAX_SIZE		200
 
 # define GO_DOWN		0
-# define GO_lEFT		1
+# define GO_LEFT		1
 # define GO_RIGHT		2
 # define GO_UP			3
 # define IS_FULL		0
