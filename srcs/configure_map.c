@@ -6,11 +6,12 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:20:22 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 16:59:46 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 19:11:37 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
+#include <stdio.h>
 
 static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)
 {
@@ -37,6 +38,7 @@ static int		ft_dim_input(t_setup *setup, size_t w_flag)
 		if (MAP->dim_t[w_flag])
 		{
 			MAP->mapsize[w_flag] = ft_atoi(MAP->dim[w_flag]);
+			printf("%d\n",MAP->mapsize[w_flag]);
 			if (MAP->mapsize[w_flag] < M_MIN_SIZE || MAP->mapsize[w_flag] >\
 					M_MAX_SIZE)
 				return (ERROR);

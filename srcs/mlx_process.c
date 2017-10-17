@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 16:57:31 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 19:14:18 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 		if (MAP->name_i >= 665)
 			ret = ERROR;
 	}
-	ret = ft_sky_select(&SETUP);
+	if (ft_sky_select(&SETUP) != OK)
+		ret = ERROR;
 	if (SETUP.key == ESC || ret != OK || !SKY)
 		ft_quit(setup);
 	ft_mlx_control_key(&SETUP);
