@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 13:44:53 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 16:50:12 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 	if (SETUP.mode == STATE_SAVE)
 		if (ft_save_map(setup) == OK)
 			SETUP.mode = STATE_DRAW;
+	ret = ft_sky_select(&SETUP);
 	if (SETUP.key == ESC || ret != OK)
 		ft_quit(setup);
 	ft_mlx_control_key(&SETUP);
-	ft_sky_select(&SETUP);
 	mlx_do_sync(MLX->mlx_ptr);
 	return (0);
 }
