@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 22:17:13 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 18:21:59 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 16:16:22 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,31 @@ void			ft_draw_map(t_setup *setup)
 		while (++j < M_HEIGHT)
 			ft_select_map_coord(setup, i, j);
 	}
+}
+
+void			ft_draw_vert_line(t_setup *setup, int posx, int len)
+{
+	int			posy;
+	int			highest;
+	int			lowest;
+
+	highest = -len / 2 + S_HEIGHT / 2;
+	lowest = len / 2 + S_HEIGHT / 2;
+	posy = -1;
+	if (highest < 0)
+		highest = 0;
+	if (lowest >= (int)S_HEIGHT)
+		lowest = S_HEIGHT - 1;
+	while (++posy < highest)
+		if (MAP->skybox)
+			ft_put_pixel(setup, posx, posy, 0xa0000000);
+		else
+			ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
+	posy--;
+	while (++posy < lowest)
+		ft_put_pixel(setup, posx, posy, ft_select_color(setup));
+	posy--;
+	while (++posy < (int)S_HEIGHT)
+		ft_put_pixel(setup, posx, posy, \
+				ft_give_color(setup, &MAP->ground, setup->alpha));
 }

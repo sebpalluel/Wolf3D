@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 16:50:12 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 16:57:31 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int			ft_loop_hook(t_setup *setup)
 	if (ret == OK && SETUP.mode == STATE_DRAW)
 	{
 		ft_pos_player(setup);
-		ret = ft_ray_casting(setup);
+		if ((ret = ft_ray_casting(setup)) == ERROR)
+			SETUP.error = MAP_ERROR;
 		if (!MAP->draw_map)
 			ft_draw_map(setup);
 		if (MAP->skybox)
@@ -49,10 +50,14 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 	if (SETUP.mode == STATE_GEN)
 		ret = ft_setup_menu(setup);
 	if (SETUP.mode == STATE_SAVE)
+	{
 		if (ft_save_map(setup) == OK)
 			SETUP.mode = STATE_DRAW;
+		if (MAP->name_i >= 665)
+			ret = ERROR;
+	}
 	ret = ft_sky_select(&SETUP);
-	if (SETUP.key == ESC || ret != OK)
+	if (SETUP.key == ESC || ret != OK || !SKY)
 		ft_quit(setup);
 	ft_mlx_control_key(&SETUP);
 	mlx_do_sync(MLX->mlx_ptr);

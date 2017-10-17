@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/10/16 13:59:29 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/10/16 14:57:12 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -33,9 +33,9 @@ OBJ			=	$(SRC:.c=.o)
 
 CMP			=	gcc
 
-FLAGS		=	-ggdb -Wall -Wextra -Werror -lpthread
+FLAGS		=	-Wall -Wextra -Werror -lpthread
 
-LIB_DIR		=	-L libs/libft/ -L minilibx/
+LIB_DIR		=	-L libft/ -L minilibx/
 LIBS		=	-lft -lmlx -framework OpenGL -framework AppKit
 
 all : lib $(NAME)
@@ -46,7 +46,7 @@ $(NAME) : $(OBJ) $(EXT)
 
 lib :
 	@echo "compiling libft..."
-	@make -C libs/libft/ --no-print-directory
+	@make -C libft/ --no-print-directory
 	@echo "libft compiled"
 	@echo "compiling mlx..."
 	@make -C minilibx/ --no-print-directory
@@ -55,7 +55,7 @@ lib :
 clean :
 	@rm -f $(OBJ)
 	@echo "cleaning libft..."
-	@make -C libs/libft/ clean --no-print-directory
+	@make -C libft/ clean --no-print-directory
 	@echo "cleaning mlx..."
 	@make -C minilibx/ clean --no-print-directory
 	@echo "clean done"
@@ -63,7 +63,7 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 	@echo "full cleaning libft..."
-	@make -C libs/libft/ fclean --no-print-directory
+	@make -C libft/ fclean --no-print-directory
 	@echo "fclean done"
 
 re : fclean all

@@ -6,40 +6,13 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 18:56:37 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 12:13:20 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 16:28:00 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 
-void			ft_draw_vert_line(t_setup *setup, int posx, int len)
-{
-	int			posy;
-	int			start;
-	int			end;
-
-	start = -len / 2 + S_HEIGHT / 2;
-	end = len / 2 + S_HEIGHT / 2;
-	posy = -1;
-	if (start < 0)
-		start = 0;
-	if (end >= (int)S_HEIGHT)
-		end = S_HEIGHT - 1;
-	while (++posy < start)
-		if (MAP->skybox)
-			ft_put_pixel(setup, posx, posy, 0xa0000000);
-		else
-			ft_put_pixel(setup, posx, posy, ft_colortohex(&MAP->sky));
-	posy--;
-	while (++posy < end)
-		ft_put_pixel(setup, posx, posy, ft_select_color(setup));
-	posy--;
-	while (++posy < (int)S_HEIGHT)
-		ft_put_pixel(setup, posx, posy, \
-				ft_give_color(setup, &MAP->ground, setup->alpha));
-}
-
-static void		ft_ray_hit(t_setup *setup)
+static int		ft_ray_cast(t_setup *setup)
 {
 	if (RAY->sidedist.x < RAY->sidedist.y)
 	{
@@ -55,66 +28,77 @@ static void		ft_ray_hit(t_setup *setup)
 	}
 	if (MAP->map[RAY->map.y][RAY->map.x] == WALL)
 		RAY->hit = 1;
+	if ((RAY->map.y >= M_HEIGHT - 1 || RAY->map.x >= M_WIDTH - 1) && !RAY->hit)
+		return (ERROR);
+	return (OK);
 }
 
 static void		ft_ray_dir(t_setup *setup)
 {
-	if (RAY->dir.x < 0)
+	if (RAY->dir.x < 0.)
 	{
 		RAY->step.x = -1;
-		RAY->sidedist.x = (RAY->pos.x - (double)RAY->map.x) * RAY->deltadist.x;
+		RAY->sidedist.x = (PLAY->pos.x - (double)RAY->map.x) * RAY->deltadist.x;
 	}
 	else
 	{
 		RAY->step.x = 1;
-		RAY->sidedist.x = ((double)RAY->map.x + 1 - RAY->pos.x) * \
+		RAY->sidedist.x = ((double)RAY->map.x + 1 - PLAY->pos.x) * \
 						RAY->deltadist.x;
 	}
-	if (RAY->dir.y < 0)
+	if (RAY->dir.y < 0.)
 	{
 		RAY->step.y = -1;
-		RAY->sidedist.y = (RAY->pos.y - (double)RAY->map.y) * RAY->deltadist.y;
+		RAY->sidedist.y = (PLAY->pos.y - (double)RAY->map.y) * RAY->deltadist.y;
 	}
 	else
 	{
 		RAY->step.y = 1;
-		RAY->sidedist.y = ((double)RAY->map.y + 1 - RAY->pos.y) * \
+		RAY->sidedist.y = ((double)RAY->map.y + 1 - PLAY->pos.y) * \
 						RAY->deltadist.y;
 	}
 	RAY->hit = 0;
 }
 
-static void		ft_ray_casting_pos(t_setup *setup, double xi)
+static void		ft_ray_casting_init(t_setup *setup, double angle_inc)
 {
-	ft_vec3cpy(&PLAY->pos, &RAY->pos);
-	RAY->dir.x = PLAY->dir.x + PLAY->plane.x * xi;
-	RAY->dir.y = PLAY->dir.y + PLAY->plane.y * xi;
+	RAY->dir.x = PLAY->dir.x + PLAY->plane.x * angle_inc;
+	RAY->dir.y = PLAY->dir.y + PLAY->plane.y * angle_inc;
 	RAY->deltadist.x = sqrt(1 + (pow(RAY->dir.y, 2) / pow(RAY->dir.x, 2)));
 	RAY->deltadist.y = sqrt(1 + (pow(RAY->dir.x, 2) / pow(RAY->dir.y, 2)));
-	RAY->map.x = (int)RAY->pos.x;
-	RAY->map.y = (int)RAY->pos.y;
+	RAY->map.x = (int)PLAY->pos.x;
+	RAY->map.y = (int)PLAY->pos.y;
+}
+
+static double	ft_ray_size(t_setup *setup)
+{
+	double ret;
+
+	if (!RAY->side)
+		ret = (RAY->map.x - PLAY->pos.x + (1 - RAY->step.x) / 2.) / RAY->dir.x;
+	else
+		ret = (RAY->map.y - PLAY->pos.y + (1 - RAY->step.y) / 2.) / RAY->dir.y;
+	return (ret);
 }
 
 size_t			ft_ray_casting(t_setup *setup)
 {
 	int			posx;
-	double		xi;
+	double		angle_inc;
+	int			lineheight;
 
 	posx = -1;
 	while (++posx < (int)S_WIDTH)
 	{
-		xi = 2 * (double)posx / (double)S_WIDTH - 1;
-		ft_ray_casting_pos(setup, xi);
+		angle_inc = 2 * (double)posx / (double)S_WIDTH - 1;
+		ft_ray_casting_init(setup, angle_inc);
 		ft_ray_dir(setup);
 		while (!(RAY->hit))
-			ft_ray_hit(setup);
-		if (!RAY->side)
-			RAY->size = (RAY->map.x - RAY->pos.x + (1 - RAY->step.x) / 2) / \
-						RAY->dir.x;
-		else
-			RAY->size = (RAY->map.y - RAY->pos.y + (1 - RAY->step.y) / 2) / \
-						RAY->dir.y;
-		ft_draw_vert_line(setup, posx, (int)((S_HEIGHT / RAY->size)));
+			if (ft_ray_cast(setup) == ERROR)
+				return (ERROR);
+		RAY->size = ft_ray_size(setup);
+		lineheight = S_HEIGHT / RAY->size;
+		ft_draw_vert_line(setup, posx, lineheight);
 	}
 	return (OK);
 }

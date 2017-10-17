@@ -6,14 +6,14 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:18 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 13:42:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 18:46:51 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WOLF3D_H
 # define WOLF3D_H
 
-# include "../libs/libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # include "../includes/wolf3d_struct.h"
 # include "../includes/wolf3d_define.h"
 # include <stdio.h>
@@ -45,5 +45,6 @@ int			ft_sky_select(t_setup *setup);
 int			ft_quit(t_setup *setup);
 int			ft_select_color(t_setup *setup);
 int			ft_give_color(t_setup *setup, t_color *color, int alpha);
+void		ft_draw_vert_line(t_setup *setup, int posx, int len);
 
 #endif

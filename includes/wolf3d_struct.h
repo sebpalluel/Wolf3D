@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 13:51:12 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 12:29:34 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct		s_ray
 	t_vec3			sidedist;
 	t_vec3			deltadist;
 	t_vec3			dir;
-	t_vec3			pos;
 	t_pix			map;
 	t_pix			step;
 }					t_ray_cast;

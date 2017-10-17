@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 13:45:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/17 16:33:42 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ static size_t	ft_parse_row(t_setup *setup, char *map_str, int line)
 		map_str[0] = MAP->map_str[line][row];
 		if (!(map_str[0] >= '0' && map_str[0] <= *max_elem) \
 				|| MAP->map_str[line][row + 1] != ' ')
+			return (ERROR);
+		if ((line == 0 || line == M_HEIGHT - 1 || row == 0 || \
+					row == M_WIDTH * 2 - 1) && map_str[0] != '1')
 			return (ERROR);
 		MAP->map[line][row2] = ft_atoi(map_str);
 		if (MAP->map[line][row2] == PATH_)

@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 13:48:18 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/16 16:45:04 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void			ft_start(t_setup *setup)
 	xy[0] = SETUP.width / 2 - SETUP.width / 14;
 	xy[1] = SETUP.height / 2 - SETUP.height / 10;
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, xy[0], xy[1], \
-			0x00FFFFFF, START_STR);
+			0xFFFFFF, START_STR);
 	mlx_string_put(MLX->mlx_ptr, MLX->win_ptr, xy[0], xy[1] + 30, \
-			0x00FFFFFF, ENTER_STR);
+			0xFFFFFF, ENTER_STR);
 }
 
 static size_t	ft_setup_alloc(t_setup *setup)
