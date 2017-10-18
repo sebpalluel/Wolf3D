@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 14:19:33 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 16:56:20 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/18 12:22:37 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void		ft_modify_speed(t_setup *setup)
 {
-	if (SETUP.key == EQUAL)
+	if (SETUP.key == EQUAL && SETUP.move_step <= 0.8)
 	{
 		SETUP.rot_step += 0.05;
 		SETUP.move_step += 0.05;
 	}
-	if (SETUP.key == MINUS)
+	if (SETUP.key == MINUS && SETUP.move_step >= 0.1)
 	{
 		SETUP.rot_step -= 0.05;
 		SETUP.move_step -= 0.05;
