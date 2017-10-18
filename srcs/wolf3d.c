@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:09:10 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/16 16:38:10 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/18 14:24:09 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int				main(int ac, char **av)
 
 	if (!(setup = (t_setup *)malloc(sizeof(t_setup) * (NUM_THREAD + 1))))
 		return (-1);
-	ft_bzero(setup, sizeof(t_setup) * (NUM_THREAD + 1));
+	ft_memset(setup, 0, sizeof(t_setup));
 	setup->mode = STATE_START;
 	setup->ac = ac;
 	setup->args = av;
