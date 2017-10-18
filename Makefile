@@ -6,7 +6,7 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/10/16 14:57:12 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/10/18 13:30:41 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -33,15 +33,23 @@ OBJ			=	$(SRC:.c=.o)
 
 CMP			=	gcc
 
-FLAGS		=	-Wall -Wextra -Werror -lpthread
+DEBUG		=	-g3 -fsanitize=address
+
+FLAGS		=	-Wall -Wextra -Werror -lpthread 
 
 LIB_DIR		=	-L libft/ -L minilibx/
 LIBS		=	-lft -lmlx -framework OpenGL -framework AppKit
 
-all : lib $(NAME)
+all : lib $(NAME) compil
 
 $(NAME) : $(OBJ) $(EXT)
+
+compil :
 	@$(CMP) $(FLAGS) -o $(NAME) $(SRC) $(LIB_DIR) $(LIBS)
+	@echo "wolf3d compiled"
+
+debug_compil :
+	@$(CMP) $(FLAGS) $(DEBUG) -o $(NAME) $(SRC) $(LIB_DIR) $(LIBS)
 	@echo "wolf3d compiled"
 
 lib :
@@ -53,8 +61,9 @@ lib :
 	@echo "mlx compiled"
 
 clean :
+	@echo "cleaning objects..."
 	@rm -f $(OBJ)
-	@echo "cleaning libft..."
+	@rm -rf $(NAME).dSYM
 	@make -C libft/ clean --no-print-directory
 	@echo "cleaning mlx..."
 	@make -C minilibx/ clean --no-print-directory
@@ -67,5 +76,7 @@ fclean : clean
 	@echo "fclean done"
 
 re : fclean all
+
+debug : lib $(NAME) debug_compil
 
 .PHONY: $(NAME) all clean fclean re
