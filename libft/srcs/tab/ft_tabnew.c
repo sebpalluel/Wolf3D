@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 20:09:13 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/04 17:22:31 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/18 13:43:06 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ size_t	**ft_tabnewsize_t(size_t width, size_t height)
 	while (tab && i < height)
 	{
 		tab[i] = (size_t *)ft_memalloc(sizeof(size_t) * width);
+		ft_bzero(tab[i], sizeof(size_t) * width);
 		i++;
 	}
 	tab[height] = NULL;

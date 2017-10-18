@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/13 13:30:55 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/18 13:46:31 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void		ft_convertmap_to_str(t_setup *setup)
 		width[1] = 0;
 		while (++width[0] < M_WIDTH)
 		{
-			if (MAP->map[height][width[1]] == PATH_)
+			if (MAP->map_str[height][width[1]] == PATH_)
 				MAP->has_path = 1;
 			tmp = ft_itoa(MAP->map[height][width[0]]);
 			MAP->map_str[height][width[1]] = *tmp;
