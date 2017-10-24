@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 17:58:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/24 18:13:49 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/24 22:25:05 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,13 @@ static void		ft_setup_delete(t_setup *setup)
 		ft_mlxdelete(MLX, IMG);
 		if (MAP)
 		{
-			ft_tabfree((void **)MAP->map_str);
+			if (MAP->map_str && !SETUP.oneline)
+				ft_tabfree((void **)MAP->map_str);
+			if (SETUP.oneline)
+			{
+				free(MAP->map_str[0]);
+				free(MAP->map_str);
+			}
 			ft_tabfree((void **)MAP->map);
 			free(MAP);
 		}
@@ -86,7 +92,6 @@ static void		ft_setup_delete(t_setup *setup)
 			free(PLAY);
 		if (FD)
 			ft_fd_delete(FD);
-		free(setup);
 	}
 }
 
@@ -101,6 +106,7 @@ size_t			ft_setup_mode(t_setup *setup, size_t mode)
 	{
 		usage(setup->error);
 		ft_setup_delete(setup);
+		free(setup);
 		exit(0);
 	}
 }

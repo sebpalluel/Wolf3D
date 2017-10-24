@@ -308,7 +308,7 @@ font_fshader	minilibx/mlx_int.h	/^  GLuint	font_fshader;$/;"	m	struct:glsl_info_
 font_program	minilibx/mlx_int.h	/^  GLuint	font_program;$/;"	m	struct:glsl_info_s
 font_vshader	minilibx/mlx_int.h	/^  GLuint	font_vshader;$/;"	m	struct:glsl_info_s
 ft_abs	libft/srcs/math/ft_abs.c	/^int		ft_abs(int a)$/;"	f
-ft_args_to_fd	srcs/open_map.c	/^static size_t	ft_args_to_fd(t_setup *setup)$/;"	f	file:
+ft_args_to_fd	srcs/wolf3d.c	/^size_t			ft_args_to_fd(t_setup *setup)$/;"	f
 ft_atoi	libft/srcs/stdlib/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
 ft_bzero	libft/srcs/mem/ft_bzero.c	/^void		ft_bzero(void *s, size_t n)$/;"	f
 ft_bzerotab	libft/srcs/mem/ft_bzerotab.c	/^void		ft_bzerotab(void **tab)$/;"	f
@@ -421,6 +421,7 @@ ft_open	libft/srcs/fd/ft_open.c	/^size_t		ft_open(t_fd *fd, int flags, int right
 ft_open_map	srcs/open_map.c	/^size_t			ft_open_map(t_setup *setup)$/;"	f
 ft_parse_map	srcs/open_map.c	/^static size_t	ft_parse_map(t_setup *setup)$/;"	f	file:
 ft_parse_row	srcs/open_map.c	/^static size_t	ft_parse_row(t_setup *setup, char *map_str, int line)$/;"	f	file:
+ft_parsingerror	srcs/open_map.c	/^int				ft_parsingerror(t_setup *setup, int *height, int ret_gnl)$/;"	f
 ft_path_down_or_right	srcs/path_maker.c	/^static void		ft_path_down_or_right(t_setup *setup, size_t mode)$/;"	f	file:
 ft_path_maker	srcs/path_maker.c	/^void			ft_path_maker(t_setup *setup)$/;"	f
 ft_path_maker_dir	srcs/path_maker_dir.c	/^void		ft_path_maker_dir(t_setup *setup)$/;"	f
@@ -618,6 +619,7 @@ next	minilibx/mlx_int.h	/^  struct mlx_img_ctx_s	*next;$/;"	m	struct:mlx_img_ctx
 next	minilibx/mlx_int.h	/^  struct mlx_img_list_s	*next;$/;"	m	struct:mlx_img_list_s	typeref:struct:mlx_img_list_s::mlx_img_list_s
 next	minilibx/mlx_int.h	/^  struct mlx_win_list_s	*next;$/;"	m	struct:mlx_win_list_s	typeref:struct:mlx_win_list_s::mlx_win_list_s
 north	includes/wolf3d_struct.h	/^	t_color			north;$/;"	m	struct:s_map
+oneline	includes/wolf3d_struct.h	/^	size_t			oneline;$/;"	m	struct:s_setup
 path	includes/wolf3d_struct.h	/^	t_pathmaker		path;$/;"	m	struct:s_map
 path	libft/includes/libft_struct.h	/^	char			*path;$/;"	m	struct:s_fd
 pixel_data	minilibx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon1	file:

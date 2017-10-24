@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:32:54 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 12:29:34 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/24 20:27:14 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct		s_setup
 	int				error;
 	int				alpha;
 	int				midalpha;
+	size_t			oneline;
 	char			**args;
 	int				key;
 	size_t			udlr[4];

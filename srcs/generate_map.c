@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/23 15:28:52 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/18 13:46:31 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/24 21:25:04 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static void		ft_random_map(t_setup *setup)
 		if (height > 0 && (height < M_HEIGHT - 2) && ft_random(0, 1, 1) == 1)
 			ft_check_if_all_one(setup, height);
 	}
+	if (M_WIDTH == 4 && M_HEIGHT == 4)
+		MAP->map[2][2] = 0;
 }
 
 static void		ft_convertmap_to_str(t_setup *setup)

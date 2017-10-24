@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:25:18 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 17:25:29 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/24 20:45:52 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "../includes/wolf3d_define.h"
 
 int			usage(int mode);
+size_t		ft_args_to_fd(t_setup *setup);
 size_t		ft_setup_mode(t_setup *setup, size_t mode);
 int			ft_setup_menu(t_setup *setup);
 int			ft_save_map(t_setup *setup);
