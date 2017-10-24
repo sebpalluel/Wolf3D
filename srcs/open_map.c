@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/17 16:33:42 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/10/24 19:10:54 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static size_t	ft_check_digit_or_space(char *str)
 	int			len;
 
 	c = -1;
-	len = ft_strlen(str);
+	len = *str ? ft_strlen(str) : 0;
 	while (++c < len)
 		if (str[c] != ' ' && str[c] != '0' && str[c] != '1' && str[c] != '2')
 			return (ERROR);

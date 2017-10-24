@@ -1,0 +1,706 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AMP	includes/wolf3d_define.h	/^# define AMP	/;"	d
+ANSI_BLACK	libft/includes/libft_define.h	/^# define ANSI_BLACK	/;"	d
+ANSI_BLINK	libft/includes/libft_define.h	/^# define ANSI_BLINK	/;"	d
+ANSI_BLUE	libft/includes/libft_define.h	/^# define ANSI_BLUE	/;"	d
+ANSI_BOLD	libft/includes/libft_define.h	/^# define ANSI_BOLD	/;"	d
+ANSI_CYAN	libft/includes/libft_define.h	/^# define ANSI_CYAN	/;"	d
+ANSI_DARK_GRAY	libft/includes/libft_define.h	/^# define ANSI_DARK_GRAY	/;"	d
+ANSI_GREEN	libft/includes/libft_define.h	/^# define ANSI_GREEN	/;"	d
+ANSI_LIGHT_BLUE	libft/includes/libft_define.h	/^# define ANSI_LIGHT_BLUE	/;"	d
+ANSI_LIGHT_CYAN	libft/includes/libft_define.h	/^# define ANSI_LIGHT_CYAN	/;"	d
+ANSI_LIGHT_GRAY	libft/includes/libft_define.h	/^# define ANSI_LIGHT_GRAY	/;"	d
+ANSI_LIGHT_GREEN	libft/includes/libft_define.h	/^# define ANSI_LIGHT_GREEN	/;"	d
+ANSI_LIGHT_MAGENTA	libft/includes/libft_define.h	/^# define ANSI_LIGHT_MAGENTA	/;"	d
+ANSI_LIGHT_RED	libft/includes/libft_define.h	/^# define ANSI_LIGHT_RED	/;"	d
+ANSI_LIGHT_YELLOW	libft/includes/libft_define.h	/^# define ANSI_LIGHT_YELLOW	/;"	d
+ANSI_MAGENTA	libft/includes/libft_define.h	/^# define ANSI_MAGENTA	/;"	d
+ANSI_MATRIX	libft/includes/libft_define.h	/^# define ANSI_MATRIX	/;"	d
+ANSI_RED	libft/includes/libft_define.h	/^# define ANSI_RED	/;"	d
+ANSI_RESET	libft/includes/libft_define.h	/^# define ANSI_RESET	/;"	d
+ANSI_UNDERLINED	libft/includes/libft_define.h	/^# define ANSI_UNDERLINED	/;"	d
+ANSI_WHITE	libft/includes/libft_define.h	/^# define ANSI_WHITE	/;"	d
+ANSI_YELLOW	libft/includes/libft_define.h	/^# define ANSI_YELLOW	/;"	d
+A_KEY	libft/includes/libft_define.h	/^# define A_KEY	/;"	d
+BUFF_SIZE	libft/includes/libft_define.h	/^# define BUFF_SIZE /;"	d
+BUTTON1MOTIONMASK	libft/includes/libft_define.h	/^# define BUTTON1MOTIONMASK	/;"	d
+BUTTON2MOTIONMASK	libft/includes/libft_define.h	/^# define BUTTON2MOTIONMASK	/;"	d
+BUTTON3MOTIONMASK	libft/includes/libft_define.h	/^# define BUTTON3MOTIONMASK	/;"	d
+BUTTON4MOTIONMASK	libft/includes/libft_define.h	/^# define BUTTON4MOTIONMASK	/;"	d
+BUTTON5MOTIONMASK	libft/includes/libft_define.h	/^# define BUTTON5MOTIONMASK	/;"	d
+BUTTONMOTIONMASK	libft/includes/libft_define.h	/^# define BUTTONMOTIONMASK	/;"	d
+BUTTONPRESS	libft/includes/libft_define.h	/^# define BUTTONPRESS	/;"	d
+BUTTONPRESSMASK	libft/includes/libft_define.h	/^# define BUTTONPRESSMASK	/;"	d
+BUTTONRELEASE	libft/includes/libft_define.h	/^# define BUTTONRELEASE	/;"	d
+BUTTONRELEASEMASK	libft/includes/libft_define.h	/^# define BUTTONRELEASEMASK	/;"	d
+B_KEY	libft/includes/libft_define.h	/^# define B_KEY	/;"	d
+CAM	includes/wolf3d_define.h	/^# define CAM	/;"	d
+CHEAT_STR	includes/wolf3d_define.h	/^# define CHEAT_STR	/;"	d
+CMP	Makefile	/^CMP			=	gcc$/;"	m
+CMP	libft/Makefile	/^CMP		=	gcc$/;"	m
+COLORMAPCHANGEMASK	libft/includes/libft_define.h	/^# define COLORMAPCHANGEMASK	/;"	d
+CTRL	libft/includes/libft_define.h	/^# define CTRL	/;"	d
+CTYPEPATH	libft/Makefile	/^CTYPEPATH = ctype\/$/;"	m
+C_KEY	libft/includes/libft_define.h	/^# define C_KEY	/;"	d
+DEBC	Makefile	/^DEBC		=	\\033[36m$/;"	m
+DEBC	libft/Makefile	/^DEBC		=	\\033[36m$/;"	m
+DEBUG_F	Makefile	/^DEBUG_F		=	-g3 -fsanitize=address$/;"	m
+DEBUG_F	libft/Makefile	/^DEBUG_F	=	-g3 -fsanitize=address$/;"	m
+DESTROYNOTIFY	libft/includes/libft_define.h	/^# define DESTROYNOTIFY	/;"	d
+DIM_ERROR	includes/wolf3d_define.h	/^# define DIM_ERROR	/;"	d
+DIM_ERROR_S	includes/wolf3d_define.h	/^# define DIM_ERROR_S	/;"	d
+DOT_KEY	libft/includes/libft_define.h	/^# define DOT_KEY	/;"	d
+DOWN	libft/includes/libft_define.h	/^# define DOWN	/;"	d
+DOWN_STR	includes/wolf3d_define.h	/^# define DOWN_STR	/;"	d
+DRUNK_STR	includes/wolf3d_define.h	/^# define DRUNK_STR	/;"	d
+D_KEY	libft/includes/libft_define.h	/^# define D_KEY	/;"	d
+EIGHT	libft/includes/libft_define.h	/^# define EIGHT	/;"	d
+EMPTY	includes/wolf3d_define.h	/^# define EMPTY	/;"	d
+ENTER	libft/includes/libft_define.h	/^# define ENTER	/;"	d
+ENTERWINDOWMASK	libft/includes/libft_define.h	/^# define ENTERWINDOWMASK	/;"	d
+ENTER_STR	includes/wolf3d_define.h	/^# define ENTER_STR	/;"	d
+EQUAL	libft/includes/libft_define.h	/^# define EQUAL	/;"	d
+ERC	Makefile	/^ERC			=	\\033[31m$/;"	m
+ERC	libft/Makefile	/^ERC			=	\\033[31m$/;"	m
+ERROR	includes/wolf3d_define.h	/^# define ERROR	/;"	d
+ERROR	libft/includes/libft_define.h	/^# define ERROR	/;"	d
+ESC	libft/includes/libft_define.h	/^# define ESC	/;"	d
+ESC_STR	includes/wolf3d_define.h	/^# define ESC_STR	/;"	d
+EXPOSE	libft/includes/libft_define.h	/^# define EXPOSE	/;"	d
+EXPOSUREMASK	libft/includes/libft_define.h	/^# define EXPOSUREMASK	/;"	d
+EXT	Makefile	/^EXT			=	Makefile$/;"	m
+EXT	libft/Makefile	/^EXT		=	Makefile$/;"	m
+E_KEY	libft/includes/libft_define.h	/^# define E_KEY	/;"	d
+FD	includes/wolf3d_define.h	/^# define FD	/;"	d
+FDPATH	libft/Makefile	/^FDPATH = fd\/$/;"	m
+FD_MAX	libft/includes/libft_define.h	/^# define FD_MAX	/;"	d
+FILE_ERROR	includes/wolf3d_define.h	/^# define FILE_ERROR	/;"	d
+FILE_ERROR_S	includes/wolf3d_define.h	/^# define FILE_ERROR_S	/;"	d
+FIVE	libft/includes/libft_define.h	/^# define FIVE	/;"	d
+FLAGS	Makefile	/^FLAGS		=	-Wall -Wextra -Werror $/;"	m
+FLAGS	libft/Makefile	/^FLAGS	=	-Wall -Wextra -Werror$/;"	m
+FOCUSCHANGEMASK	libft/includes/libft_define.h	/^# define FOCUSCHANGEMASK	/;"	d
+FONT_HEIGHT	minilibx/mlx_int.h	/^#define	FONT_HEIGHT	/;"	d
+FONT_WIDTH	minilibx/mlx_int.h	/^#define FONT_WIDTH	/;"	d
+FOUR	libft/includes/libft_define.h	/^# define FOUR	/;"	d
+F_KEY	libft/includes/libft_define.h	/^# define F_KEY	/;"	d
+GFXPATH	libft/Makefile	/^GFXPATH = gfx\/$/;"	m
+GO_DOWN	includes/wolf3d_define.h	/^# define GO_DOWN	/;"	d
+GO_LEFT	includes/wolf3d_define.h	/^# define GO_LEFT	/;"	d
+GO_RIGHT	includes/wolf3d_define.h	/^# define GO_RIGHT	/;"	d
+GO_UP	includes/wolf3d_define.h	/^# define GO_UP	/;"	d
+GUI_STR	includes/wolf3d_define.h	/^# define GUI_STR	/;"	d
+G_KEY	libft/includes/libft_define.h	/^# define G_KEY	/;"	d
+HEIGHT	includes/wolf3d_define.h	/^# define HEIGHT	/;"	d
+HEIGHTG_STR	includes/wolf3d_define.h	/^# define HEIGHTG_STR	/;"	d
+H_KEY	libft/includes/libft_define.h	/^# define H_KEY	/;"	d
+IMG	includes/wolf3d_define.h	/^# define IMG	/;"	d
+INC	Makefile	/^INC		= 	$(addprefix -I,$(INCDIR),$(INCNAME))$/;"	m
+INCDIR	Makefile	/^INCDIR		=	.\/includes\/$/;"	m
+INCDIR	libft/Makefile	/^INCDIR = .\/includes$/;"	m
+INCNAME	Makefile	/^INCNAME		=	wolf3d.h \\$/;"	m
+INCS	libft/Makefile	/^INCS = $(addprefix -I, $(INCS_DIRS))$/;"	m
+INCS_DIRS	libft/Makefile	/^INCS_DIRS = $(addsuffix \/, $(INCDIR))$/;"	m
+INTPATH	libft/Makefile	/^INTPATH = int\/$/;"	m
+IS_FULL	includes/wolf3d_define.h	/^# define IS_FULL	/;"	d
+I_KEY	libft/includes/libft_define.h	/^# define I_KEY	/;"	d
+J_KEY	libft/includes/libft_define.h	/^# define J_KEY	/;"	d
+KEYMAPSTATEMASK	libft/includes/libft_define.h	/^# define KEYMAPSTATEMASK	/;"	d
+KEYPRESS	libft/includes/libft_define.h	/^# define KEYPRESS	/;"	d
+KEYPRESSMASK	libft/includes/libft_define.h	/^# define KEYPRESSMASK	/;"	d
+KEYRELEASE	libft/includes/libft_define.h	/^# define KEYRELEASE	/;"	d
+KEYRELEASEMASK	libft/includes/libft_define.h	/^# define KEYRELEASEMASK	/;"	d
+K_KEY	libft/includes/libft_define.h	/^# define K_KEY	/;"	d
+LEAVEWINDOWMASK	libft/includes/libft_define.h	/^# define LEAVEWINDOWMASK	/;"	d
+LEFT	libft/includes/libft_define.h	/^# define LEFT	/;"	d
+LEFT_STR	includes/wolf3d_define.h	/^# define LEFT_STR	/;"	d
+LFTDIR	Makefile	/^LFTDIR		=	.\/libft\/$/;"	m
+LIBFT_DEFINE_H	libft/includes/libft_define.h	/^# define LIBFT_DEFINE_H$/;"	d
+LIBFT_H	libft/includes/libft.h	/^# define LIBFT_H$/;"	d
+LIBFT_STRUCT_H	libft/includes/libft_struct.h	/^# define LIBFT_STRUCT_H$/;"	d
+LIBS	Makefile	/^LIBS		=	-lft -lmlx -framework OpenGL -framework AppKit$/;"	m
+LISTPATH	libft/Makefile	/^LISTPATH = list\/$/;"	m
+L_KEY	libft/includes/libft_define.h	/^# define L_KEY	/;"	d
+MAP	includes/wolf3d_define.h	/^# define MAP	/;"	d
+MAPG_STR	includes/wolf3d_define.h	/^# define MAPG_STR	/;"	d
+MAP_ERROR	includes/wolf3d_define.h	/^# define MAP_ERROR	/;"	d
+MAP_ERROR_S	includes/wolf3d_define.h	/^# define MAP_ERROR_S	/;"	d
+MAP_STR	includes/wolf3d_define.h	/^# define MAP_STR	/;"	d
+MATHPATH	libft/Makefile	/^MATHPATH = math\/$/;"	m
+MAX_ELEM	includes/wolf3d_define.h	/^# define MAX_ELEM	/;"	d
+MAX_EVENT	minilibx/mlx_int.h	/^#define	MAX_EVENT	/;"	d
+MAX_INT	libft/includes/libft_define.h	/^# define MAX_INT	/;"	d
+MAX_INT_DECIMAL	libft/includes/libft_define.h	/^# define MAX_INT_DECIMAL	/;"	d
+MAX_PIXEL_NB	minilibx/mlx_int.h	/^#define MAX_PIXEL_NB	/;"	d
+MEMPATH	libft/Makefile	/^MEMPATH = mem\/$/;"	m
+MINUS	libft/includes/libft_define.h	/^# define MINUS	/;"	d
+MINUS_STR	includes/wolf3d_define.h	/^# define MINUS_STR	/;"	d
+MIN_INT	libft/includes/libft_define.h	/^# define MIN_INT	/;"	d
+MLX	includes/wolf3d_define.h	/^# define MLX	/;"	d
+MLXDIR	Makefile	/^MLXDIR		=	.\/minilibx\/$/;"	m
+MLX_H	minilibx/mlx.h	/^#define	MLX_H$/;"	d
+MOUSE_LEFT	libft/includes/libft_define.h	/^# define MOUSE_LEFT	/;"	d
+MOUSE_RIGHT	libft/includes/libft_define.h	/^# define MOUSE_RIGHT	/;"	d
+MOUSE_SIDE	libft/includes/libft_define.h	/^# define MOUSE_SIDE	/;"	d
+MOVE_STEP	includes/wolf3d_define.h	/^# define MOVE_STEP	/;"	d
+M_DEPTH	includes/wolf3d_define.h	/^# define M_DEPTH	/;"	d
+M_HEIGHT	includes/wolf3d_define.h	/^# define M_HEIGHT	/;"	d
+M_KEY	libft/includes/libft_define.h	/^# define M_KEY	/;"	d
+M_MAX_SIZE	includes/wolf3d_define.h	/^# define M_MAX_SIZE	/;"	d
+M_MIN_SIZE	includes/wolf3d_define.h	/^# define M_MIN_SIZE	/;"	d
+M_WIDTH	includes/wolf3d_define.h	/^# define M_WIDTH	/;"	d
+NAME	Makefile	/^NAME		=	wolf3d$/;"	m
+NAME	libft/Makefile	/^NAME	=	libft.a$/;"	m
+NAME_STR	includes/wolf3d_define.h	/^# define NAME_STR	/;"	d
+NINE	libft/includes/libft_define.h	/^# define NINE	/;"	d
+NOC	Makefile	/^NOC			=	\\033[0m$/;"	m
+NOC	libft/Makefile	/^NOC			=	\\033[0m$/;"	m
+NOEVENTMASK	libft/includes/libft_define.h	/^# define NOEVENTMASK	/;"	d
+NOM	minilibx/Makefile	/^NOM=libmlx.a$/;"	m
+NOTIFY	libft/includes/libft_define.h	/^# define NOTIFY	/;"	d
+NUM_THREAD	includes/wolf3d_define.h	/^# define NUM_THREAD	/;"	d
+N_KEY	libft/includes/libft_define.h	/^# define N_KEY	/;"	d
+OBJ	Makefile	/^OBJ		= 	$(addprefix $(OBJDIR),$(OBJNAME))$/;"	m
+OBJ	minilibx/Makefile	/^OBJ=$(OBJ1:.m=.o)$/;"	m
+OBJ1	minilibx/Makefile	/^OBJ1=$(SRC:.c=.o)$/;"	m
+OBJDIR	Makefile	/^OBJDIR		=	.\/obj\/$/;"	m
+OBJDIR	libft/Makefile	/^OBJDIR = .\/objs\/$/;"	m
+OBJNAME	Makefile	/^OBJNAME		=	$(SRCNAME:.c=.o)$/;"	m
+OBJS	libft/Makefile	/^OBJS 	=	$(SRCS:.c=.o)$/;"	m
+OBJS	libft/Makefile	/^OBJS = $(addprefix $(OBJDIR), $(addsuffix .o, $(basename $(SRC))))$/;"	m
+OBJS_DIRS	libft/Makefile	/^OBJS_DIRS = $(sort $(dir $(OBJS)))$/;"	m
+OK	includes/wolf3d_define.h	/^# define OK	/;"	d
+OK	libft/includes/libft_define.h	/^# define OK	/;"	d
+OKC	Makefile	/^OKC			=	\\033[32m$/;"	m
+OKC	libft/Makefile	/^OKC			=	\\033[32m$/;"	m
+ONE	libft/includes/libft_define.h	/^# define ONE	/;"	d
+OWNERGRABBUTTONMASK	libft/includes/libft_define.h	/^# define OWNERGRABBUTTONMASK	/;"	d
+O_KEY	libft/includes/libft_define.h	/^# define O_KEY	/;"	d
+PATH	includes/wolf3d_define.h	/^# define PATH	/;"	d
+PATH_	includes/wolf3d_define.h	/^# define PATH_	/;"	d
+PERSOPATH	libft/Makefile	/^PERSOPATH = perso\/$/;"	m
+PLAY	includes/wolf3d_define.h	/^# define PLAY	/;"	d
+PLUS_STR	includes/wolf3d_define.h	/^# define PLUS_STR	/;"	d
+POINTERMOTIONHINTMASK	libft/includes/libft_define.h	/^# define POINTERMOTIONHINTMASK	/;"	d
+POINTERMOTIONMASK	libft/includes/libft_define.h	/^# define POINTERMOTIONMASK	/;"	d
+PRINTPATH	libft/Makefile	/^PRINTPATH = print\/$/;"	m
+PROPERTYCHANGEMASK	libft/includes/libft_define.h	/^# define PROPERTYCHANGEMASK	/;"	d
+PUTPATH	libft/Makefile	/^PUTPATH = put\/$/;"	m
+P_KEY	libft/includes/libft_define.h	/^# define P_KEY	/;"	d
+Q_KEY	libft/includes/libft_define.h	/^# define Q_KEY	/;"	d
+RANDPATH	libft/Makefile	/^RANDPATH = rand\/$/;"	m
+RAY	includes/wolf3d_define.h	/^# define RAY	/;"	d
+READ_EOF	libft/includes/libft_define.h	/^# define READ_EOF	/;"	d
+READ_ERR	libft/includes/libft_define.h	/^# define READ_ERR	/;"	d
+READ_OK	libft/includes/libft_define.h	/^# define READ_OK	/;"	d
+RESIZEREDIRECTMASK	libft/includes/libft_define.h	/^# define RESIZEREDIRECTMASK	/;"	d
+RETURN	minilibx/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
+RIGHT	libft/includes/libft_define.h	/^# define RIGHT	/;"	d
+RIGHT_STR	includes/wolf3d_define.h	/^# define RIGHT_STR	/;"	d
+ROT_STEP	includes/wolf3d_define.h	/^# define ROT_STEP	/;"	d
+R_KEY	libft/includes/libft_define.h	/^# define R_KEY	/;"	d
+SAVE_STR	includes/wolf3d_define.h	/^# define SAVE_STR	/;"	d
+SETUP	includes/wolf3d_define.h	/^# define SETUP	/;"	d
+SEVEN	libft/includes/libft_define.h	/^# define SEVEN	/;"	d
+SIX	libft/includes/libft_define.h	/^# define SIX	/;"	d
+SKY	includes/wolf3d_define.h	/^# define SKY	/;"	d
+SKY_PATH_0	includes/wolf3d_define.h	/^# define SKY_PATH_0	/;"	d
+SKY_PATH_1	includes/wolf3d_define.h	/^# define SKY_PATH_1	/;"	d
+SKY_PATH_2	includes/wolf3d_define.h	/^# define SKY_PATH_2	/;"	d
+SKY_PATH_3	includes/wolf3d_define.h	/^# define SKY_PATH_3	/;"	d
+SKY_PATH_4	includes/wolf3d_define.h	/^# define SKY_PATH_4	/;"	d
+SKY_PATH_5	includes/wolf3d_define.h	/^# define SKY_PATH_5	/;"	d
+SKY_STR	includes/wolf3d_define.h	/^# define SKY_STR	/;"	d
+SLASH	libft/includes/libft_define.h	/^# define SLASH	/;"	d
+SLASH_KEY	libft/includes/libft_define.h	/^# define SLASH_KEY	/;"	d
+SRC	Makefile	/^SRC		= 	$(addprefix $(SRCDIR),$(SRCNAME))$/;"	m
+SRC	libft/Makefile	/^SRC		=	$(MEMPATH)ft_memset.c\\$/;"	m
+SRC	libft/Makefile	/^SRC := $(filter $(addprefix %, .c), $(SRC))$/;"	m
+SRC	minilibx/Makefile	/^SRC= mlx_shaders.c mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_xpm.c mlx_int_str_to_wordtab.c$/;"	m
+SRCDIR	Makefile	/^SRCDIR		=	.\/srcs\/$/;"	m
+SRCDIR	libft/Makefile	/^SRCDIR = .\/srcs\/$/;"	m
+SRCNAME	Makefile	/^SRCNAME 	=	wolf3d.c \\$/;"	m
+SRCS	libft/Makefile	/^SRCS = $(addprefix $(SRCDIR), $(SRC))$/;"	m
+STAR	libft/includes/libft_define.h	/^# define STAR	/;"	d
+START_STR	includes/wolf3d_define.h	/^# define START_STR	/;"	d
+STATE_DRAW	includes/wolf3d_define.h	/^# define STATE_DRAW	/;"	d
+STATE_GEN	includes/wolf3d_define.h	/^# define STATE_GEN	/;"	d
+STATE_OPEN	includes/wolf3d_define.h	/^# define STATE_OPEN	/;"	d
+STATE_RUN	includes/wolf3d_define.h	/^# define STATE_RUN	/;"	d
+STATE_SAVE	includes/wolf3d_define.h	/^# define STATE_SAVE	/;"	d
+STATE_START	includes/wolf3d_define.h	/^# define STATE_START	/;"	d
+STDLIBPATH	libft/Makefile	/^STDLIBPATH = stdlib\/$/;"	m
+STRPATH	libft/Makefile	/^STRPATH = str\/$/;"	m
+STRUCTURENOTIFYMASK	libft/includes/libft_define.h	/^# define STRUCTURENOTIFYMASK	/;"	d
+SUBSTRUCTURENOTIFYMASK	libft/includes/libft_define.h	/^# define SUBSTRUCTURENOTIFYMASK	/;"	d
+SUBSTRUCTUREREDIRECTMASK	libft/includes/libft_define.h	/^# define SUBSTRUCTUREREDIRECTMASK	/;"	d
+S_HEIGHT	includes/wolf3d_define.h	/^# define S_HEIGHT	/;"	d
+S_KEY	libft/includes/libft_define.h	/^# define S_KEY	/;"	d
+S_MODE_STR	includes/wolf3d_define.h	/^# define S_MODE_STR	/;"	d
+S_WIDTH	includes/wolf3d_define.h	/^# define S_WIDTH	/;"	d
+TABPATH	libft/Makefile	/^TABPATH = tab\/$/;"	m
+THREE	libft/includes/libft_define.h	/^# define THREE	/;"	d
+TWO	libft/includes/libft_define.h	/^# define TWO	/;"	d
+T_KEY	libft/includes/libft_define.h	/^# define T_KEY	/;"	d
+UNIQ_BPP	minilibx/mlx_int.h	/^#define UNIQ_BPP	/;"	d
+UP	libft/includes/libft_define.h	/^# define UP	/;"	d
+UP_STR	includes/wolf3d_define.h	/^# define UP_STR	/;"	d
+U_KEY	libft/includes/libft_define.h	/^# define U_KEY	/;"	d
+VISIBILITYCHANGEMASK	libft/includes/libft_define.h	/^# define VISIBILITYCHANGEMASK	/;"	d
+V_KEY	libft/includes/libft_define.h	/^# define V_KEY	/;"	d
+WAC	Makefile	/^WAC			=	\\033[33m$/;"	m
+WAC	libft/Makefile	/^WAC			=	\\033[33m$/;"	m
+WALL	includes/wolf3d_define.h	/^# define WALL	/;"	d
+WHEEL_DOWN	libft/includes/libft_define.h	/^# define WHEEL_DOWN	/;"	d
+WHEEL_UP	libft/includes/libft_define.h	/^# define WHEEL_UP	/;"	d
+WIDTH	includes/wolf3d_define.h	/^# define WIDTH	/;"	d
+WIDTHG_STR	includes/wolf3d_define.h	/^# define WIDTHG_STR	/;"	d
+WOLF3D_DEFINE_H	includes/wolf3d_define.h	/^# define WOLF3D_DEFINE_H$/;"	d
+WOLF3D_H	includes/wolf3d.h	/^# define WOLF3D_H$/;"	d
+WOLF3D_STRUCT_H	includes/wolf3d_struct.h	/^# define WOLF3D_STRUCT_H$/;"	d
+W_KEY	libft/includes/libft_define.h	/^# define W_KEY	/;"	d
+X_KEY	libft/includes/libft_define.h	/^# define X_KEY	/;"	d
+YESORNO_STR	includes/wolf3d_define.h	/^# define YESORNO_STR	/;"	d
+Y_KEY	libft/includes/libft_define.h	/^# define Y_KEY	/;"	d
+ZERO	libft/includes/libft_define.h	/^# define ZERO	/;"	d
+Z_KEY	libft/includes/libft_define.h	/^# define Z_KEY	/;"	d
+ac	includes/wolf3d_struct.h	/^	int				ac;$/;"	m	struct:s_setup
+alpha	includes/wolf3d_struct.h	/^	int				alpha;$/;"	m	struct:s_setup
+appid	minilibx/mlx_int.h	/^  void			*appid;$/;"	m	struct:mlx_ptr_s
+args	includes/wolf3d_struct.h	/^	char			**args;$/;"	m	struct:s_setup
+b	libft/includes/libft_struct.h	/^	unsigned char	b;$/;"	m	struct:s_color
+bbp	libft/includes/libft_struct.h	/^	int				bbp;$/;"	m	struct:s_img
+buffer	libft/includes/libft_struct.h	/^	t_str			*buffer;$/;"	m	struct:s_fd
+buffer	minilibx/mlx_int.h	/^  char			*buffer;$/;"	m	struct:mlx_img_list_s
+bytes_per_pixel	minilibx/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon1	file:
+c	libft/includes/libft_struct.h	/^	char			c;$/;"	m	struct:s_str
+cheat	includes/wolf3d_struct.h	/^	size_t			cheat;$/;"	m	struct:s_map
+col	minilibx/mlx_xpm.c	/^  int           col;$/;"	m	struct:s_xpm_col	file:
+color	minilibx/mlx_xpm.c	/^  int   color;$/;"	m	struct:s_col_name	file:
+content	libft/includes/libft_struct.h	/^	void			*content;$/;"	m	struct:s_list
+content_size	libft/includes/libft_struct.h	/^	size_t			content_size;$/;"	m	struct:s_list
+copy_buff	libft/srcs/perso/get_next_line.c	/^static int			copy_buff(t_str **buffer, char *src)$/;"	f	file:
+custom	libft/srcs/fd/ft_create_file.c	/^static void	custom(char *command, char *tmp, char *file_path, int mode)$/;"	f	file:
+deltadist	includes/wolf3d_struct.h	/^	t_vec3			deltadist;$/;"	m	struct:s_ray
+dim	includes/wolf3d_struct.h	/^	char			dim[2][MAX_INT_DECIMAL + 1];$/;"	m	struct:s_map
+dim_i	includes/wolf3d_struct.h	/^	size_t			dim_i[2];$/;"	m	struct:s_map
+dim_t	includes/wolf3d_struct.h	/^	size_t			dim_t[2];$/;"	m	struct:s_map
+dir	includes/wolf3d_struct.h	/^	t_vec3			dir;$/;"	m	struct:s_player
+dir	includes/wolf3d_struct.h	/^	t_vec3			dir;$/;"	m	struct:s_ray
+display_log	minilibx/mlx_shaders.c	/^void display_log(GLuint object, void (*param_func)(), void (*getlog_func)())$/;"	f
+draw_map	includes/wolf3d_struct.h	/^	size_t			draw_map;$/;"	m	struct:s_map
+draw_tick	includes/wolf3d_struct.h	/^	int				draw_tick;$/;"	m	struct:s_map
+drunk_mode	includes/wolf3d_struct.h	/^	size_t			drunk_mode;$/;"	m	struct:s_map
+east	includes/wolf3d_struct.h	/^	t_color			east;$/;"	m	struct:s_map
+endian	libft/includes/libft_struct.h	/^	int				endian;$/;"	m	struct:s_img
+error	includes/wolf3d_struct.h	/^	int				error;$/;"	m	struct:s_setup
+fd	includes/wolf3d_struct.h	/^	t_fd			*fd;$/;"	m	struct:s_setup
+fd	libft/includes/libft_struct.h	/^	int				fd;$/;"	m	struct:s_fd
+flags	libft/includes/libft_struct.h	/^	int				flags;$/;"	m	struct:s_fd
+font	minilibx/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s
+font_atlas	minilibx/font.c	/^} font_atlas = {$/;"	v	typeref:struct:__anon1	file:
+font_fshader	minilibx/mlx_int.h	/^  GLuint	font_fshader;$/;"	m	struct:glsl_info_s
+font_program	minilibx/mlx_int.h	/^  GLuint	font_program;$/;"	m	struct:glsl_info_s
+font_vshader	minilibx/mlx_int.h	/^  GLuint	font_vshader;$/;"	m	struct:glsl_info_s
+ft_abs	libft/srcs/math/ft_abs.c	/^int		ft_abs(int a)$/;"	f
+ft_args_to_fd	srcs/open_map.c	/^static size_t	ft_args_to_fd(t_setup *setup)$/;"	f	file:
+ft_atoi	libft/srcs/stdlib/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f
+ft_bzero	libft/srcs/mem/ft_bzero.c	/^void		ft_bzero(void *s, size_t n)$/;"	f
+ft_bzerotab	libft/srcs/mem/ft_bzerotab.c	/^void		ft_bzerotab(void **tab)$/;"	f
+ft_check_digit_or_space	srcs/open_map.c	/^static size_t	ft_check_digit_or_space(char *str)$/;"	f	file:
+ft_check_if_all_one	srcs/generate_map.c	/^static void		ft_check_if_all_one(t_setup *setup, int height)$/;"	f	file:
+ft_checkdigit	libft/srcs/ctype/ft_checkdigit.c	/^int			ft_checkdigit(char *str)$/;"	f
+ft_checkhexa	libft/srcs/ctype/ft_checkhexa.c	/^int					ft_checkhexa(char *str)$/;"	f
+ft_checkint	libft/srcs/ctype/ft_checkint.c	/^int			ft_checkint(char *str)$/;"	f
+ft_close	libft/srcs/fd/ft_close.c	/^int	ft_close(t_fd *fd)$/;"	f
+ft_color	libft/srcs/gfx/ft_color.c	/^void	ft_color(t_color *clr, \\$/;"	f
+ft_colorcpy	libft/srcs/gfx/ft_colorcpy.c	/^void	ft_colorcpy(t_color *clr_from, t_color *clr_to)$/;"	f
+ft_colornew	libft/srcs/gfx/ft_colornew.c	/^t_color			*ft_colornew(unsigned char r, unsigned char g, \\$/;"	f
+ft_colorparse	libft/srcs/gfx/ft_colorparse.c	/^t_color		*ft_colorparse(char *arg)$/;"	f
+ft_colortohex	libft/srcs/gfx/ft_colortohex.c	/^int			ft_colortohex(t_color *col)$/;"	f
+ft_configure_dim	srcs/configure_map.c	/^int				ft_configure_dim(t_setup *setup)$/;"	f
+ft_convertmap_to_str	srcs/generate_map.c	/^static void		ft_convertmap_to_str(t_setup *setup)$/;"	f	file:
+ft_create_file	libft/srcs/fd/ft_create_file.c	/^size_t		ft_create_file(t_fd *fd, int chmod)$/;"	f
+ft_dim_input	srcs/configure_map.c	/^static int		ft_dim_input(t_setup *setup, size_t w_flag)$/;"	f	file:
+ft_draw_map	srcs/draw.c	/^void			ft_draw_map(t_setup *setup)$/;"	f
+ft_draw_map_coord	srcs/draw.c	/^static void		ft_draw_map_coord(t_setup *setup, int x, int y, int color)$/;"	f	file:
+ft_draw_vert_line	srcs/draw.c	/^void			ft_draw_vert_line(t_setup *setup, int posx, int len)$/;"	f
+ft_fd_delete	libft/srcs/fd/ft_fd_delete.c	/^void		ft_fd_delete(t_fd *fd)$/;"	f
+ft_fish_eye_correct	srcs/player.c	/^static void		ft_fish_eye_correct(t_setup *setup, double prev_dirx, \\$/;"	f	file:
+ft_flipcolumn	libft/srcs/tab/ft_v_flip.c	/^static void	ft_flipcolumn(void **array, size_t column, size_t rows,\\$/;"	f	file:
+ft_fliprow	libft/srcs/tab/ft_h_flip.c	/^static void	ft_fliprow(void *row, size_t columns, size_t nbytes)$/;"	f	file:
+ft_ftoa	libft/srcs/stdlib/ft_ftoa.c	/^char		*ft_ftoa(float f)$/;"	f
+ft_generate_map	srcs/generate_map.c	/^size_t			ft_generate_map(t_setup *setup)$/;"	f
+ft_getnbr	libft/srcs/int/ft_getnbr.c	/^int		ft_getnbr(char *str)$/;"	f
+ft_give_color	srcs/color.c	/^int				ft_give_color(t_setup *setup, t_color *color, int alpha)$/;"	f
+ft_godown	srcs/path_maker_dir.c	/^static void	ft_godown(t_setup *setup)$/;"	f	file:
+ft_goleft	srcs/path_maker_dir.c	/^static void	ft_goleft(t_setup *setup)$/;"	f	file:
+ft_goright	srcs/path_maker_dir.c	/^static void	ft_goright(t_setup *setup)$/;"	f	file:
+ft_goup	srcs/path_maker_dir.c	/^static void	ft_goup(t_setup *setup)$/;"	f	file:
+ft_h_flip	libft/srcs/tab/ft_h_flip.c	/^void		ft_h_flip(void **array, size_t columns, size_t rows, size_t nbytes)$/;"	f
+ft_hash	libft/srcs/rand/ft_hash.c	/^unsigned long		ft_hash(unsigned char *str)$/;"	f
+ft_hash32	libft/srcs/rand/ft_hash32.c	/^uint32_t	ft_hash32(uint32_t val)$/;"	f
+ft_hexcolor	libft/srcs/gfx/ft_hexcolor.c	/^t_color			*ft_hexcolor(int hexvalue)$/;"	f
+ft_hextocolor	libft/srcs/gfx/ft_hextocolor.c	/^void			ft_hextocolor(t_color *col, int hexvalue)$/;"	f
+ft_imgclean	libft/srcs/gfx/ft_imgclean.c	/^void				ft_imgclean(t_img *img, size_t width, size_t height)$/;"	f
+ft_imgdel	libft/srcs/gfx/ft_imgdel.c	/^void			ft_imgdel(t_img *img, void *mlx)$/;"	f
+ft_imgnew	libft/srcs/gfx/ft_imgnew.c	/^t_img				*ft_imgnew(void *mlx, size_t x, size_t y)$/;"	f
+ft_initwindow	libft/srcs/gfx/ft_initwindow.c	/^t_mlx		*ft_initwindow(char *name, size_t width, size_t height)$/;"	f
+ft_intdup	libft/srcs/int/ft_intdup.c	/^int			*ft_intdup(int *array, size_t width)$/;"	f
+ft_intlen	libft/srcs/int/ft_intlen.c	/^size_t	ft_intlen(int nbr)$/;"	f
+ft_intmax	libft/srcs/int/ft_intmax.c	/^int		ft_intmax(int *array, size_t size)$/;"	f
+ft_intmin	libft/srcs/int/ft_intmin.c	/^int		ft_intmin(int *array, size_t size)$/;"	f
+ft_isalnum	libft/srcs/ctype/ft_isalnum.c	/^int		ft_isalnum(int c)$/;"	f
+ft_isalpha	libft/srcs/ctype/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f
+ft_isascii	libft/srcs/ctype/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
+ft_isdigit	libft/srcs/ctype/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
+ft_ishexa	libft/srcs/ctype/ft_ishexa.c	/^int			ft_ishexa(int c)$/;"	f
+ft_isint	libft/srcs/ctype/ft_isint.c	/^int		ft_isint(int c)$/;"	f
+ft_isnegative	libft/srcs/stdlib/ft_itoa.c	/^static void		ft_isnegative(int *n, int *negative)$/;"	f	file:
+ft_isprint	libft/srcs/ctype/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
+ft_isspace	libft/srcs/ctype/ft_isspace.c	/^int		ft_isspace(int c)$/;"	f
+ft_itoa	libft/srcs/stdlib/ft_itoa.c	/^char			*ft_itoa(int n)$/;"	f
+ft_key_hook	srcs/mlx_process.c	/^static int	ft_key_hook(int keycode, t_setup *setup)$/;"	f	file:
+ft_key_release	srcs/mlx_process.c	/^static int	ft_key_release(int keycode, t_setup *setup)$/;"	f	file:
+ft_letters	libft/srcs/str/ft_strsplit.c	/^static unsigned int		ft_letters(char const *s, char c, int i)$/;"	f	file:
+ft_lines	libft/srcs/str/ft_strsplit.c	/^static unsigned int		ft_lines(char const *s, char c)$/;"	f	file:
+ft_loop_hook	srcs/mlx_process.c	/^int			ft_loop_hook(t_setup *setup)$/;"	f
+ft_lstadd	libft/srcs/list/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f
+ft_lstaddback	libft/srcs/list/ft_lstaddback.c	/^void		ft_lstaddback(t_list **alst, t_list *new)$/;"	f
+ft_lstaddend	libft/srcs/list/ft_lstaddend.c	/^void	ft_lstaddend(t_list **alst, t_list *new)$/;"	f
+ft_lstaddfront	libft/srcs/list/ft_lstaddfront.c	/^void	ft_lstaddfront(t_list **alst, t_list *new)$/;"	f
+ft_lstdel	libft/srcs/list/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))$/;"	f
+ft_lstdelone	libft/srcs/list/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))$/;"	f
+ft_lstfree	libft/srcs/list/ft_lstfree.c	/^void		ft_lstfree(t_list **lst)$/;"	f
+ft_lstiter	libft/srcs/list/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f
+ft_lstlen	libft/srcs/list/ft_lstlen.c	/^int		ft_lstlen(t_list *lst)$/;"	f
+ft_lstmap	libft/srcs/list/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f
+ft_lstnew	libft/srcs/list/ft_lstnew.c	/^t_list		*ft_lstnew(void const *content, size_t content_size)$/;"	f
+ft_lstpushback	libft/srcs/list/ft_lstpushback.c	/^t_list		*ft_lstpushback(t_list **alst, void *data, size_t content_size)$/;"	f
+ft_lstpushfront	libft/srcs/list/ft_lstpushfront.c	/^t_list	*ft_lstpushfront(t_list **alst, void *data, size_t content_size)$/;"	f
+ft_lsttoarray	libft/srcs/list/ft_lsttoarray.c	/^void	**ft_lsttoarray(t_list *lst)$/;"	f
+ft_map_dim	srcs/configure_map.c	/^static int		ft_map_dim(t_setup *setup, size_t *c, char *str, size_t *flag)$/;"	f	file:
+ft_matrixadd	libft/srcs/gfx/ft_matrixadd.c	/^void		ft_matrixadd(double **mat, double **m, double **n, int size)$/;"	f
+ft_matrixhomothety	libft/srcs/gfx/ft_matrixhomothety.c	/^void		ft_matrixhomothety(double **mat, int factor)$/;"	f
+ft_matrixmult	libft/srcs/gfx/ft_matrixmult.c	/^void		ft_matrixmult(double **mat, double **m, double **n, int size)$/;"	f
+ft_matrixonpoint	libft/srcs/gfx/ft_matrixonpoint.c	/^void		ft_matrixonpoint(double **mat, t_vec3 *vec3)$/;"	f
+ft_matrixrotx	libft/srcs/gfx/ft_matrixrotx.c	/^void		ft_matrixrotx(double **mat, double deg)$/;"	f
+ft_matrixroty	libft/srcs/gfx/ft_matrixroty.c	/^void		ft_matrixroty(double **mat, double deg)$/;"	f
+ft_matrixrotz	libft/srcs/gfx/ft_matrixrotz.c	/^void		ft_matrixrotz(double **mat, double deg)$/;"	f
+ft_matrixtranslate	libft/srcs/gfx/ft_matrixtranslate.c	/^void		ft_matrixtranslate(double **mat, t_vec3 *vec)$/;"	f
+ft_matrixzero	libft/srcs/gfx/ft_matrixzero.c	/^double		**ft_matrixzero(int size)$/;"	f
+ft_memalloc	libft/srcs/mem/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/;"	f
+ft_memccpy	libft/srcs/mem/ft_memccpy.c	/^void	*ft_memccpy(void *dest, const void *src, int c, size_t n)$/;"	f
+ft_memchr	libft/srcs/mem/ft_memchr.c	/^void	*ft_memchr(const void *str, int c, size_t n)$/;"	f
+ft_memcmp	libft/srcs/mem/ft_memcmp.c	/^int		ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+ft_memcpy	libft/srcs/mem/ft_memcpy.c	/^void	*ft_memcpy(void *dest, const void *src, size_t n)$/;"	f
+ft_memdel	libft/srcs/mem/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f
+ft_memdeltab	libft/srcs/mem/ft_memdeltab.c	/^void		ft_memdeltab(void *tab, size_t dimension)$/;"	f
+ft_memdup	libft/srcs/mem/ft_memdup.c	/^void		*ft_memdup(const void *mem, size_t size)$/;"	f
+ft_memmove	libft/srcs/mem/ft_memmove.c	/^void	*ft_memmove(void *dest, const void *src, size_t n)$/;"	f
+ft_memset	libft/srcs/mem/ft_memset.c	/^void	*ft_memset(void *str, int c, size_t n)$/;"	f
+ft_mlx_control	srcs/mlx_control.c	/^void		ft_mlx_control(t_setup *setup)$/;"	f
+ft_mlx_control_key	srcs/mlx_control.c	/^void		ft_mlx_control_key(t_setup *setup)$/;"	f
+ft_mlx_keytoint	libft/srcs/gfx/ft_mlx_keytoint.c	/^int			ft_mlx_keytoint(int keycode)$/;"	f
+ft_mlx_keytoletterchar	libft/srcs/gfx/ft_mlx_keytoletterchar.c	/^char		ft_mlx_keytoletterchar(int keycode)$/;"	f
+ft_mlx_keytoletterchar2	libft/srcs/gfx/ft_mlx_keytoletterchar.c	/^static char	ft_mlx_keytoletterchar2(int keycode)$/;"	f	file:
+ft_mlx_keytoletterchar3	libft/srcs/gfx/ft_mlx_keytoletterchar.c	/^static char	ft_mlx_keytoletterchar3(int keycode)$/;"	f	file:
+ft_mlx_keytonumchar	libft/srcs/gfx/ft_mlx_keytonumchar.c	/^char		ft_mlx_keytonumchar(int keycode)$/;"	f
+ft_mlx_printkeytochar	libft/srcs/gfx/ft_mlx_printkeytochar.c	/^char		ft_mlx_printkeytochar(int keycode)$/;"	f
+ft_mlx_process	srcs/mlx_process.c	/^void		ft_mlx_process(t_setup *setup)$/;"	f
+ft_mlxdelete	libft/srcs/gfx/ft_mlxdelete.c	/^void		ft_mlxdelete(t_mlx *mlx, t_img *img)$/;"	f
+ft_modify_speed	srcs/mlx_control.c	/^void		ft_modify_speed(t_setup *setup)$/;"	f
+ft_move_player	srcs/player.c	/^static void		ft_move_player(t_setup *setup)$/;"	f	file:
+ft_name_input	srcs/configure_map.c	/^size_t			ft_name_input(t_setup *setup)$/;"	f
+ft_open	libft/srcs/fd/ft_open.c	/^size_t		ft_open(t_fd *fd, int flags, int rights)$/;"	f
+ft_open_map	srcs/open_map.c	/^size_t			ft_open_map(t_setup *setup)$/;"	f
+ft_parse_map	srcs/open_map.c	/^static size_t	ft_parse_map(t_setup *setup)$/;"	f	file:
+ft_parse_row	srcs/open_map.c	/^static size_t	ft_parse_row(t_setup *setup, char *map_str, int line)$/;"	f	file:
+ft_path_down_or_right	srcs/path_maker.c	/^static void		ft_path_down_or_right(t_setup *setup, size_t mode)$/;"	f	file:
+ft_path_maker	srcs/path_maker.c	/^void			ft_path_maker(t_setup *setup)$/;"	f
+ft_path_maker_dir	srcs/path_maker_dir.c	/^void		ft_path_maker_dir(t_setup *setup)$/;"	f
+ft_path_maker_down	srcs/path_maker.c	/^static size_t	ft_path_maker_down(t_setup *setup)$/;"	f	file:
+ft_path_maker_right	srcs/path_maker.c	/^static size_t	ft_path_maker_right(t_setup *setup)$/;"	f	file:
+ft_perror	libft/srcs/perso/ft_perror.c	/^void	ft_perror(char *name, char *error, int exit_f)$/;"	f
+ft_pixcpy	libft/srcs/gfx/ft_pixcpy.c	/^void		ft_pixcpy(t_pix *pix_from, t_pix *pix_to)$/;"	f
+ft_pixnew	libft/srcs/gfx/ft_pixnew.c	/^t_pix		*ft_pixnew(int x, int y, int z)$/;"	f
+ft_pixpopulate	libft/srcs/gfx/ft_pixpopulate.c	/^void	ft_pixpopulate(t_pix *to_pix, int x, int y, int z)$/;"	f
+ft_pos_player	srcs/player.c	/^void			ft_pos_player(t_setup *setup)$/;"	f
+ft_pow	libft/srcs/math/ft_pow.c	/^int			ft_pow(int n, int p)$/;"	f
+ft_printfloatmatrix	libft/srcs/print/ft_printfloatmatrix.c	/^void		ft_printfloatmatrix(float **mat, size_t size)$/;"	f
+ft_printintarray	libft/srcs/print/ft_printintarray.c	/^void		ft_printintarray(int **map, size_t width, size_t height)$/;"	f
+ft_printsize_tarray	libft/srcs/print/ft_printsize_tarray.c	/^void		ft_printsize_tarray(size_t **map, size_t width, size_t height)$/;"	f
+ft_printstrarray	libft/srcs/print/ft_printstrarray.c	/^void		ft_printstrarray(char **array)$/;"	f
+ft_put_pixel	srcs/draw.c	/^void			ft_put_pixel(t_setup *setup, int x, int y, int color)$/;"	f
+ft_putchar	libft/srcs/put/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f
+ft_putchar_fd	libft/srcs/put/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
+ft_putendl	libft/srcs/put/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f
+ft_putendl_fd	libft/srcs/put/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f
+ft_putnbr	libft/srcs/put/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f
+ft_putnbr_fd	libft/srcs/put/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
+ft_putstr	libft/srcs/put/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f
+ft_putstr_fd	libft/srcs/put/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f
+ft_quit	srcs/mlx_process.c	/^int			ft_quit(t_setup *setup)$/;"	f
+ft_rand	libft/srcs/rand/ft_rand.c	/^uintmax_t		ft_rand(void)$/;"	f
+ft_randint	libft/srcs/rand/ft_randint.c	/^uintmax_t		ft_randint(size_t length)$/;"	f
+ft_random	libft/srcs/rand/ft_random.c	/^uintmax_t	ft_random(uintmax_t min, uintmax_t max, uintmax_t res)$/;"	f
+ft_random_map	srcs/generate_map.c	/^static void		ft_random_map(t_setup *setup)$/;"	f	file:
+ft_range_num	libft/srcs/math/ft_range_num.c	/^double		ft_range_num(double input, double i[2], double o[2])$/;"	f
+ft_ray_cast	srcs/ray_casting.c	/^static int		ft_ray_cast(t_setup *setup)$/;"	f	file:
+ft_ray_casting	srcs/ray_casting.c	/^size_t			ft_ray_casting(t_setup *setup)$/;"	f
+ft_ray_casting_init	srcs/ray_casting.c	/^static void		ft_ray_casting_init(t_setup *setup, double angle_inc)$/;"	f	file:
+ft_ray_dir	srcs/ray_casting.c	/^static void		ft_ray_dir(t_setup *setup)$/;"	f	file:
+ft_ray_size	srcs/ray_casting.c	/^static double	ft_ray_size(t_setup *setup)$/;"	f	file:
+ft_rol	libft/srcs/rand/ft_rol.c	/^unsigned int	ft_rol(const unsigned int value, int shift)$/;"	f
+ft_ror	libft/srcs/rand/ft_ror.c	/^unsigned int	ft_ror(const unsigned int value, int shift)$/;"	f
+ft_save_file	srcs/save_map.c	/^static size_t	ft_save_file(t_setup *setup)$/;"	f	file:
+ft_save_map	srcs/save_map.c	/^int				ft_save_map(t_setup *setup)$/;"	f
+ft_select_color	srcs/color.c	/^int				ft_select_color(t_setup *setup)$/;"	f
+ft_select_map_coord	srcs/draw.c	/^static void		ft_select_map_coord(t_setup *setup, int i, int j)$/;"	f	file:
+ft_setup_alloc	srcs/setup.c	/^static size_t	ft_setup_alloc(t_setup *setup)$/;"	f	file:
+ft_setup_delete	srcs/setup.c	/^static void		ft_setup_delete(t_setup *setup)$/;"	f	file:
+ft_setup_menu	srcs/setup.c	/^int				ft_setup_menu(t_setup *setup)$/;"	f
+ft_setup_mode	srcs/setup.c	/^size_t			ft_setup_mode(t_setup *setup, size_t mode)$/;"	f
+ft_sky_apply	srcs/mlx_control.c	/^static int	ft_sky_apply(t_setup *setup, char *path, int num)$/;"	f	file:
+ft_sky_select	srcs/mlx_control.c	/^int			ft_sky_select(t_setup *setup)$/;"	f
+ft_specialchar	libft/srcs/gfx/ft_mlx_printkeytochar.c	/^static char	ft_specialchar(int keycode)$/;"	f	file:
+ft_sqrt	libft/srcs/math/ft_sqrt.c	/^int		ft_sqrt(int nb)$/;"	f
+ft_start	srcs/setup.c	/^void			ft_start(t_setup *setup)$/;"	f
+ft_stoul	libft/srcs/stdlib/ft_stoul.c	/^unsigned long		ft_stoul(const char *str, int base)$/;"	f
+ft_straddchar	libft/srcs/str/ft_straddchar.c	/^char		*ft_straddchar(char *src, char c)$/;"	f
+ft_strcat	libft/srcs/str/ft_strcat.c	/^char	*ft_strcat(char *src, const char *dest)$/;"	f
+ft_strchr	libft/srcs/str/ft_strchr.c	/^char	*ft_strchr(const char *src, int c)$/;"	f
+ft_strclr	libft/srcs/str/ft_strclr.c	/^void	ft_strclr(char *src)$/;"	f
+ft_strcmp	libft/srcs/str/ft_strcmp.c	/^size_t		ft_strcmp(char *s1, char *s2)$/;"	f
+ft_strcpy	libft/srcs/str/ft_strcpy.c	/^char	*ft_strcpy(char *dest, const char *src)$/;"	f
+ft_strdel	libft/srcs/str/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f
+ft_strdup	libft/srcs/str/ft_strdup.c	/^char	*ft_strdup(const char *src)$/;"	f
+ft_strequ	libft/srcs/str/ft_strequ.c	/^int		ft_strequ(char const *s1, char const *s2)$/;"	f
+ft_striter	libft/srcs/str/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f
+ft_striteri	libft/srcs/str/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f
+ft_strjoin	libft/srcs/str/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
+ft_strlcat	libft/srcs/str/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size_t size)$/;"	f
+ft_strlen	libft/srcs/str/ft_strlen.c	/^size_t		ft_strlen(const char *str)$/;"	f
+ft_strmap	libft/srcs/str/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f
+ft_strmapi	libft/srcs/str/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
+ft_strncat	libft/srcs/str/ft_strncat.c	/^char	*ft_strncat(char *dest, const char *src, size_t n)$/;"	f
+ft_strncmp	libft/srcs/str/ft_strncmp.c	/^int			ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+ft_strncpy	libft/srcs/str/ft_strncpy.c	/^char	*ft_strncpy(char *dest, const char *src, size_t n)$/;"	f
+ft_strnequ	libft/srcs/str/ft_strnequ.c	/^int		ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f
+ft_strnew	libft/srcs/str/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f
+ft_strnjoin	libft/srcs/str/ft_strnjoin.c	/^char		*ft_strnjoin(char const *s1, char const *s2, size_t len)$/;"	f
+ft_strnstr	libft/srcs/str/ft_strnstr.c	/^char		*ft_strnstr(const char *str, const char *tofind, size_t n)$/;"	f
+ft_stroneof	libft/srcs/str/ft_stroneof.c	/^int		ft_stroneof(char c, char *str)$/;"	f
+ft_strrchr	libft/srcs/str/ft_strrchr.c	/^char	*ft_strrchr(const char *str, int c)$/;"	f
+ft_strsplit	libft/srcs/str/ft_strsplit.c	/^char					**ft_strsplit(char const *s, char c)$/;"	f
+ft_strstr	libft/srcs/str/ft_strstr.c	/^char		*ft_strstr(const char *str, const char *tofind)$/;"	f
+ft_strsub	libft/srcs/str/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
+ft_strtol	libft/srcs/stdlib/ft_strtol.c	/^long int				ft_strtol(const char *str, int base)$/;"	f
+ft_strtrim	libft/srcs/str/ft_strtrim.c	/^char	*ft_strtrim(char const *s)$/;"	f
+ft_swap	libft/srcs/perso/ft_swap.c	/^void				ft_swap(void *a, void *b, size_t nbytes)$/;"	f
+ft_tab3free	libft/srcs/tab/ft_tab3free.c	/^void	ft_tab3free(void ***tab)$/;"	f
+ft_tab3newstr	libft/srcs/tab/ft_tab3newstr.c	/^char	***ft_tab3newstr(size_t width, size_t height)$/;"	f
+ft_tabdepth	libft/srcs/tab/ft_tabdepth.c	/^int			ft_tabdepth(void **tab)$/;"	f
+ft_tabfree	libft/srcs/tab/ft_tabfree.c	/^void	ft_tabfree(void **tab)$/;"	f
+ft_tabintcpy	libft/srcs/tab/ft_tabintcpy.c	/^int			**ft_tabintcpy(int **array, size_t width)$/;"	f
+ft_tablen	libft/srcs/tab/ft_tablen.c	/^size_t		ft_tablen(char **tab)$/;"	f
+ft_tabnewint	libft/srcs/tab/ft_tabnewint.c	/^int			**ft_tabnewint(size_t width, size_t height)$/;"	f
+ft_tabnewsize_t	libft/srcs/tab/ft_tabnew.c	/^size_t	**ft_tabnewsize_t(size_t width, size_t height)$/;"	f
+ft_tabnewsize_t	libft/srcs/tab/ft_tabnewsize_t.c	/^size_t		**ft_tabnewsize_t(size_t width, size_t height)$/;"	f
+ft_tabnewstr	libft/srcs/tab/ft_tabnewstr.c	/^char	**ft_tabnewstr(size_t width, size_t height)$/;"	f
+ft_tabstrcpy	libft/srcs/tab/ft_tabstrcpy.c	/^char		**ft_tabstrcpy(char **str)$/;"	f
+ft_test_move	srcs/player.c	/^static size_t	ft_test_move(t_setup *setup)$/;"	f	file:
+ft_tolower	libft/srcs/str/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
+ft_toupper	libft/srcs/str/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
+ft_turn_player	srcs/player.c	/^static void		ft_turn_player(t_setup *setup, double prev_dirx, \\$/;"	f	file:
+ft_v_flip	libft/srcs/tab/ft_v_flip.c	/^void		ft_v_flip(void **array, size_t columns, size_t rows, size_t nbytes)$/;"	f
+ft_vec3cpy	libft/srcs/gfx/ft_vec3cpy.c	/^void	ft_vec3cpy(t_vec3 *vec_from, t_vec3 *vec_to)$/;"	f
+ft_vec3new	libft/srcs/gfx/ft_vec3new.c	/^t_vec3		*ft_vec3new(double x, double y, double z)$/;"	f
+ft_vec3populate	libft/srcs/gfx/ft_vec3populate.c	/^void		ft_vec3populate(t_vec3 *to_vec3, double x, double y, double z)$/;"	f
+ft_write_to_file	srcs/save_map.c	/^static size_t	ft_write_to_file(t_setup *setup)$/;"	f	file:
+ft_xmpnew	libft/srcs/gfx/ft_xmpnew.c	/^t_img			*ft_xmpnew(void *mlx, char *xmp, size_t x, size_t y)$/;"	f
+func_t	minilibx/mlx_int.h	/^typedef int (*func_t)();$/;"	t
+g	libft/includes/libft_struct.h	/^	unsigned char	g;$/;"	m	struct:s_color
+get_line	libft/srcs/perso/get_next_line.c	/^static int			get_line(t_str *buffer, int *num_char)$/;"	f	file:
+get_next_line	libft/srcs/perso/get_next_line.c	/^int					get_next_line(const int fd, char **line)$/;"	f
+glsl_info_s	minilibx/mlx_int.h	/^typedef struct	glsl_info_s$/;"	s
+glsl_info_t	minilibx/mlx_int.h	/^} glsl_info_t;$/;"	t	typeref:struct:glsl_info_s
+ground	includes/wolf3d_struct.h	/^	t_color			ground;$/;"	m	struct:s_map
+has_path	includes/wolf3d_struct.h	/^	size_t			has_path;$/;"	m	struct:s_map
+height	includes/wolf3d_struct.h	/^	size_t			height;$/;"	m	struct:s_setup
+height	minilibx/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon1	file:
+height	minilibx/mlx_int.h	/^  int			height;$/;"	m	struct:mlx_img_list_s
+hit	includes/wolf3d_struct.h	/^	size_t			hit;$/;"	m	struct:s_ray
+image	libft/includes/libft_struct.h	/^	void			*image;$/;"	m	struct:s_img
+image	libft/includes/libft_struct.h	/^	void			*image;$/;"	m	struct:s_mlx
+image_addr	libft/includes/libft_struct.h	/^	char			*image_addr;$/;"	m	struct:s_mlx
+image_addr	libft/includes/libft_struct.h	/^	void			*image_addr;$/;"	m	struct:s_img
+image_fshader	minilibx/mlx_int.h	/^  GLuint	image_fshader;$/;"	m	struct:glsl_info_s
+image_program	minilibx/mlx_int.h	/^  GLuint	image_program;$/;"	m	struct:glsl_info_s
+image_vshader	minilibx/mlx_int.h	/^  GLuint	image_vshader;$/;"	m	struct:glsl_info_s
+img	includes/wolf3d_struct.h	/^	t_img			*img;$/;"	m	struct:s_setup
+img	minilibx/mlx_int.h	/^  mlx_img_list_t	*img;$/;"	m	struct:mlx_img_ctx_s
+img_list	minilibx/mlx_int.h	/^  mlx_img_ctx_t		*img_list;$/;"	m	struct:mlx_win_list_s
+img_list	minilibx/mlx_int.h	/^  mlx_img_list_t	*img_list;$/;"	m	struct:mlx_ptr_s
+is_full	includes/wolf3d_struct.h	/^	size_t			is_full;$/;"	m	struct:s_pathmaker
+key	includes/wolf3d_struct.h	/^	int				key;$/;"	m	struct:s_setup
+lenght	libft/srcs/stdlib/ft_stoul.c	/^static int			lenght(char *str, int base)$/;"	f	file:
+loc_font_atlassize	minilibx/mlx_int.h	/^  GLint		loc_font_atlassize;$/;"	m	struct:glsl_info_s
+loc_font_color	minilibx/mlx_int.h	/^  GLint		loc_font_color;$/;"	m	struct:glsl_info_s
+loc_font_posinatlas	minilibx/mlx_int.h	/^  GLint		loc_font_posinatlas;$/;"	m	struct:glsl_info_s
+loc_font_posinwin	minilibx/mlx_int.h	/^  GLint		loc_font_posinwin;$/;"	m	struct:glsl_info_s
+loc_font_position	minilibx/mlx_int.h	/^  GLint		loc_font_position;$/;"	m	struct:glsl_info_s
+loc_font_texture	minilibx/mlx_int.h	/^  GLint		loc_font_texture;$/;"	m	struct:glsl_info_s
+loc_font_winhalfsize	minilibx/mlx_int.h	/^  GLint		loc_font_winhalfsize;$/;"	m	struct:glsl_info_s
+loc_image_pos	minilibx/mlx_int.h	/^  GLint		loc_image_pos;$/;"	m	struct:glsl_info_s
+loc_image_position	minilibx/mlx_int.h	/^  GLint		loc_image_position;$/;"	m	struct:glsl_info_s
+loc_image_size	minilibx/mlx_int.h	/^  GLint		loc_image_size;$/;"	m	struct:glsl_info_s
+loc_image_texture	minilibx/mlx_int.h	/^  GLint		loc_image_texture;$/;"	m	struct:glsl_info_s
+loc_image_winhalfsize	minilibx/mlx_int.h	/^  GLint		loc_image_winhalfsize;$/;"	m	struct:glsl_info_s
+loc_pixel_position	minilibx/mlx_int.h	/^  GLint		loc_pixel_position;$/;"	m	struct:glsl_info_s
+loc_pixel_texture	minilibx/mlx_int.h	/^  GLint		loc_pixel_texture;$/;"	m	struct:glsl_info_s
+loc_pixel_winhalfsize	minilibx/mlx_int.h	/^  GLint		loc_pixel_winhalfsize;$/;"	m	struct:glsl_info_s
+loop_hook	minilibx/mlx_int.h	/^  void			(*loop_hook)(void *);$/;"	m	struct:mlx_ptr_s
+loop_hook_data	minilibx/mlx_int.h	/^  void			*loop_hook_data;$/;"	m	struct:mlx_ptr_s
+loop_timer	minilibx/mlx_int.h	/^  void			*loop_timer;$/;"	m	struct:mlx_ptr_s
+lrdu	includes/wolf3d_struct.h	/^	size_t			lrdu[4];$/;"	m	struct:s_pathmaker
+main	srcs/wolf3d.c	/^int				main(int ac, char **av)$/;"	f
+main_loop_active	minilibx/mlx_int.h	/^  int			main_loop_active;$/;"	m	struct:mlx_ptr_s
+map	includes/wolf3d_struct.h	/^	size_t			**map;$/;"	m	struct:s_map
+map	includes/wolf3d_struct.h	/^	t_map			*map;$/;"	m	struct:s_setup
+map	includes/wolf3d_struct.h	/^	t_pix			map;$/;"	m	struct:s_ray
+map_str	includes/wolf3d_struct.h	/^	char			**map_str;$/;"	m	struct:s_map
+mapsize	includes/wolf3d_struct.h	/^	int				mapsize[2];$/;"	m	struct:s_map
+midalpha	includes/wolf3d_struct.h	/^	int				midalpha;$/;"	m	struct:s_setup
+mlx	includes/wolf3d_struct.h	/^	t_mlx			*mlx;$/;"	m	struct:s_setup
+mlx_col_name	minilibx/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name
+mlx_img_ctx_s	minilibx/mlx_int.h	/^typedef struct	mlx_img_ctx_s$/;"	s
+mlx_img_ctx_t	minilibx/mlx_int.h	/^} mlx_img_ctx_t;$/;"	t	typeref:struct:mlx_img_ctx_s
+mlx_img_list_s	minilibx/mlx_int.h	/^typedef struct	mlx_img_list_s$/;"	s
+mlx_img_list_t	minilibx/mlx_int.h	/^} mlx_img_list_t;$/;"	t	typeref:struct:mlx_img_list_s
+mlx_int_file_get_rid_comment	minilibx/mlx_xpm.c	/^void	mlx_int_file_get_rid_comment(char *ptr, int size)$/;"	f
+mlx_int_get_col_name	minilibx/mlx_xpm.c	/^int	mlx_int_get_col_name(char *str,int size)$/;"	f
+mlx_int_get_line	minilibx/mlx_xpm.c	/^char	*mlx_int_get_line(char *ptr,int *pos,int size)$/;"	f
+mlx_int_get_text_rgb	minilibx/mlx_xpm.c	/^int	mlx_int_get_text_rgb(char *name, char *end)$/;"	f
+mlx_int_parse_xpm	minilibx/mlx_xpm.c	/^void	*mlx_int_parse_xpm(mlx_ptr_t *xvar,void *info,int info_size,char *(*f)())$/;"	f
+mlx_int_static_line	minilibx/mlx_xpm.c	/^char	*mlx_int_static_line(char **xpm_data,int *pos,int size)$/;"	f
+mlx_int_str_str	minilibx/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str(char *str,char *find,int len)$/;"	f
+mlx_int_str_str_cote	minilibx/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str_cote(char *str,char *find,int len)$/;"	f
+mlx_int_str_to_wordtab	minilibx/mlx_int_str_to_wordtab.c	/^char	**mlx_int_str_to_wordtab(char *str)$/;"	f
+mlx_int_xpm_set_pixel	minilibx/mlx_xpm.c	/^void	mlx_int_xpm_set_pixel(mlx_img_list_t *img, char *data, int opp, int col, int x)$/;"	f
+mlx_ptr	libft/includes/libft_struct.h	/^	void			*mlx_ptr;$/;"	m	struct:s_mlx
+mlx_ptr_s	minilibx/mlx_int.h	/^typedef struct		mlx_ptr_s$/;"	s
+mlx_ptr_t	minilibx/mlx_int.h	/^} mlx_ptr_t;$/;"	t	typeref:struct:mlx_ptr_s
+mlx_shaders	minilibx/mlx_shaders.c	/^int mlx_shaders(glsl_info_t *glsl)$/;"	f
+mlx_shaders_font	minilibx/mlx_shaders.c	/^int mlx_shaders_font(glsl_info_t *glsl)$/;"	f
+mlx_shaders_image	minilibx/mlx_shaders.c	/^int mlx_shaders_image(glsl_info_t *glsl)$/;"	f
+mlx_shaders_pixel	minilibx/mlx_shaders.c	/^int mlx_shaders_pixel(glsl_info_t *glsl)$/;"	f
+mlx_win_list_s	minilibx/mlx_int.h	/^typedef struct	mlx_win_list_s$/;"	s
+mlx_win_list_t	minilibx/mlx_int.h	/^} mlx_win_list_t;$/;"	t	typeref:struct:mlx_win_list_s
+mlx_xpm_file_to_image	minilibx/mlx_xpm.c	/^void	*mlx_xpm_file_to_image(mlx_ptr_t *xvar,char *file,int *width,int *height)$/;"	f
+mlx_xpm_to_image	minilibx/mlx_xpm.c	/^void	*mlx_xpm_to_image(mlx_ptr_t *xvar,char **xpm_data,int *width,int *height)$/;"	f
+mode	includes/wolf3d_struct.h	/^	size_t			mode;$/;"	m	struct:s_setup
+move_step	includes/wolf3d_struct.h	/^	float			move_step;$/;"	m	struct:s_setup
+name	libft/includes/libft_struct.h	/^	char			*name;$/;"	m	struct:s_fd
+name	minilibx/mlx_xpm.c	/^  char  *name;$/;"	m	struct:s_col_name	file:
+name	minilibx/mlx_xpm.c	/^  int           name;$/;"	m	struct:s_xpm_col	file:
+name_i	includes/wolf3d_struct.h	/^	size_t			name_i;$/;"	m	struct:s_map
+name_t	includes/wolf3d_struct.h	/^	size_t			name_t;$/;"	m	struct:s_map
+nb_flush	minilibx/mlx_int.h	/^  int			nb_flush;$/;"	m	struct:mlx_win_list_s
+next	libft/includes/libft_struct.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+next	libft/includes/libft_struct.h	/^	struct s_str	*next;$/;"	m	struct:s_str	typeref:struct:s_str::s_str
+next	minilibx/mlx_int.h	/^  struct mlx_img_ctx_s	*next;$/;"	m	struct:mlx_img_ctx_s	typeref:struct:mlx_img_ctx_s::mlx_img_ctx_s
+next	minilibx/mlx_int.h	/^  struct mlx_img_list_s	*next;$/;"	m	struct:mlx_img_list_s	typeref:struct:mlx_img_list_s::mlx_img_list_s
+next	minilibx/mlx_int.h	/^  struct mlx_win_list_s	*next;$/;"	m	struct:mlx_win_list_s	typeref:struct:mlx_win_list_s::mlx_win_list_s
+north	includes/wolf3d_struct.h	/^	t_color			north;$/;"	m	struct:s_map
+path	includes/wolf3d_struct.h	/^	t_pathmaker		path;$/;"	m	struct:s_map
+path	libft/includes/libft_struct.h	/^	char			*path;$/;"	m	struct:s_fd
+pixel_data	minilibx/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon1	file:
+pixel_fshader	minilibx/mlx_int.h	/^  GLuint	pixel_fshader;$/;"	m	struct:glsl_info_s
+pixel_program	minilibx/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s
+pixel_vshader	minilibx/mlx_int.h	/^  GLuint	pixel_vshader;$/;"	m	struct:glsl_info_s
+pixmgt	minilibx/mlx_int.h	/^  int			pixmgt;$/;"	m	struct:mlx_win_list_s
+plane	includes/wolf3d_struct.h	/^	t_vec3			plane;$/;"	m	struct:s_player
+player	includes/wolf3d_struct.h	/^	t_player		*player;$/;"	m	struct:s_setup
+pos	includes/wolf3d_struct.h	/^	t_pix			pos;$/;"	m	struct:s_pathmaker
+pos	includes/wolf3d_struct.h	/^	t_vec3			pos;$/;"	m	struct:s_player
+pos	libft/includes/libft_struct.h	/^	int				pos;$/;"	m	struct:s_fd
+pos	libft/srcs/stdlib/ft_stoul.c	/^static int			pos(int c, int base)$/;"	f	file:
+r	libft/includes/libft_struct.h	/^	unsigned char	r;$/;"	m	struct:s_color
+rand_dir	includes/wolf3d_struct.h	/^	size_t			rand_dir;$/;"	m	struct:s_pathmaker
+randpos	includes/wolf3d_struct.h	/^	size_t			randpos;$/;"	m	struct:s_player
+ray_cast	includes/wolf3d_struct.h	/^	t_ray_cast		*ray_cast;$/;"	m	struct:s_setup
+read_buff	libft/srcs/perso/get_next_line.c	/^static int			read_buff(t_str **buffer, int fd)$/;"	f	file:
+rights	libft/includes/libft_struct.h	/^	int				rights;$/;"	m	struct:s_fd
+rot_step	includes/wolf3d_struct.h	/^	float			rot_step;$/;"	m	struct:s_setup
+s_col_name	minilibx/mlx_xpm.c	/^struct  s_col_name$/;"	s	file:
+s_color	libft/includes/libft_struct.h	/^typedef struct		s_color$/;"	s
+s_fd	libft/includes/libft_struct.h	/^typedef	struct		s_fd$/;"	s
+s_img	libft/includes/libft_struct.h	/^typedef struct		s_img$/;"	s
+s_list	libft/includes/libft_struct.h	/^typedef struct		s_list$/;"	s
+s_map	includes/wolf3d_struct.h	/^typedef struct		s_map$/;"	s
+s_mlx	libft/includes/libft_struct.h	/^typedef struct		s_mlx$/;"	s
+s_pathmaker	includes/wolf3d_struct.h	/^typedef struct		s_pathmaker$/;"	s
+s_pix	libft/includes/libft_struct.h	/^typedef struct		s_pix$/;"	s
+s_player	includes/wolf3d_struct.h	/^typedef struct		s_player$/;"	s
+s_ray	includes/wolf3d_struct.h	/^typedef struct		s_ray$/;"	s
+s_setup	includes/wolf3d_struct.h	/^typedef struct		s_setup$/;"	s
+s_str	libft/includes/libft_struct.h	/^typedef struct		s_str$/;"	s
+s_vec3	libft/includes/libft_struct.h	/^typedef struct		s_vec3$/;"	s
+s_vec3u	libft/includes/libft_struct.h	/^typedef struct		s_vec3u$/;"	s
+s_xpm_col	minilibx/mlx_xpm.c	/^typedef struct  s_xpm_col$/;"	s	file:
+side	includes/wolf3d_struct.h	/^	size_t			side;$/;"	m	struct:s_ray
+sidedist	includes/wolf3d_struct.h	/^	t_vec3			sidedist;$/;"	m	struct:s_ray
+size	includes/wolf3d_struct.h	/^	double			size;$/;"	m	struct:s_ray
+size_x	libft/includes/libft_struct.h	/^	int				size_x;$/;"	m	struct:s_img
+sky	includes/wolf3d_struct.h	/^	t_color			sky;$/;"	m	struct:s_map
+sky	includes/wolf3d_struct.h	/^	t_img			*sky;$/;"	m	struct:s_setup
+sky_num	includes/wolf3d_struct.h	/^	size_t			sky_num;$/;"	m	struct:s_setup
+skybox	includes/wolf3d_struct.h	/^	size_t			skybox;$/;"	m	struct:s_map
+south	includes/wolf3d_struct.h	/^	t_color			south;$/;"	m	struct:s_map
+step	includes/wolf3d_struct.h	/^	t_pix			step;$/;"	m	struct:s_ray
+t_color	libft/includes/libft_struct.h	/^}					t_color;$/;"	t	typeref:struct:s_color
+t_fd	libft/includes/libft_struct.h	/^}					t_fd;$/;"	t	typeref:struct:s_fd
+t_img	libft/includes/libft_struct.h	/^}					t_img;$/;"	t	typeref:struct:s_img
+t_list	libft/includes/libft_struct.h	/^}					t_list;$/;"	t	typeref:struct:s_list
+t_map	includes/wolf3d_struct.h	/^}					t_map;$/;"	t	typeref:struct:s_map
+t_mlx	libft/includes/libft_struct.h	/^}					t_mlx;$/;"	t	typeref:struct:s_mlx
+t_pathmaker	includes/wolf3d_struct.h	/^}					t_pathmaker;$/;"	t	typeref:struct:s_pathmaker
+t_pix	libft/includes/libft_struct.h	/^}					t_pix;$/;"	t	typeref:struct:s_pix
+t_player	includes/wolf3d_struct.h	/^}					t_player;$/;"	t	typeref:struct:s_player
+t_ray_cast	includes/wolf3d_struct.h	/^}					t_ray_cast;$/;"	t	typeref:struct:s_ray
+t_setup	includes/wolf3d_struct.h	/^}					t_setup;$/;"	t	typeref:struct:s_setup
+t_str	libft/includes/libft_struct.h	/^}					t_str;$/;"	t	typeref:struct:s_str
+t_vec3	libft/includes/libft_struct.h	/^}					t_vec3;$/;"	t	typeref:struct:s_vec3
+t_vec3u	libft/includes/libft_struct.h	/^}					t_vec3u;$/;"	t	typeref:struct:s_vec3u
+t_xpm_col	minilibx/mlx_xpm.c	/^} t_xpm_col;$/;"	t	typeref:struct:s_xpm_col	file:
+texture	minilibx/mlx_int.h	/^  GLuint		texture;$/;"	m	struct:mlx_img_ctx_s
+to_find	includes/wolf3d_struct.h	/^	t_pix			to_find;$/;"	m	struct:s_pathmaker
+udlr	includes/wolf3d_struct.h	/^	size_t			udlr[4];$/;"	m	struct:s_setup
+ui	includes/wolf3d_struct.h	/^	size_t			ui;$/;"	m	struct:s_setup
+usage	srcs/wolf3d.c	/^int				usage(int mode)$/;"	f
+vbuffer	minilibx/mlx_int.h	/^  GLuint		vbuffer;$/;"	m	struct:mlx_img_ctx_s
+vertexes	minilibx/mlx_int.h	/^  GLfloat		vertexes[8];$/;"	m	struct:mlx_img_list_s
+west	includes/wolf3d_struct.h	/^	t_color			west;$/;"	m	struct:s_map
+width	includes/wolf3d_struct.h	/^	size_t			width;$/;"	m	struct:s_setup
+width	minilibx/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon1	file:
+width	minilibx/mlx_int.h	/^  int			width;$/;"	m	struct:mlx_img_list_s
+win_list	minilibx/mlx_int.h	/^  mlx_win_list_t	*win_list;$/;"	m	struct:mlx_ptr_s
+win_ptr	libft/includes/libft_struct.h	/^	void			*win_ptr;$/;"	m	struct:s_mlx
+winid	minilibx/mlx_int.h	/^  void			*winid;$/;"	m	struct:mlx_win_list_s
+write_line	libft/srcs/perso/get_next_line.c	/^static int			write_line(t_str **current, char **target, int num_char)$/;"	f	file:
+x	libft/includes/libft_struct.h	/^	double			x;$/;"	m	struct:s_vec3
+x	libft/includes/libft_struct.h	/^	int				x;$/;"	m	struct:s_pix
+x	libft/includes/libft_struct.h	/^	size_t			x;$/;"	m	struct:s_vec3u
+y	libft/includes/libft_struct.h	/^	double			y;$/;"	m	struct:s_vec3
+y	libft/includes/libft_struct.h	/^	int				y;$/;"	m	struct:s_pix
+y	libft/includes/libft_struct.h	/^	size_t			y;$/;"	m	struct:s_vec3u
+yes_t	includes/wolf3d_struct.h	/^	size_t			yes_t;$/;"	m	struct:s_map
+z	libft/includes/libft_struct.h	/^	double			z;$/;"	m	struct:s_vec3
+z	libft/includes/libft_struct.h	/^	int				z;$/;"	m	struct:s_pix
+z	libft/includes/libft_struct.h	/^	size_t			z;$/;"	m	struct:s_vec3u
