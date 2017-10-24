@@ -6,77 +6,97 @@
 #*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/01/09 14:05:27 by psebasti          #+#    #+#             *#
-#*   Updated: 2017/10/18 13:30:41 by psebasti         ###   ########.fr       *#
+#*   Updated: 2017/10/24 16:12:30 by psebasti         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
-NAME = wolf3d
+NAME		=	wolf3d
 
-SRC 		=	srcs/wolf3d.c \
-				srcs/setup.c \
-				srcs/mlx_process.c \
-				srcs/mlx_control.c \
-				srcs/path_maker.c \
-				srcs/path_maker_dir.c \
-				srcs/configure_map.c \
-				srcs/save_map.c \
-				srcs/generate_map.c \
-				srcs/open_map.c \
-				srcs/draw.c \
-				srcs/ray_casting.c \
-				srcs/player.c \
-				srcs/color.c \
-
-EXT			=	Makefile
-
-OBJ			=	$(SRC:.c=.o)
+NOC			=	\033[0m
+DEBC		=	\033[36m
+OKC			=	\033[32m
+ERC			=	\033[31m
+WAC			=	\033[33m
 
 CMP			=	gcc
 
-DEBUG		=	-g3 -fsanitize=address
+DEBUG_F		=	-g3 -fsanitize=address
 
-FLAGS		=	-Wall -Wextra -Werror -lpthread 
+FLAGS		=	-Wall -Wextra -Werror 
 
-LIB_DIR		=	-L libft/ -L minilibx/
+OBJDIR		=	./obj/
+INCDIR		=	./includes/
+SRCDIR		=	./srcs/
+
+LFTDIR		=	./libft/
+MLXDIR		=	./minilibx/
 LIBS		=	-lft -lmlx -framework OpenGL -framework AppKit
 
-all : lib $(NAME) compil
+OBJNAME		=	$(SRCNAME:.c=.o)
+INCNAME		=	wolf3d.h \
+				wolf3d_define.h \
+				wolf3d_struct.h
+SRCNAME 	=	wolf3d.c \
+				setup.c \
+				mlx_process.c \
+				mlx_control.c \
+				path_maker.c \
+				path_maker_dir.c \
+				configure_map.c \
+				save_map.c \
+				generate_map.c \
+				open_map.c \
+				draw.c \
+				ray_casting.c \
+				player.c \
+				color.c \
 
-$(NAME) : $(OBJ) $(EXT)
+SRC		= 	$(addprefix $(SRCDIR),$(SRCNAME))
+OBJ		= 	$(addprefix $(OBJDIR),$(OBJNAME))
+INC		= 	$(addprefix -I,$(INCDIR),$(INCNAME))
 
-compil :
-	@$(CMP) $(FLAGS) -o $(NAME) $(SRC) $(LIB_DIR) $(LIBS)
-	@echo "wolf3d compiled"
+EXT			=	Makefile
 
-debug_compil :
-	@$(CMP) $(FLAGS) $(DEBUG) -o $(NAME) $(SRC) $(LIB_DIR) $(LIBS)
-	@echo "wolf3d compiled"
+debug : all
 
-lib :
-	@echo "compiling libft..."
-	@make -C libft/ --no-print-directory
-	@echo "libft compiled"
-	@echo "compiling mlx..."
-	@make -C minilibx/ --no-print-directory
-	@echo "mlx compiled"
+all: $(NAME) $(EXT)
 
-clean :
-	@echo "cleaning objects..."
-	@rm -f $(OBJ)
-	@rm -rf $(NAME).dSYM
-	@make -C libft/ clean --no-print-directory
-	@echo "cleaning mlx..."
-	@make -C minilibx/ clean --no-print-directory
-	@echo "clean done"
+$(NAME): $(OBJ)
+	@echo
+ifneq (,$(filter debug,$(MAKECMDGOALS)))
+	@echo "$(DEBC)$(NAME):\t\t$(NAME) DEBUG MODE$(NOC)"
+	@echo "$(DEBC)IF YOU WANT TO SWITCH TO RELEASE VERSION 'make re'$(NOC)"
+	@echo "$(DEBC)⤜(ʘvʘ)⤏$(NOC)"
+	@make debug -C $(LFTDIR)
+	@$(CMP) $(FLAGS) $(DEBUG_F) -o $(NAME) -L $(LFTDIR) -L $(MLXDIR) $(LIBS) $^ -o $@
+else
+	@make -C $(LFTDIR)
+	@$(CMP) $(FLAGS) -o $(NAME) -L $(LFTDIR) -L $(MLXDIR) $(LIBS) $^ -o $@
+	@echo "$(OKC)$(NAME):\t\t$(NAME) READY$(NOC)"
+	@echo "$(OKC)¯\_ツ_/¯$(NOC)"
+endif
 
-fclean : clean
+$(OBJDIR)%.o: $(SRCDIR)%.c
+ifneq (,$(filter debug,$(MAKECMDGOALS)))
+	@mkdir -p $(OBJDIR) 2> /dev/null || true
+	@$(CMP) -c -o $@ $< $(INC) $(FLAGS) $(DEBUG_F)
+	@echo -n .
+else
+	@mkdir -p $(OBJDIR) 2> /dev/null || true
+	@$(CMP) -c -o $@ $< $(INC) $(FLAGS)
+	@echo -n .
+endif
+
+clean:
+	@make -C $(LFTDIR) clean
+	@rm -rf $(OBJDIR)
+	@echo "$(WAC)$(NAME):\t\tRemoving OBJ dir: ./obj/$(NOC)"
+
+fclean: clean
+	@make -C $(LFTDIR) fclean
 	@rm -f $(NAME)
-	@echo "full cleaning libft..."
-	@make -C libft/ fclean --no-print-directory
-	@echo "fclean done"
+	@echo "$(WAC)$(NAME):\t\tRemoving $(NAME) executables$(NOC)"
 
-re : fclean all
-
-debug : lib $(NAME) debug_compil
+re: fclean all
 
 .PHONY: $(NAME) all clean fclean re
