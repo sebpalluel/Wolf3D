@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/19 21:01:20 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/24 19:39:32 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/11/07 10:48:26 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	custom(char *command, char *tmp, char *file_path, int mode)
 {
-	char *tmp2;
+	char	*tmp2;
 
 	tmp2 = NULL;
 	if (mode)

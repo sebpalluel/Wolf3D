@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 17:20:12 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/24 21:32:09 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/11/07 11:24:45 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,14 @@ static size_t	ft_check_digit_or_space(char *str)
 int				ft_parsingerror(t_setup *setup, int *height, int ret_gnl)
 {
 	if (*height == 0)
+	{
+		if (ret_gnl <= 0)
+		{
+			MAP->map_str[*height] = NULL;
+			return (SETUP.error = FILE_ERROR);
+		}
 		M_WIDTH = ft_strlen(MAP->map_str[0]) / 2;
+	}
 	if (ft_check_digit_or_space(MAP->map_str[*height]) != OK ||\
 			M_WIDTH != (ft_strlen(MAP->map_str[*height]) / 2) ||\
 			*height > M_MAX_SIZE || ret_gnl == READ_ERR)

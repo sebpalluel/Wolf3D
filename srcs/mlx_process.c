@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 18:01:08 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/24 22:24:18 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/11/07 11:04:27 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	ft_key_hook(int keycode, t_setup *setup)
 	{
 		if (ft_save_map(setup) == OK)
 			SETUP.mode = STATE_DRAW;
-		if (MAP->name_i >= 665)
+		if (MAP->name_i >= 665 || SETUP.error != OK)
 			ret = ERROR;
 	}
 	if (ft_sky_select(&SETUP) != OK)

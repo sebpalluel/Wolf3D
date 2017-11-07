@@ -6,7 +6,7 @@
 /*   By: psebasti <sebpalluel@free.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/19 20:33:45 by psebasti          #+#    #+#             */
-/*   Updated: 2017/10/12 17:11:25 by psebasti         ###   ########.fr       */
+/*   Updated: 2017/11/07 10:58:12 by psebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t		ft_open(t_fd *fd, int flags, int rights)
 		return (ERROR);
 	}
 	tmp = ft_strjoin(fd->path, fd->name);
-	if (tmp != NULL && (fd->fd = open(tmp, flags, rights)) <= 0)
+	if (tmp == NULL || (fd->fd = open(tmp, flags, rights)) <= 0)
 	{
 		free(tmp);
 		return (ERROR);
